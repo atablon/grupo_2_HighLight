@@ -32,5 +32,5 @@ Dentro de los principales sitios en los que este trabajo comenzó a inspirarse t
 ## Wireframe
 A continuacion se presentan el acceso al documento con las diferentes secciones requeridas para el wireframe del primer sprint:
 
-- [Wireframe entregable](https://github.com/atablon/grupo_2_HighLight/blob/master/Sprint%201/Wireframe.pptx)
+- [Wireframe entregable](https://docs.google.com/presentation/d/1sgNyd5XVhYLOvcpFUmMaicmvxKjrkXeeeUwylYzTh1g/edit?usp=sharing)
 
