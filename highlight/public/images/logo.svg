@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="190px" height="35px" viewBox="0 0 190 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>Group 10</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="352" width="1280" height="100"></rect>
+        <filter x="-0.6%" y="-4.5%" width="101.2%" height="115.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="3" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.305871353   0 0 0 0 0.507983567   0 0 0 0 0.697463768  0 0 0 0.547803759 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home---estructuras" transform="translate(-61.000000, -387.000000)">
+            <rect fill="#FFFFFF" x="0" y="0" width="1280" height="2144"></rect>
+            <g id="Rectangle">
+                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+            </g>
+            <g id="Group-10" transform="translate(63.000000, 376.000000)">
+                <text id="HighLight" font-family="OpenSans-Regular, Open Sans" font-size="34.1879986" font-weight="normal" letter-spacing="0.957263926">
+                    <tspan x="21.3675004" y="37" fill="#0F5184">High</tspan>
+                    <tspan x="98.7808811" y="37" font-family="OpenSans-Bold, Open Sans" font-weight="bold" fill="#00A5F1">Light</tspan>
+                </text>
+                <g id="Group-9" transform="translate(0.000000, 15.256400)" stroke="#10A3EB" stroke-linecap="round" stroke-width="2.73503988">
+                    <path d="M0,11.6239195 L15.2991294,11.7093895" id="Line-6"></path>
+                    <path d="M0.897434962,6.11110474 L15.2991294,11.7093895" id="Line-6"></path>
+                    <path d="M4.31623482,0.641024973 L15.2991294,11.7093895" id="Line-6"></path>
+                    <path d="M0.897434962,17.0512643 L15.2991294,11.7093895" id="Line-6"></path>
+                    <path d="M3.63247485,21.8375841 L15.2991294,11.7093895" id="Line-6"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,78 @@
+/*Usando fuente de google*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
+
+
+html, body {
+  min-height: 100vh;
+  margin: 0;
+}
+
+body{
+font-family: 'Open Sans', sans-serif;
+
+  }
+
+/* Acá ponemos todo lo que queremos reseatear y los css que son cross al site */
+* { 
+  box-sizing: border-box; /*para aplicar para todo los contendedores*/
+}
+
+ol, ul {
+  list-style: none;
+  padding:0;
+  margin:0;
+}
+p, a {
+  font-size:14px ;
+}
+
+a {
+  color: #10A3EB;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover {
+  color: #105285 ;
+  }
+  
+p {
+  color: #444444;
+}
+button.btn {
+    padding: 14px 30px;
+    border-radius: 100px;
+    color: #fff;
+    background: #10A3EB;
+    border: none;
+    font-size:14px ;
+
+}
+
+/* contenedor general */
+.contenedor_body {
+  width: 1280px;
+  margin: 0 auto;
+  border:solid 1px steelblue;
+  }
+
+/* header */
+header.main_header {
+  overflow: hidden;
+  border:1px solid salmon;
+  padding:10px 60px ;
+  }
+
+.logo {
+  float: left;
+  margin-top:20px;
+  }
+nav.navegacion {
+  float:right;
+ }
+nav.navegacion ul li{
+  display: inline-block;
+  padding: 10px;
+}
+
+
