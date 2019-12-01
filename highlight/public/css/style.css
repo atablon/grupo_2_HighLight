@@ -2,28 +2,33 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
 
 
-html, body {
+html,
+body {
   min-height: 100vh;
   margin: 0;
 }
 
-body{
-font-family: 'Open Sans', sans-serif;
+body {
+  font-family: 'Open Sans', sans-serif;
 
-  }
+}
 
 /* Acá ponemos todo lo que queremos reseatear y los css que son cross al site */
-* { 
-  box-sizing: border-box; /*para aplicar para todo los contendedores*/
+* {
+  box-sizing: border-box;
+  /*para aplicar para todo los contendedores*/
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
-  padding:0;
-  margin:0;
+  padding: 0;
+  margin: 0;
 }
-p, a {
-  font-size:14px ;
+
+p,
+a {
+  font-size: 14px;
 }
 
 a {
@@ -33,46 +38,162 @@ a {
 }
 
 a:hover {
-  color: #105285 ;
-  }
-  
+  color: #105285;
+}
+
 p {
   color: #444444;
 }
+
 button.btn {
-    padding: 14px 30px;
-    border-radius: 100px;
-    color: #fff;
-    background: #10A3EB;
-    border: none;
-    font-size:14px ;
+  padding: 14px 30px;
+  border-radius: 100px;
+  color: #fff;
+  background: #10A3EB;
+  border: none;
+  font-size: 14px;
 
 }
 
+h2,
+h3 {
+  color: #105285;
+  margin: 0 0 20px 0;
+}
+
+
 /* contenedor general */
 .contenedor_body {
-  width: 1280px;
+
   margin: 0 auto;
-  border:solid 1px steelblue;
-  }
+  border: solid 1px steelblue;
+}
 
 /* header */
 header.main_header {
   overflow: hidden;
-  border:1px solid salmon;
-  padding:10px 60px ;
-  }
+  border: 1px solid salmon;
+  padding: 10px 60px;
+  width: 1280px;
+  margin: 0 auto;
+}
 
 .logo {
   float: left;
-  margin-top:20px;
-  }
+  margin-top: 20px;
+}
+
 nav.navegacion {
-  float:right;
- }
-nav.navegacion ul li{
+  float: right;
+}
+
+nav.navegacion ul li {
   display: inline-block;
   padding: 10px;
 }
 
+/* main */
 
+/* buscador */
+main.body {
+  margin: 0 auto;
+  width: 1280px;
+
+
+
+}
+
+section.buscador {
+  background-image: url("/images/banner.svg");
+  background-repeat: no-repeat;
+  background-color: #0096E0;
+  margin: 0 auto;
+  height: 436px;
+  position: relative;
+}
+
+.box_buscardor {
+  background-color: #fff;
+  padding: 60px 40px;
+  border-radius: 20px;
+  width: 38%;
+  position: absolute;
+  top: 60px;
+  left: 65px;
+  -webkit-box-shadow: 6px 4px 54px -5px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 6px 4px 54px -5px rgba(0, 0, 0, 0.5);
+  box-shadow: 6px 4px 54px -5px rgba(0, 0, 0, 0.5);
+
+}
+
+.box_buscardor h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.box_buscardor input {
+  border: 1px solid #10A3EB;
+  height: 56px;
+  border-radius: 5px;
+  width: 80%;
+  font-size: 14px;
+  color: #666666;
+  padding: 0 10px;
+}
+
+
+.nav-search-btn {
+  background-color: #10A3EB;
+  height: 56px;
+  width: 18%;
+  font-size: 18px;
+  color: #ffffff;
+  border: 1px solid #10A3EB;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  position: relative;
+  right: 10px;
+  border: 1px solid #10A3EB;
+  top: 1px;
+}
+
+/*lista de productos principales*/
+section.lista_productos {
+  overflow: hidden;
+  margin: 60px 0 0 0;
+  border: 1px solid slategrey;
+  padding: 0 60px;
+}
+
+.producto {
+  width: 23.3%;
+  margin-right: 1.7%;
+  float: left;
+
+}
+
+.producto:hover {
+  -webkit-box-shadow: 6px 4px 34px -5px rgba(0, 25, 55, 0.5);
+  -moz-box-shadow: 6px 4px 34px -5px rgba(0, 25, 55, 0.5);
+  box-shadow: 6px 4px 34px -5px rgba(0, 25, 55, 0.5);
+}
+
+.img_produto {
+  height: 250px;
+
+}
+
+.producto_info {
+  padding: 4% 6%;
+  border: 1px solid #cccccc;
+
+}
+
+/*bloque destacado*/
+.bloque_productos_destacados {
+  overflow: hidden;
+  margin: 60px 0 0 0;
+  border: 1px solid slategrey;
+  padding: 0 60px ;
+
+}
