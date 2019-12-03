@@ -34,3 +34,6 @@ A continuacion se presentan el acceso al documento con las diferentes secciones 
 
 - [Wireframe entregable](https://docs.google.com/presentation/d/1sgNyd5XVhYLOvcpFUmMaicmvxKjrkXeeeUwylYzTh1g/edit?usp=sharing)
 
+## Tablero Trello
+
+https://trello.com/b/2v6Z9lll/integradorgrupo2highlight
