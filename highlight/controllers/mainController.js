@@ -13,6 +13,11 @@ const controller = {
 		let html = readHTML('index');
 		res.send(html);
 	},
+	root_carrito: (req, res) => {
+		let html = readHTML('carrito');
+		res.send(html);
+	},
+	
 };
 
 module.exports = controller

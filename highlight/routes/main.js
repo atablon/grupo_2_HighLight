@@ -7,5 +7,10 @@ const mainController = require('../controllers/mainController');
 
 /* GET - home page. */
 router.get('/', mainController.root);
+router.get('/carrito', mainController.root_carrito);
+
+
 
 module.exports = router;
+
+
