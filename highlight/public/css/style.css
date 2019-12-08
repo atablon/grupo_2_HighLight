@@ -1,22 +1,15 @@
-/*Usando fuente de google*/
+/*fuente de google*/
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
 
-
-html,
+/*Css para resetear estilos de los navegadores*/
 body {
-
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f6f6f6;
   margin: 0;
 }
 
-body {
-  font-family: 'Open Sans', sans-serif;
-
-}
-
-/* Acá ponemos todo lo que queremos reseatear y los css que son cross al site */
 * {
   box-sizing: border-box;
-  /*para aplicar para todo los contendedores*/
 }
 
 ol,
@@ -43,159 +36,288 @@ a:hover {
 
 p {
   color: #444444;
+  padding: 0;
+  margin: 0;
 }
 
-button.btn {
-  padding: 14px 30px;
-  border-radius: 100px;
-  color: #fff;
-  background: #10A3EB;
-  border: none;
-  font-size: 14px;
-
+.fa {
+  font-size: 18px;
 }
 
 h2,
 h3 {
   color: #105285;
-  margin: 0 0 20px 0;
+  margin: 0
 }
 
-
-/* contenedor general */
-.contenedor_body {
-  margin: 0 auto;
-  border: solid 1px steelblue;
+/* Estilos para el header*/
+.main-header {
+  padding: 16px 0;
+  border-bottom: 1px solid #105285;
 }
 
-/* header */
-header.main_header {
+.header_row {
+  align-items: center;
+}
+
+.menu {
+  text-align: right;
+}
+
+.menu a {
+  padding: 5px;
+}
+
+.menu a:hover {
+  color: #105285;
+}
+
+.menu a:focus {
+  background-color: #10A3EB;
+  color: #105285;
+}
+
+.box_nav {
+  width: 100%;
+  position: relative;
+  padding: 0;
+  visibility: hidden;
+}
+
+/*no me funciona*/
+.toggle-nav:hover .box_nav {
+  padding: 50px;
+  background-color: blue;
+  visibility: visible;
+}
+
+/* Estilos para el header media quary*/
+@media (min-width:100px) and (max-width: 767px) {
+  .navegacion {
+    position: absolute;
+    border-top: 1px solid #10A3EB;
+    border-bottom: 1px solid #10A3EB;
+    z-index: 1;
+    background-color: #f5f5f5;
+    width: 100%;
+    margin: 10px 0 0 0;
+  }
+
+  .navegacion::before {
+    content: '';
+    position: absolute;
+    top: -6px;
+    right: 18%;
+    width: 10px;
+    height: 10px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background: #f5f5f5;
+    border-top: solid 1px #10A3EB;
+    border-left: solid 1px #10A3EB;
+  }
+
+  .navegacion ul li {
+    border-bottom: 1px solid #ccc;
+  }
+
+  .navegacion ul li a {
+    display: block;
+    padding: 4%;
+  }
+
+  .navegacion ul li a:hover {
+    background-color: aqua;
+  }
+}
+
+@media (min-width:768px) {
+  .toggle-nav {
+    display: none;
+  }
+
+  .box_nav {
+    visibility: visible;
+  }
+
+  .navegacion ul li {
+    display: inline-block;
+    padding: 0 6px;
+  }
+
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .logo-column,
+  .box_nav {
+    order: -1;
+  }
+
+  .box_nav {
+    text-align: right;
+    display: block;
+  }
+}
+
+/* Estilos para el buscdor*/
+.buscador {
+  background-color: #3695DA;
+  margin-bottom: 40px;
+}
+
+.bkg-buscador {
   overflow: hidden;
-  border: 1px solid salmon;
-  padding: 10px 60px;
-  min-width: 768px;
-  max-width: 1280px;
-  margin: 0 auto;
-}
-
-.logo {
-  float: left;
-  margin-top: 20px;
-}
-
-nav.navegacion {
-  float: right;
-}
-
-nav.navegacion ul li {
-  display: inline-block;
-  padding: 10px;
-}
-
-/* main */
-
-/* buscador */
-main.body {
-  margin: 0 auto;
-  min-width: 768px;
-  max-width: 1280px;
-
-
-
-}
-
-section.buscador {
   background-image: url("/images/banner.svg");
   background-repeat: no-repeat;
-  background-color: #0096E0;
+  background-position: center;
+  height: 320px;
   margin: 0 auto;
-  height: 436px;
-  position: relative;
-
 }
 
-.box_buscardor {
+.box_buscador {
   background-color: #fff;
-  padding: 60px 40px;
-  border-radius: 20px;
-  width: 38%;
-  position: absolute;
-  top: 60px;
-  left: 65px;
+  opacity: 0.9;
+  padding: 20px;
+  border-radius: 10px;
+  width: 96%;
   -webkit-box-shadow: 6px 4px 54px -5px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 6px 4px 54px -5px rgba(0, 0, 0, 0.5);
   box-shadow: 6px 4px 54px -5px rgba(0, 0, 0, 0.5);
-
+  margin: 40px auto;
 }
 
-.box_buscardor h2 {
-  font-size: 30px;
-  margin-bottom: 10px;
+.box_buscador h2 {
+  margin-bottom: 20px;
+  font-weight: 400;
 }
 
-.box_buscardor input {
+.box_buscador input {
   border: 1px solid #10A3EB;
   height: 56px;
   border-radius: 5px;
-  width: 80%;
+  width: 78%;
   font-size: 14px;
   color: #666666;
   padding: 0 10px;
 }
 
-
-.nav-search-btn {
+.box_buscador .nav-search-btn {
   background-color: #10A3EB;
   height: 56px;
-  width: 18%;
+  width: 20%;
   font-size: 18px;
   color: #ffffff;
   border: 1px solid #10A3EB;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   position: relative;
-  right: 10px;
+  right: 8px;
   border: 1px solid #10A3EB;
   top: 1px;
 }
 
-/*lista de productos principales*/
-section.lista_productos {
-  overflow: hidden;
-  margin: 60px 0 0 0;
-  border: 1px solid slategrey;
-  padding: 0 60px;
+@media (min-width:768px) {
+  .box_buscador {
+    width: 60%;
+    margin: 50px 40px;
+  }
+
+  .box_buscador {
+    padding: 40px;
+    width: 60%;
+    margin: 50px 0 0 50px;
+    border-radius: 20px;
+  }
+
+  .box_buscador input {
+    width: 78%;
+  }
+
+  .box_buscador .nav-search-btn {
+    top: 1px;
+  }
+
+  .bkg-buscador {
+    height: 430px;
+  }
+}
+
+@media (min-width:1024px) {
+  .box_buscador {
+    width: 40%;
+  }
+}
+
+/* PRODUCTOS */
+.lista-productos,
+.bloque-productos-destacados {
+  margin-bottom: 30px;
+}
+
+.lista-productos h2,
+.bloque-productos-destacados h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 400;
 }
 
 .producto {
-  width: 23.3%;
-  margin-right: 1.7%;
-  float: left;
-
-}
-
-.producto:hover {
-  -webkit-box-shadow: 6px 4px 34px -5px rgba(0, 25, 55, 0.5);
-  -moz-box-shadow: 6px 4px 34px -5px rgba(0, 25, 55, 0.5);
-  box-shadow: 6px 4px 34px -5px rgba(0, 25, 55, 0.5);
-}
-
-.img_produto {
- /* height: 250px;*/
-
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+  margin-bottom: 20px;
 }
 
 .producto_info {
-  padding: 4% 6%;
-  border: 1px solid #cccccc;
-
+  padding: 10px 16px;
 }
 
-/*bloque destacado*/
-.bloque_productos_destacados {
-  overflow: hidden;
-  margin: 60px 0 0 0;
-  border: 1px solid slategrey;
-  padding: 0 60px;
+.producto:hover {
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.4);
+}
 
+@media (min-width:768px) {
+
+  .lista-productos h2,
+  .bloque-productos-destacados h2 {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+}
+
+/* sección de clientes */
+.clientes {
+  background-color: #efefef;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px;
+}
+
+.clientes h3 {
+  padding: 0 0 30px 0;
+  font-weight: 600;
+}
+
+/*footer */
+.footer {
+  background-color: #f6f6f6;
+  padding: 10px;
+}
+
+.footer ul li {
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.icon-sociales {
+  text-align: right;
+}
+
+.icon-sociales a {
+  font-size: 18px;
+  padding: 10px 5px;
 }
