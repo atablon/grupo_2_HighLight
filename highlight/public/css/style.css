@@ -45,15 +45,18 @@ p {
 }
 
 h2,
-h3 {
+h3,
+h4 {
   color: #105285;
-  margin: 0
+  margin: 0;
+  font-weight: 400;
 }
 
 /* Estilos para el header*/
 .main-header {
   padding: 16px 0;
-  border-bottom: 1px solid #105285;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: #ffffff;
 }
 
 .header_row {
@@ -163,7 +166,7 @@ h3 {
   }
 }
 
-/* Estilos para el buscdor*/
+/* Estilos para el buscador*/
 .buscador {
   background-color: #3695DA;
   margin-bottom: 40px;
@@ -245,7 +248,7 @@ h3 {
 @media (min-width:1024px) {
 
   .box_buscador {
-  
+
     width: 500px;
 
 
@@ -321,4 +324,35 @@ h3 {
 .icon-sociales a {
   font-size: 18px;
   padding: 10px 5px;
+}
+
+/* contenedor base blanco para todas las view */
+
+.contenedor-main {
+  max-width: 860px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+.contenedor-main {
+  margin-bottom: 20px;
+}
+
+.box-container-view {}
+
+.box-time {
+  padding: 0;
+}
+
+.box-precio {
+  text-align: right;
+  padding: 0;
+}
+
+.carrito_cantidad {
+  margin-bottom: 5px;
+}
+
+.carrito_cantidad li {
+  display: inline-block;
 }
