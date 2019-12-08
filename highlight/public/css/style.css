@@ -171,23 +171,17 @@ h3 {
 
 .bkg-buscador {
   overflow: hidden;
-  background-image: url("/images/banner.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 320px;
+  height: 280px;
   margin: 0 auto;
 }
 
 .box_buscador {
   background-color: #fff;
-  opacity: 0.9;
-  padding: 20px;
+  padding: 30px 20px;
   border-radius: 10px;
-  width: 96%;
-  -webkit-box-shadow: 6px 4px 54px -5px rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 6px 4px 54px -5px rgba(0, 0, 0, 0.5);
-  box-shadow: 6px 4px 54px -5px rgba(0, 0, 0, 0.5);
-  margin: 40px auto;
+  width: 100%;
+  margin: 40px 0;
+
 }
 
 .box_buscador h2 {
@@ -217,39 +211,46 @@ h3 {
   position: relative;
   right: 8px;
   border: 1px solid #10A3EB;
-  top: 1px;
 }
 
 @media (min-width:768px) {
-  .box_buscador {
-    width: 60%;
-    margin: 50px 40px;
+
+  .bkg-buscador {
+    overflow: hidden;
+    background-image: url("/images/banner.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 430px;
+
   }
 
   .box_buscador {
     padding: 40px;
-    width: 60%;
-    margin: 50px 0 0 50px;
     border-radius: 20px;
+    box-shadow: 6px 4px 54px -5px rgba(0, 0, 0, 0.5);
+    width: 500px;
+    margin: 60px 40px;
+
   }
 
   .box_buscador input {
     width: 78%;
   }
 
-  .box_buscador .nav-search-btn {
-    top: 1px;
-  }
 
-  .bkg-buscador {
-    height: 430px;
-  }
+
+
 }
 
 @media (min-width:1024px) {
+
   .box_buscador {
-    width: 40%;
+  
+    width: 500px;
+
+
   }
+
 }
 
 /* PRODUCTOS */
