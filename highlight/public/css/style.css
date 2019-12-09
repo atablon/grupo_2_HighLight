@@ -310,6 +310,7 @@ h4 {
 .footer {
   background-color: #f6f6f6;
   padding: 10px;
+  border-top: 1px solid #e5e5e5;
 }
 
 .footer ul li {
@@ -326,19 +327,56 @@ h4 {
   padding: 10px 5px;
 }
 
+
+/*header con logo small */
+.logo_bg {
+  display: none;
+}
+
+@media (min-width:768px) {
+  .logo_bg {
+    display: block;
+  }
+
+  .logo_sm {
+    display: none;
+  }
+}
+
 /* contenedor base blanco para todas las view */
 
 .contenedor-main {
   max-width: 860px;
   margin: 60px auto;
-  padding: 0 20px;
+
 }
 
-.contenedor-main {
-  margin-bottom: 20px;
+
+.box-container-view {
+  padding: 20px 0;
 }
 
-.box-container-view {}
+@media (min-width:768px) {
+  .box-container-view {
+    background-color: #ffffff;
+    padding: 60px;
+    border: 1px solid #f5f5f5;
+    border-radius: 4px;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.4);
+  }
+
+  .box-total {
+    background-color: #e5e5e5;
+    padding: 60px;
+    border-bottom: 4px;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.4);
+    position: relative;
+    top:-6px
+
+  }
+}
+
+/*carrito*/
 
 .box-time {
   padding: 0;
@@ -355,4 +393,19 @@ h4 {
 
 .carrito_cantidad li {
   display: inline-block;
+}
+
+.acciones {
+  margin-top: 20px;
+}
+
+.box-total {
+  background-color: #efefef;
+  padding: 20px 0;
+}
+
+/* estilos para formularios*/
+select {
+  padding: 4px;
+  border-color: #10A3EB;
 }
