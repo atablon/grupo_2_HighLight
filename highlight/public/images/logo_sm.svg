@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="191px"
+   height="47px"
+   viewBox="0 0 191 47"
+   version="1.1"
+   id="svg3825"
+   sodipodi:docname="logo_sm.svg"
+   inkscape:version="0.92.2 5c3e80d, 2017-08-06">
+  <metadata
+     id="metadata3831">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Group 10</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3829" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1165"
+     inkscape:window-height="566"
+     id="namedview3827"
+     showgrid="false"
+     inkscape:zoom="2"
+     inkscape:cx="95.5"
+     inkscape:cy="23.5"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg3825" />
+  <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+  <title
+     id="title3803">Group 10</title>
+  <desc
+     id="desc3805">Created with Sketch.</desc>
+  <g
+     id="Group-10"
+     stroke="none"
+     stroke-width="1"
+     fill="none"
+     fill-rule="evenodd">
+    <g
+       id="g3822">
+      <text
+         id="HighLight"
+         font-family="OpenSans-Regular, Open Sans"
+         font-size="34.1879986"
+         font-weight="normal"
+         letter-spacing="0.957263926">
+        <tspan
+           x="21.3675004"
+           y="37"
+           fill="#0F5184"
+           id="tspan3807">High</tspan>
+        <tspan
+           x="98.7808811"
+           y="37"
+           font-family="OpenSans-Bold, Open Sans"
+           font-weight="bold"
+           fill="#00A5F1"
+           id="tspan3809">Light</tspan>
+      </text>
+      <g
+         id="Group-9"
+         transform="translate(0.000000, 15.256400)"
+         stroke="#10A3EB"
+         stroke-linecap="round"
+         stroke-width="2.73503988">
+        <path
+           d="M0,11.6239195 L15.2991294,11.7093895"
+           id="Line-6" />
+        <path
+           d="M0.897434962,6.11110474 L15.2991294,11.7093895"
+           id="path3813" />
+        <path
+           d="M4.31623482,0.641024973 L15.2991294,11.7093895"
+           id="path3815" />
+        <path
+           d="M0.897434962,17.0512643 L15.2991294,11.7093895"
+           id="path3817" />
+        <path
+           d="M3.63247485,21.8375841 L15.2991294,11.7093895"
+           id="path3819" />
+      </g>
+    </g>
+  </g>
+</svg>

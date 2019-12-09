@@ -17,6 +17,10 @@ const controller = {
 		let html = readHTML('carrito');
 		res.send(html);
 	},
+	root_detalle: (req, res) => {
+		let html = readHTML('detalle');
+		res.send(html);
+	},
 	
 };
 
