@@ -37,3 +37,8 @@ A continuacion se presentan el acceso al documento con las diferentes secciones 
 ## Tablero Trello
 
 https://trello.com/b/2v6Z9lll/integradorgrupo2highlight
+
+## Retrospectiva Sprint 1
+<!-- 
+![retros1](https://ibb.co/Vw58Tw2) -->
+<a href="https://ibb.co/6gqBtv4"><img src="https://i.ibb.co/kQP1D3h/retros1.png" alt="retros1" border="0"></a>
