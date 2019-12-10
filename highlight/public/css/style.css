@@ -58,7 +58,7 @@ h4 {
   margin-bottom: 20px;
 }
 
-button {
+button.btn {
   background-color: #10A3EB;
   border: none;
   padding: 12px 30px;
@@ -238,6 +238,7 @@ button:focus {
   position: relative;
   right: 8px;
   border: 1px solid #10A3EB;
+  top:1px
 }
 
 @media (min-width:768px) {
