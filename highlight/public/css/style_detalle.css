@@ -5,6 +5,7 @@
     box-sizing: border-box;
   }
 
+  /* Para ver el posicionamiento de los bloques */
   /* [class*=col-]{
     border: solid red;
 } */
@@ -13,6 +14,11 @@ body {
     font-family: 'Open Sans', sans-serif;
     background-color: #f6f6f6;
     margin: 0;
+    overflow:visible;
+  }
+
+  .extra_options{
+      align-content: center;
   }
   
  /* style */
@@ -59,6 +65,7 @@ body {
     color: #666666;
 
   }
+ 
   .nopadding {
     padding: 0 !important;
     margin: 0 !important;
@@ -67,8 +74,138 @@ body {
  .menu {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
+/* Supuestamente esta en style pero no lo encontre, los tuve que redefinir */
+
+  .carrito{
+      color: #10A3EB;
+      position: relative;
+      left: 8px;
+      top: 8px;
+
+  }
+  .toggle-nav{
+      color: #10A3EB;
+      position: relative;
+      top: 8px;
+  }
+
+  /* style */
+
+  .producto {
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    margin-bottom: 20px;
+  }
+  
+  .producto_info {
+    padding: 10px 16px;
+  }
+
+.img_produto{
+    min-width: 300px;
+}
+  /*  */
 /* .form_style{
     margin-bottom: none;
 } */
+
+
+
+/* Estilos para la informacion en caja de producto */
+p{
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.p_tipo_cartel{
+    font-size: small;
+    font-weight: lighter;
+
+}
+.p_direccion{
+    font-size: small;
+    font-weight: bolder;
+}
+.p_calles{
+    font-size: xx-small;
+    font-weight: lighter;
+
+}
+.p_costo{
+    font-size: small;
+}
+
+/* Estilos de la puntuacion con estrellas */
+.estrellas{
+
+    margin-bottom: 10px;
+}
+.checked{
+    font-size: smaller;
+    color: #10A3EB;
+}
+.n_checked{
+    font-size: smaller;
+    color: rgb(83, 92, 96);
+}
+
+/* Resultados Producto */
+
+.resultados_producto{
+    border:1px #666666 solid;
+    padding: 5px;
+}
+
+.bloque_resultado{
+    max-height: 172;
+    max-width: 330;
+}
+
+
+.paginado_contenido{
+    text-align: center;
+    background-color: #fff;
+}
+.arrow{
+    font-size: small;
+}
+/* Footer */
+.footer {
+    background-color: #f6f6f6;
+    padding: 10px;
+    border-top: 1px solid #e5e5e5;
+  }
+  
+  .footer ul li {
+    display: inline-block;
+    padding-right: 10px;
+  }
+  
+.icon-sociales {
+    text-align: right;
+    padding-left:0px ;
+  }
+  
+.icon-sociales a {
+    font-size: 18px;
+    padding: 10px 5px;
+  }
+
+  /* Preguntar bien sobre estos estilos */
+
+  p,
+a {
+  font-size: 14px;
+}
+
+a {
+  color: #10A3EB;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover {
+  color: #105285;
+}
+/*  */
