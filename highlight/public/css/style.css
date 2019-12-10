@@ -52,6 +52,30 @@ h4 {
   font-weight: 400;
 }
 
+.titulo-seccion {
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #10A3EB;
+  border: none;
+  padding: 12px 30px;
+  color: #ffffff;
+  border-radius: 50px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #105285;
+}
+
+button:focus {
+  background-color: #10A3EB;
+}
+
 /* Estilos para el header*/
 .main-header {
   padding: 16px 0;
@@ -371,8 +395,7 @@ h4 {
     border-bottom: 4px;
     box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.4);
     position: relative;
-    top:-6px
-
+    top: -6px
   }
 }
 
@@ -393,15 +416,54 @@ h4 {
 
 .carrito_cantidad li {
   display: inline-block;
+  padding-right: 5px;
 }
 
 .acciones {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .box-total {
   background-color: #efefef;
   padding: 20px 0;
+}
+
+.box-total .row {
+  padding: 10px 60px;
+}
+
+.box_valor {
+  text-align: right;
+}
+
+.item_chosse {
+  padding: 20px 0;
+}
+
+.second-item {
+  border-top: 1px solid #e5e5e5;
+  padding-top: 30px;
+}
+
+.action-carrito {
+  text-align: right;
+  padding: 20px 0px;
+}
+
+em.tipo_cartel {
+  text-transform: uppercase;
+  font-style: normal;
+  background-color: #efefef;
+  color: #105285;
+  border-radius: 2px;
+  display: inline-block;
+  padding: 2px;
+  font-size: 9px;
+  margin-bottom: 8px;
+}
+
+.action-carrito a {
+  margin-right: 20px;
 }
 
 /* estilos para formularios*/
