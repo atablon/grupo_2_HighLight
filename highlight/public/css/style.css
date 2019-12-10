@@ -338,7 +338,7 @@ button:focus {
   border-top: 1px solid #e5e5e5;
 }
 
-.footer ul li {
+.nav-footer ul li {
   display: inline-block;
   padding-right: 10px;
 }

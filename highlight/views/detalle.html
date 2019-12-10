@@ -1,85 +1,85 @@
 <!-- Html dedicado para la ruta /detalle -->
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Agrego las hojas de estilo correspondientes a style.css (los estilos base) y agrego luego una hoja de estilos para la ruta de /detalles -->
     <!-- <link rel="stylesheet" href="/css/app.css"> -->
-    
+
     <!-- Bootstrap Grid Stylesheet SIEMPRE VA PRIMERO -->
     <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <!-- STYLE.CSS + STYLE_DETALLE.CSS -->
 
-	<!-- <link rel="stylesheet" href="/css/style.css"> -->
+    <!-- <link rel="stylesheet" href="/css/style.css"> -->
     <link rel="stylesheet" href="/css/style_detalle.css">
 
-    
     <!-- Titulo de la vineta -->
-    <title>Detalle-HighLight</title>
+    <title>HighLight</title>
 </head>
 
 <body>
-<!-- HEADER Ver wireframe /detalle -->
+    <!-- HEADER Ver wireframe /detalle -->
     <header class="main-header">
         <div class="container">
 
             <div class="row header-row">
                 <!-- Logotipo -->
-                <div class="col-3 col-md-3 col-lg-2 "> 
-                    <img class="logo_sm" src="/images/logo_chico.svg" alt="HighLight" width="100%"> 
-                    <img class="logo_bg" src="/images/logo.svg" alt="HighLight" width="100%"> 
+                <div class="col-md-3 col-lg-2  logo_bg">
+                    <a href="/"> <img class="" src="/images/logo.svg" alt="HighLight" width="100%"> </a>
+                </div>
+                <div class="col-2 logo_sm">
+                    <a href="/"> <img class="logo_sm" src="/images/logo_chico.svg" alt="HighLight" width="100%"></a>
+
                 </div>
 
                 <!-- Buscador  -->
-                <div class="col-7 col-md-6 col-lg-5">
-                            
+                <div class="col-8 col-md-6 col-lg-5">
+
                     <!-- BUSCADOR -->
                     <!-- <form class="form_style" action="/detalle.html" method="get"> -->
                     <div class="box_buscador container">
-                        <div class="row"> 
-                       
-                            <div class="col-9 nopadding" > 
-                                    <input class="barra_buscador" type="text" id="search_box" placeholder="Buscar">
+                        <div class="row">
+
+                            <div class="col-9 nopadding">
+                                <input class="barra_buscador" type="text" id="search_box" placeholder="Buscar">
                             </div>
 
                             <div class="col-3 nopadding">
                                 <button type="submit" class="top-nav-search-btn"> <i class="fas fa-search"></i></button>
 
                             </div>
-                        
+
                         </div>
 
-                       
-                    </div> 
-                <!-- </form>            -->
+                    </div>
+                    <!-- </form>            -->
 
                 </div>
                 <!-- Carrito y menu -->
                 <div class="col-2 col-md-3 col-lg-4 nopadding">
-                        
-                                <div class="menu">
-            
-                                    <a href="#" class="toggle-nav">
-                                        <i class="fa fa-bars"></i>
-                                    </a>
-                                    <nav class="menu_nav">
-                                            <a href="·"> Ingresar</a> <a href="·"> Registrarse </a> <a href="·" class="btn">Publicar mi cartel</a>
-                    
-                                    </nav>
-                                    <a href="#" class="carrito">
-                                        <i class="fa fa-shopping-cart"></i>
-                                    </a>
-                                </div>
-                                   
-                 
-                    
+
+                    <div class="menu">
+
+                        <a href="#" class="toggle-nav">
+                            <i class="fa fa-bars"></i>
+                        </a>
+                        <nav class="menu_nav">
+                            <a href="·"> Ingresar</a> <a href="·"> Registrarse </a> <a href="·" class="btn">Publicar mi
+                                cartel</a>
+
+                        </nav>
+                        <a href="#" class="carrito">
+                            <i class="fa fa-shopping-cart"></i>
+                        </a>
+                    </div>
 
                 </div>
-
 
             </div>
 
@@ -87,141 +87,142 @@
 
     </header>
     <!-- Main Body -->
-<section>
-    <div class="container">
-        <h2>Tu resultado de la busqueda:</h2>
-        <div class="row">
+    <section>
+        <div class="container">
+            <h2>Tu resultado de la busqueda:</h2>
+            <div class="row">
 
-            <div class="col-12 col-md-6 container bloque_resultado"> 
-                <div class="row resultados_producto">
-                    <div class="col-6 nopadding">
+                <div class="col-12 col-md-6 container bloque_resultado">
+                    <div class="row resultados_producto">
+                        <div class="col-6 nopadding">
                             <div class="img_producto"><img src="/images/img_banner.svg" width="100%" alt=""></div>
+                        </div>
+                        <div class="col-6">
+                            <p class="p_tipo_cartel">
+                                Cartel Medianera
+                                <p class="estrellas">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star n_checked"></span>
+                                    <span class="fa fa-star n_checked"></span>
+                                </p>
+                            </p>
+                            <p class="p_direccion">Alberdi 1829</p>
+                            <p class="p_calles">Entre calles Francisco Alem y Pacifico Rodriguez</p>
+                            <p class="p_costo">1 mes por $20.000,0</p>
+                        </div>
+
                     </div>
-                    <div class="col-6"> 
-                       <p class="p_tipo_cartel">
-                           Cartel Medianera 
-                           <p class="estrellas">
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star n_checked"></span>
-                                <span class="fa fa-star n_checked"></span>
-                           </p>
-                       </p>
-                       <p class="p_direccion">Alberdi 1829</p>
-                       <p class="p_calles">Entre calles Francisco Alem y Pacifico Rodriguez</p>
-                       <p class="p_costo">1 mes por $20.000,0</p> 
+                </div>
+
+                <div class="col-12 col-md-6 container bloque_resultado">
+                    <div class="row resultados_producto">
+                        <div class="col-6 nopadding">
+                            <div class="img_producto"><img src="/images/img_banner.svg" width="100%" alt=""></div>
+                        </div>
+                        <div class="col-6">
+                            <p class="p_tipo_cartel">
+                                Cartel Medianera
+                                <p class="estrellas">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star n_checked"></span>
+                                    <span class="fa fa-star n_checked"></span>
+                                </p>
+                            </p>
+                            <p class="p_direccion">Alberdi 1829</p>
+                            <p class="p_calles">Entre calles Francisco Alem y Pacifico Rodriguez</p>
+                            <p class="p_costo">1 mes por $20.000,0</p>
+                        </div>
+
                     </div>
+                </div>
+
+                <div class="col-12 col-md-6 container bloque_resultado">
+                    <div class="row resultados_producto">
+                        <div class="col-6 nopadding">
+                            <div class="img_producto"><img src="/images/img_banner.svg" width="100%" alt=""></div>
+                        </div>
+                        <div class="col-6">
+                            <p class="p_tipo_cartel">
+                                Cartel Medianera
+                                <p class="estrellas">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star n_checked"></span>
+                                    <span class="fa fa-star n_checked"></span>
+                                </p>
+                            </p>
+                            <p class="p_direccion">Alberdi 1829</p>
+                            <p class="p_calles">Entre calles Francisco Alem y Pacifico Rodriguez</p>
+                            <p class="p_costo">1 mes por $20.000,0</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 container bloque_resultado">
+                    <div class="row resultados_producto">
+                        <div class="col-6 nopadding">
+                            <div class="img_producto"><img src="/images/img_banner.svg" width="100%" alt=""></div>
+                        </div>
+                        <div class="col-6">
+                            <p class="p_tipo_cartel">
+                                Cartel Medianera
+                                <p class="estrellas">
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star checked"></span>
+                                    <span class="fa fa-star n_checked"></span>
+                                    <span class="fa fa-star n_checked"></span>
+                                </p>
+                            </p>
+                            <p class="p_direccion">Alberdi 1829</p>
+                            <p class="p_calles">Entre calles Francisco Alem y Pacifico Rodriguez</p>
+                            <p class="p_costo">1 mes por $20.000,0</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- Paginado de resultados de busqueda -->
+            <div class="row p_paginado">
+                <div class="col-12 nopadding">
+                    <p class="paginado_contenido"> <a href="detalle.html">1</a> <a href="detalle.html">2</a> <a
+                            href="detalle.html">3</a> <a href="detalle.html"><span class="arrow">&#10148;</span></a></p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+                    <nav class="nav-footer">
+                        <p><a href="·">Quienes somos</a> <a href="·">Términos y condiciones</a></p>
+                    </nav>
+                </div>
+                <div class="col-4 icon-sociales">
+                    <a href="·">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="·">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="·">
+                        <i class="fab fa-twitter-square"></i>
+                    </a>
 
                 </div>
             </div>
-
-            <div class="col-12 col-md-6 container bloque_resultado"> 
-                    <div class="row resultados_producto">
-                        <div class="col-6 nopadding">
-                                <div class="img_producto"><img src="/images/img_banner.svg" width="100%" alt=""></div>
-                        </div>
-                        <div class="col-6"> 
-                           <p class="p_tipo_cartel">
-                               Cartel Medianera 
-                               <p class="estrellas">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star n_checked"></span>
-                                    <span class="fa fa-star n_checked"></span>
-                               </p>
-                           </p>
-                           <p class="p_direccion">Alberdi 1829</p>
-                           <p class="p_calles">Entre calles Francisco Alem y Pacifico Rodriguez</p>
-                           <p class="p_costo">1 mes por $20.000,0</p> 
-                        </div>
-    
-                    </div>
-            </div>
-
-
-            <div class="col-12 col-md-6 container bloque_resultado"> 
-                        <div class="row resultados_producto">
-                            <div class="col-6 nopadding">
-                                    <div class="img_producto"><img src="/images/img_banner.svg" width="100%" alt=""></div>
-                            </div>
-                            <div class="col-6"> 
-                               <p class="p_tipo_cartel">
-                                   Cartel Medianera 
-                                   <p class="estrellas">
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star n_checked"></span>
-                                        <span class="fa fa-star n_checked"></span>
-                                   </p>
-                               </p>
-                               <p class="p_direccion">Alberdi 1829</p>
-                               <p class="p_calles">Entre calles Francisco Alem y Pacifico Rodriguez</p>
-                               <p class="p_costo">1 mes por $20.000,0</p> 
-                            </div>
-        
-                        </div>
-            </div>
-
-            <div class="col-12 col-md-6 container bloque_resultado"> 
-                    <div class="row resultados_producto">
-                        <div class="col-6 nopadding">
-                                <div class="img_producto"><img src="/images/img_banner.svg" width="100%" alt=""></div>
-                        </div>
-                        <div class="col-6"> 
-                           <p class="p_tipo_cartel">
-                               Cartel Medianera 
-                               <p class="estrellas">
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star checked"></span>
-                                    <span class="fa fa-star n_checked"></span>
-                                    <span class="fa fa-star n_checked"></span>
-                               </p>
-                           </p>
-                           <p class="p_direccion">Alberdi 1829</p>
-                           <p class="p_calles">Entre calles Francisco Alem y Pacifico Rodriguez</p>
-                           <p class="p_costo">1 mes por $20.000,0</p> 
-                        </div>
-    
-                    </div>
-            </div>
-
         </div>
-        <!-- Paginado de resultados de busqueda -->
-        <div class="row p_paginado">
-            <div class="col-12 nopadding">
-               <p class="paginado_contenido"> <a href="detalle.html">1</a>  <a href="detalle.html">2</a>  <a href="detalle.html">3</a>  <a href="detalle.html"><span class="arrow">&#10148;</span></a></p> 
-            </div>
-        </div>
-    </div>
-    
-</section>
-<footer class="footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-8">
-					<nav class="footer">
-						<p><a href="·">Quienes somos</a> <a href="·">Términos y condiciones</a></p>
-					</nav>
-				</div>
-				<div class="col-4 icon-sociales">
-					<a href="·">
-						<i class="fab fa-instagram"></i>
-					</a>
-					<a href="·">
-						<i class="fab fa-facebook-f"></i>
-					</a>
-					<a href="·">
-						<i class="fab fa-twitter-square"></i>
-					</a>
 
-				</div>
-			</div>
-		</div>
-
-	</footer>
+    </footer>
 </body>
+
 </html>
