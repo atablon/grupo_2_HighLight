@@ -209,3 +209,52 @@ a:hover {
   color: #105285;
 }
 /*  */
+
+/* Logo */
+
+.logo_bg {
+    display: none;
+  }
+  .logo{
+      position: relative
+      top:5px;
+  }
+  
+  @media (min-width:768px) {
+
+    .logo_bg {
+      display: block;
+    }
+  
+    .logo_sm {
+      display: none;
+    }
+  }
+  
+  .menu_nav{
+      display: none;
+  }
+  .box_buscador .nav-search-btn {
+    background-color: #10A3EB;
+    height: 56px;
+    width: 20%;
+    font-size: 18px;
+    color: #ffffff;
+    border: 1px solid #10A3EB;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    position: relative;
+    right: 8px;
+    border: 1px solid #10A3EB;
+    top:1px
+  }
+
+  /* NAVEGACION */
+  @media (min-width:800px) {
+    .menu_nav{
+        display:block;
+    }
+    .toggle-nav{
+        display: none;
+    }
+}
