@@ -18,7 +18,6 @@ router.get('/publicar', mainControllerPublicar.publicar);
 
 
 
-
 module.exports = router;
 
 
