@@ -15,24 +15,8 @@
 </head>
 
 <body>
-    <header class="main-header">
-        <div class="container">
-            <!-- Logo y menu -->
+        <%- include('partials/header_small.ejs') %>
 
-            <div class="row header_row">
-                <div class="col-5 col-md-3 col-lg-2 logo_bg">
-                    <a href="/"><img src="/images/logo.svg" alt="HighLight" width="100%"></a>
-                 </div>
-                <div class="col-7 logo_bg"></div>
-                 <div class="col-2 col-md-3 col-lg-2 logo_sm">
-                    <a href="/"> <img class="logo_sm" src="/images/logo_chico.svg" width="100%" alt="HighLight"></a>
-                 </div>
-              
-                <div class="col-10 logo_sm"></div>
-            </div>
-        </div>
-
-    </header>
     <main class="main-body">
         <!-- Carrito -->
             <div class="contenedor-main container">
@@ -137,34 +121,8 @@
         
       
     </main>
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-8">
-                    <nav class="nav-footer">
-                        <ul>
-                            <li><a href="·">Quienes somos</a></li>
-                            <li><a href="·">Términos y condiciones</a></li>
+    <%- include('partials/footer.ejs') %>
 
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-4 icon-sociales">
-                    <a href="·">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="·">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="·">
-                        <i class="fab fa-twitter-square"></i>
-                    </a>
-
-                </div>
-            </div>
-        </div>
-
-    </footer>
 </body>
 
 </html>

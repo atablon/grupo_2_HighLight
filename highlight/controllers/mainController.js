@@ -15,9 +15,16 @@ const controller = {
 	root_carrito: (req, res) => {
 		res.render('carrito');
 	},
-	root_detalle: (req, res) => {
-		res.render('detalle');	
+	root_resultado: (req, res) => {
+		res.render('resultado');	
 	},
+	ingresar: (req, res) => {
+		res.render('ingresar');
+	},
+	registrar: (req, res) => {
+		res.render('registro');
+	},
+	
 	
 };
 

@@ -85,6 +85,7 @@ button:focus {
 
 .header_row {
   align-items: center;
+
 }
 
 .menu {
@@ -116,6 +117,37 @@ button:focus {
   padding: 50px;
   background-color: blue;
   visibility: visible;
+}
+
+.buscador_medium {
+  margin: 0px 20px;
+  text-align: center;
+}
+
+.buscador_medium input {
+  border: 1px solid #10A3EB;
+  height: 30px;
+  border-radius: 5px;
+  width: 78%;
+  font-size: 14px;
+  color: #666666;
+  padding: 0 10px;
+  margin-right: 6 px;
+}
+
+.buscador_medium .nav-search-btn {
+  background-color: #10A3EB;
+  height: 30px;
+  width: 18%;
+  font-size: 18px;
+  color: #ffffff;
+  border: 1px solid #10A3EB;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  position: relative;
+  right: 8px;
+  border: 1px solid #10A3EB;
+  top: 1px
 }
 
 /* Estilos para el header media quary*/
@@ -238,7 +270,7 @@ button:focus {
   position: relative;
   right: 8px;
   border: 1px solid #10A3EB;
-  top:1px
+  top: 1px
 }
 
 @media (min-width:768px) {
@@ -301,11 +333,12 @@ button:focus {
 }
 
 .producto_info {
-  padding: 10px 16px;
+  padding: 10px 16px !important;
 }
 
 .producto:hover {
   box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
 }
 
 @media (min-width:768px) {
@@ -333,7 +366,7 @@ button:focus {
 
 /*footer */
 .footer {
-  background-color: #f6f6f6;
+  background-color: #ffffff;
   padding: 10px;
   border-top: 1px solid #e5e5e5;
 }
@@ -358,7 +391,7 @@ button:focus {
   display: none;
 }
 
-@media (min-width:768px) {
+@media (min-width:1024px) {
   .logo_bg {
     display: block;
   }
