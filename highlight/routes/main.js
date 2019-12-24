@@ -5,6 +5,7 @@ const router = express.Router();
 // ************ Controller Require ************
 const mainController = require('../controllers/mainController');
 const mainControllerPublicar = require('../controllers/mainControllerPublicar');
+const mainControllerDetalle = require('../controllers/mainControllerDetalle');
 
 
 /* GET - home page. */
@@ -15,6 +16,7 @@ router.get('/resultado',mainController.root_resultado);
 router.get('/ingresar', mainController.ingresar);
 router.get('/registrar', mainController.registrar);
 router.get('/publicar', mainControllerPublicar.publicar);
+router.get('/detalle', mainControllerDetalle.detalle);
 
 
 

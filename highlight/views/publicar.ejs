@@ -1,8 +1,27 @@
 
 <%- include('partials/head.ejs') %>
-
 <%- include('partials/header_small.ejs') %>
 
-    <%= productos[1].nombre%> Publicar
+<main class="main-body">
+    <div class="contenedor-main container">
+        <h2 class="titulo-seccion"> Publicar mi cartel</h2>
 
+        <div class="box-view">
+            <div class="box-container-view ">
+            <form class="formBase">
+                 <p>
+                    <label for="addresses">Dinos el domicilio exacto: </label>
+                   <input type="text" id="addresses">
+                 </p>
+
+                
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!--<%= productos[1].nombre%> Publicar-->
 <%- include('partials/footer.ejs') %>
