@@ -52,13 +52,19 @@ h4 {
   font-weight: 400;
 }
 
+label {
+  color: #105285;
+  ;
+}
+
 .titulo-seccion {
   text-transform: uppercase;
   font-size: 20px;
   margin-bottom: 20px;
 }
 
-button.btn {
+button.btn,
+input.btn {
   background-color: #10A3EB;
   border: none;
   padding: 12px 30px;
@@ -66,6 +72,7 @@ button.btn {
   border-radius: 50px;
   font-size: 14px;
   cursor: pointer;
+  width: 100%;
 }
 
 button:hover {
@@ -504,4 +511,187 @@ em.tipo_cartel {
 select {
   padding: 10px;
   border-color: #10A3EB;
+}
+
+
+/*estilos para formulario de registro e ingreso */
+.formBase {}
+
+.formBase p {
+  padding: 0 0 10px 0;
+}
+
+.formBase label {
+  font-size: 16px;
+}
+
+.formBase p {
+  margin: 0 0 40px 0;
+}
+
+.formBase input {
+  border: 1px solid #10A3EB;
+  width: 100%;
+  padding: 10px;
+  border-top: none;
+  background-color: #f5f5f5;
+  border-right: none;
+  border-left: none;
+}
+
+.formBase input:focus {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 2px solid #10A3EB;
+  box-shadow: none;
+}
+
+.formBase select {
+  width: 100%;
+}
+
+.box-buttom {
+  margin: 30px 0 0 0;
+}
+
+@media (min-width:768px) {
+
+  .formBase input,
+  .formBase select {
+    background-color: #ffffff;
+    width: 60%;
+    margin-left: 20px;
+
+  }
+
+  .formBase p {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    text-align: center;
+    align-items: center;
+  }
+
+  .box-buttom {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto
+  }
+
+}
+
+
+/* Estilos para vista de resultados*/
+.container_resultado {
+  padding: 20px;
+}
+
+.filtros {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 12px;
+  color: #999999;
+  margin-bottom: 20px;
+
+}
+
+.filtros ul li {
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.bloque_resultado {
+  padding: 10px !important;
+}
+
+.producto {
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+
+
+
+/* Estilos para la informacion en caja de producto */
+p {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.p_tipo_cartel {
+  font-size: 10px;
+  font-weight: lighter;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+
+}
+
+.p_direccion {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.p_calles {
+  font-size: 12px;
+  font-weight: 400;
+
+}
+
+.p_costo {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 20px;
+
+}
+
+.flex-probar {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap
+}
+
+/* Estilos de la puntuacion con estrellas */
+.estrellas {
+  margin-bottom: 10px;
+}
+
+.checked {
+  font-size: 12px;
+  color: #10A3EB;
+}
+
+.n_checked {
+  font-size: smaller;
+  color: rgb(83, 92, 96);
+}
+
+/* Resultados Producto */
+
+.resultados_producto {
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+}
+
+.resultados_producto:hover {
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+
+
+.paginado_contenido {
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  color: #999999;
+
+}
+
+.paginado_contenido a {
+
+  font-size: 18px;
 }

@@ -1,12 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    Registro
-</body>
-</html>
+
+    <%- include('partials/head.ejs') %>
+
+    <%- include('partials/header_small.ejs') %>
+            
+    <main class="main-body">
+    <div class="contenedor-main container">
+        <h2 class="titulo-seccion"> Completá los datos</h2>
+    
+        <div class="box-view">
+            <div class="box-container-view ">
+                <form class="formBase">
+                    <p>
+                            <label for="name">Mi nombre y apellido es: </label>
+                            <input type="text" id="name">
+                    </p>
+                    <p>
+                        <label for="registro">Quiero registrarme para:</label>
+                      <select id="registro">
+                          <option> Publicar </option>
+                         <option> Alquilar </option>
+                      </select>
+                    </p>
+                    <p>
+                        <label for="empresa">Pertenezco a la empresa:</label>
+                        <input type="text" id="empresa">
+                    </p>
+                    <p><label for="rubro">Nos dedicamos a:</label>
+                        <input type="text" id="rubro">
+                    </p>
+                    <p><label for="tel">Dejános un número de teléfono:</label>
+                        <input type="number" id="tel">
+                    </p>
+                    <p><label for="mail">Danos tu e-mail:</label>
+                        <input type="email" id="mail">
+                    </p>
+                    <p><label for="pass">Y ahora solo falta la contraseña</label>
+                        <input type="password" id="pass">
+                    </p>
+                    <p><label for="pass2">¿Puedes repetirla?</label>
+                        <input type="password" id="pass2">
+                    </p>
+                    <div class="box-buttom">
+                    <button type="submit" class ="btn"> Registrarme </button>
+                    </div>
+
+
+                </form>
+
+            </div>
+            </div>
+
+</main>
+    <%- include('partials/footer.ejs') %>
