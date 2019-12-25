@@ -18,6 +18,9 @@ router.get('/registrar', mainController.registrar);
 router.get('/publicar', mainControllerPublicar.publicar);
 router.get('/detalle', mainControllerDetalle.detalle);
 
+/* POST - para guardar un producto nuevo. */
+router.post('/carteles/crear', mainControllerPublicar.crearproducto);
+
 
 
 module.exports = router;

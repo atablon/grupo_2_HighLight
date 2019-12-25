@@ -15,7 +15,11 @@ const controller = {
     },
     detalle: (req, res) => {
         res.render('detalle');
-    },
+    }, 
+    crearproducto : (req, res) => {
+        res.send("Listo")
+    } 
+   
 
 };
 module.exports = controller
