@@ -19,7 +19,7 @@ router.get('/publicar', mainControllerPublicar.publicar);
 router.get('/detalle', mainControllerDetalle.detalle);
 
 /* POST - para guardar un producto nuevo. */
-router.post('/carteles/crear', mainControllerPublicar.crearproducto);
+router.post('/crear/cartel', mainControllerPublicar.crearcartel);
 
 
 

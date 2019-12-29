@@ -1,0 +1,95 @@
+/* estilos para formularios */
+
+:focus {
+    outline: 0;
+}
+
+/* PUBLICAR*/
+
+.ui-form {}
+
+.form-content {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.titulo-content {
+    color: #105285;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.titulo-content.margin {
+    margin-top: 40px;
+}
+
+.form-content em {
+    color: #105285;
+    font-style: normal;
+    display: inline-block;
+    padding: 5px 0;
+}
+
+.form-content input,
+.form-content textarea,
+.form-content select {
+    border: 1px solid #10A3EB;
+    width: 100%;
+    padding: 10px;
+    border-radius: 3px;
+    margin: 5px 0;
+    background-color: #ffffff;
+}
+
+.form-content select {
+    height: 34px;
+}
+
+.form-content input:focus {
+    border: 2px solid #10A3EB;
+    box-sizing: border-box;
+    padding: 9px;
+}
+
+
+.form-content label {
+    display: inline-block;
+    width: 100%;
+    padding: 0 10px 0 0;
+    margin-top: 10px;
+}
+
+
+.box-buttom {
+    margin: 30px 0 0 0;
+}
+
+
+@media (min-width:768px) {
+    .form-content label {
+        width: 24%;
+        text-align: right;
+    }
+
+    .form-content input,
+    .form-content textarea,
+    .form-content select {
+        width: 50%;
+
+    }
+
+    .box-buttom .btn {
+        width: 30%;
+        margin-left: 24%;
+    }
+
+    .help {
+        width: 40%;
+        margin-left: 24%;
+        font-size: 11px;
+    
+        padding: 0;
+    }
+}

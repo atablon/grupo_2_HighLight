@@ -10,34 +10,39 @@
         <div class="box-view">
             <div class="box-container-view ">
                 <form class="formBase">
-                    <p>
-                            <label for="name">Mi nombre y apellido es: </label>
+                    <p class="form-content">
+                            <label for="name">Nombre y apellido: </label>
                             <input type="text" id="name">
                     </p>
-                    <p>
-                        <label for="registro">Quiero registrarme para:</label>
+                    <p class="form-content">
+                        <label for="registro">Quiero:</label>
                       <select id="registro">
+                        <option value="" selected disabled hidden> Seleccionar </option>
                           <option> Publicar </option>
                          <option> Alquilar </option>
                       </select>
                     </p>
-                    <p>
-                        <label for="empresa">Pertenezco a la empresa:</label>
+                    <p class="form-content">
+                        <label for="empresa">Mi empresa:</label>
                         <input type="text" id="empresa">
                     </p>
-                    <p><label for="rubro">Nos dedicamos a:</label>
+                    <p class="form-content">
+                    <label for="rubro">Nos dedicamos a:</label>
                         <input type="text" id="rubro">
                     </p>
-                    <p><label for="tel">Dejános un número de teléfono:</label>
-                        <input type="number" id="tel">
+                    <p class="form-content">
+                        <label for="tel">Teléfono:</label>
+                        <input type="number" id="tel" placeholder="11 5 760 2881">
                     </p>
-                    <p><label for="mail">Danos tu e-mail:</label>
-                        <input type="email" id="mail">
+                    <p class="form-content">
+                        <label for="mail">E-mail:</label>
+                        <input type="email" id="mail" placeholder="juan@gmail.com">
                     </p>
-                    <p><label for="pass">Y ahora solo falta la contraseña</label>
+                    <p class="form-content"><label for="pass">Contraseña:</label>
                         <input type="password" id="pass">
+                        <em class="help">Debe tener un número + un caracter</em>
                     </p>
-                    <p><label for="pass2">¿Puedes repetirla?</label>
+                    <p class="form-content"><label for="pass2">Repetir contraseña:</label>
                         <input type="password" id="pass2">
                     </p>
                     <div class="box-buttom">

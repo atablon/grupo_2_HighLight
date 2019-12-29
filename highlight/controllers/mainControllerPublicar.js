@@ -15,9 +15,9 @@ const controller = {
     detalle: (req, res) => {
         res.render('detalle');
     }, 
-    crearproducto : (req, res) => {
+    crearcartel : (req, res) => {
         // array 
-        let array = [];
+        let arrayDeProductos = [];
 
         // Si el archivo no está vacío 
         
@@ -25,11 +25,12 @@ const controller = {
             // tomo el contenido y lo convierto en un formato de Array de objetos literales
             arrayDeProductos = JSON.parse(contenidoProductosJSON);
         }
-
+        console.log(req.body)
         // Genero el id para el producto
         req.body = {
             id: arrayDeProductos.length + 1,
-            ...req.body
+            ...req.body, 
+         
         };
 
 
