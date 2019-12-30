@@ -75,12 +75,14 @@ input.btn {
   width: 100%;
 }
 
-button:hover {
+button.btn:hover {
   background-color: #105285;
+  cursor: pointer;
 }
 
-button:focus {
+button.btn:focus {
   background-color: #10A3EB;
+  cursor: pointer;
 }
 
 /* Estilos para el header*/
@@ -509,116 +511,176 @@ em.tipo_cartel {
 
 
 
-  /* Estilos para vista de resultados*/
-  .container_resultado {
-    padding: 20px;
+/* Estilos para vista de resultados*/
+.container_resultado {
+  padding: 20px;
+}
+
+.filtros {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 12px;
+  color: #999999;
+  margin-bottom: 20px;
+
+}
+
+.filtros ul li {
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.bloque_resultado {
+  padding: 10px !important;
+}
+
+.producto {
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+
+
+
+/* Estilos para la informacion en caja de producto */
+p {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.p_tipo_cartel {
+  font-size: 10px;
+  font-weight: lighter;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+
+}
+
+.p_direccion {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.p_calles {
+  font-size: 12px;
+  font-weight: 400;
+
+}
+
+.p_costo {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 20px;
+
+}
+
+.flex-probar {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap
+}
+
+/* Estilos de la puntuacion con estrellas */
+.estrellas {
+  margin-bottom: 10px;
+}
+
+.checked {
+  font-size: 12px;
+  color: #10A3EB;
+}
+
+.n_checked {
+  font-size: smaller;
+  color: rgb(83, 92, 96);
+}
+
+/* Resultados Producto */
+
+.resultados_producto {
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+}
+
+.resultados_producto:hover {
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+
+
+.paginado_contenido {
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  color: #999999;
+
+}
+
+.paginado_contenido a {
+  font-size: 18px;
+}
+
+
+/* Estilos para listado de productos */
+
+.listado_productos {
+  padding-bottom: 10px;
+}
+
+.listado_btn {
+  border-bottom: 1px dotted #e5e5e5;
+  padding-bottom:20px;
+  margin-bottom: 20px;
+  text-align: left;
+
+}
+
+
+
+.listado_productos h2 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.btn_borrar {
+  color: #10A3EB;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  background: none;
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+
+button.btn_borrar:hover {
+  color: #105285;
+  background-color: none !important;
+  cursor: pointer;
+
+}
+
+@media (min-width:768px) {
+
+  .listado_productos,
+  .listado_btn {
+    border-bottom: 1px dotted #e5e5e5;
+    margin-bottom: 30px;
+    padding: 0 10px 30px 0;
+
   }
 
-  .filtros {
-    background-color: #eee;
-    padding: 10px;
-    font-size: 12px;
-    color: #999999;
-    margin-bottom: 20px;
-
+  .listado_btn {
+    text-align: right;
   }
 
-  .filtros ul li {
-    display: inline-block;
-    padding-right: 10px;
-  }
-
-  .bloque_resultado {
-    padding: 10px !important;
-  }
-
-  .producto {
-    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.4);
-    border-radius: 2px;
-    margin-bottom: 20px;
+  .btn_borrar {
+    padding: 0;
   }
 
 
-
-
-  /* Estilos para la informacion en caja de producto */
-  p {
-    margin-bottom: 5px;
-    margin-top: 5px;
-  }
-
-  .p_tipo_cartel {
-    font-size: 10px;
-    font-weight: lighter;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-
-  }
-
-  .p_direccion {
-    font-size: 18px;
-    font-weight: bold;
-  }
-
-  .p_calles {
-    font-size: 12px;
-    font-weight: 400;
-
-  }
-
-  .p_costo {
-    font-size: 16px;
-    font-weight: 600;
-    margin-top: 20px;
-
-  }
-
-  .flex-probar {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap
-  }
-
-  /* Estilos de la puntuacion con estrellas */
-  .estrellas {
-    margin-bottom: 10px;
-  }
-
-  .checked {
-    font-size: 12px;
-    color: #10A3EB;
-  }
-
-  .n_checked {
-    font-size: smaller;
-    color: rgb(83, 92, 96);
-  }
-
-  /* Resultados Producto */
-
-  .resultados_producto {
-    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.4);
-    border-radius: 2px;
-    margin-bottom: 20px;
-    background-color: #ffffff;
-  }
-
-  .resultados_producto:hover {
-    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.4);
-    cursor: pointer;
-  }
-
-
-
-  .paginado_contenido {
-    text-align: center;
-    padding: 10px;
-    font-size: 12px;
-    color: #999999;
-
-  }
-
-  .paginado_contenido a {
-
-    font-size: 18px;
-  }
+}

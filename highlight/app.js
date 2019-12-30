@@ -4,6 +4,7 @@ const cookieParser = require('cookie-parser');
 const express = require('express');
 const logger = require('morgan');
 const path = require('path');
+const methodOverride = require('method-override');
 
 // ************ express() - (don't touch) ************
 const app = express();
@@ -18,7 +19,8 @@ app.use(cookieParser());
 // ************ Template Engine - (don't touch) ************
 app.set('view engine', 'ejs');
 
-
+// override with POST having ?_method=DELETE
+app.use(methodOverride('_method'));
 
 // ************ WRITE YOUR CODE FROM HERE ************
 // ************ Route System require and use() ************

@@ -4,7 +4,7 @@ const path = require('path');
 /* ubicacion del archivo producto json*/
 const ubicacionProductosJSON = path.join(__dirname,'../data/productos_creados.json');
 const contenidoProductosJSON = fs.readFileSync(ubicacionProductosJSON, 'utf-8');
-
+let productos = JSON.parse(contenidoProductosJSON);
 
 
 const controller = {
@@ -44,8 +44,24 @@ const controller = {
         fs.writeFileSync(ubicacionProductosJSON, contenidoAGuardar);
 
         res.send("Listo")
-    } 
-   
+    }, 
+    listado: (req, res) => {
+        res.render('listaProductos', { productos});
+    }, 
+     borrarCartel: (req, res) => {
+            let productosSinElQueBorramos = productos.filter(function (unProducto) {
+                return unProducto.id != req.params.id;
+            })
+            // guardo el array con los productos finales
 
+         // Convierto el arrayDeProductos a JSON
+         let contenidoAGuardar = JSON.stringify(productosSinElQueBorramos, null, ' ');
+
+         // guardo el array completo en el archivo JSON
+         fs.writeFileSync(ubicacionProductosJSON, contenidoAGuardar);
+         res.redirect('/listado');
+        }
+        
+    
 };
 module.exports = controller

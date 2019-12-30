@@ -1,22 +1,11 @@
 [
  {
-  "id": 1,
-  "domiclioCarel": "Alberdi 6093",
-  "entreCalles1": "Córdoba",
-  "entreCalles2": "Dr. Marengo",
-  "ref-ubicacion": "Es la esquina derecha",
-  "Tipo de cartel": "Cartel de Pantalla",
-  "ClasifiacionCartel": "Cartel de pared",
-  "medidasCartelAncho": "400",
-  "medidasCartelLargo": "600"
- },
- {
-  "id": 2,
+  "id": 6,
   "domiclioCarel": "Entre Ríos 6093",
   "entreCalles1": "Paraná",
   "entreCalles2": "Avenida Alvear",
-  "ref-ubicacion": "Mitad de cuadra.",
-  "Tipo de cartel": "Cartel Led",
+  "refubicacion": "Mitad de cuadra.",
+  "TipoDeCartel": "Cartel Led",
   "ClasifiacionCartel": "Cartel de parada de colectivo",
   "medidasCartelAncho": "400",
   "medidasCartelLargo": "600"
