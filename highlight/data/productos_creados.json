@@ -1,18 +1,18 @@
 [
  {
   "id": 1,
-  "domiclioCarel": "Entre rios 994",
+  "domiclioCartel": "Entre rios 994",
   "entreCalles1": "calle 3º",
   "entreCalles2": "Dr. Marengo",
   "refubicacion": "Referencias esquina",
   "TipoDeCartel": "Cartel de Ploteo",
-  "ClasifiacionCartel": "Cartel de autopista ",
+  "ClasifiacionCartel": "Cartel de pared",
   "medidasCartelAncho": "300",
   "medidasCartelLargo": "400"
  },
  {
   "id": 2,
-  "domiclioCarel": "Alberdi 60939",
+  "domiclioCartel": "Alberdi 8939",
   "entreCalles1": "Paraná",
   "entreCalles2": "Avenida Alvear",
   "refubicacion": "mitad de cuadra paradas de colectivos ",

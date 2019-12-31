@@ -32,9 +32,6 @@ router.put('/productos/editar/:id', mainControllerPublicar.seleccionarCartel);
 router.put('/editar/cartel/:id', mainControllerPublicar.modificar);
 
 
-
-
-
 module.exports = router;
 
 

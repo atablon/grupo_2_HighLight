@@ -85,6 +85,10 @@ button.btn:focus {
   cursor: pointer;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 /* Estilos para el header*/
 .main-header {
   padding: 16px 0;
@@ -633,10 +637,10 @@ p {
 
 .listado_btn {
   border-bottom: 1px dotted #e5e5e5;
-  padding-bottom:20px;
+  padding-bottom: 20px;
   margin-bottom: 20px;
   text-align: left;
-
+  display: flex;
 }
 
 
@@ -653,7 +657,8 @@ p {
   cursor: pointer;
   background: none;
   cursor: pointer;
-  padding: 10px 0;
+  padding: 12px 0;
+  margin-left: 20px;
 }
 
 
@@ -662,6 +667,37 @@ button.btn_borrar:hover {
   background-color: none !important;
   cursor: pointer;
 
+}
+
+button.btn-editar {
+  background-color: #10A3EB;
+  color: #fff;
+  padding: 12px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+
+}
+
+button.btn-editar:hover {
+  background-color: #105285;
+  color: #fff;
+}
+
+.box_clasificacion {
+  font-size: 13px;
+  margin: 10px 0 0 0;
+
+}
+
+
+.box_clasificacion li {
+  background-color: #eee;
+  padding: 4px 8px;
+  margin-right: 10px;
+  border-radius: 4px;
+  color: #999999;
+  display: inline-block;
 }
 
 @media (min-width:768px) {

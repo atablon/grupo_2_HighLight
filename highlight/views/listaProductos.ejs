@@ -8,20 +8,25 @@
         <div class="box-view container">
             <div class="box-container-view row">
                 <% productos.forEach(unProducto => { %> 
-                <div class="listado_productos col-12 col-md-11"> 
-                <h2> <%= unProducto.domiclioCarel %> </h2>
-                <p> Entre calles: <%= unProducto.entreCalles1 %> - <%= unProducto.entreCalles2 %></p>
-                <p> Referencias: <%= unProducto.refubicacion %></p>
-                <p> Tipo de cartel: <%= unProducto.TipoDeCartel %></p>
-                <p> Clasificación: <%= unProducto.ClasifiacionCartel %></p>
-                <p> Medidas: <%= unProducto.medidasCartelAncho %> x <%= unProducto.medidasCartelLargo %> metros.</p>
+                <div class="listado_productos col-12 col-md-9"> 
+                <h2 class="capitalize"> <%= unProducto.domiclioCartel %> </h2>
+                <p class="capitalize"><strong> Entre calles: </strong><%= unProducto.entreCalles1 %> - <%= unProducto.entreCalles2 %></p>
+                <p> <strong>Referencias:</strong> <%= unProducto.refubicacion %></p>
+                <p> <strong>Medidas:</strong> <%= unProducto.medidasCartelAncho %> x <%= unProducto.medidasCartelLargo %> metros.</p>
+
+                <ul class="box_clasificacion">
+                    
+                <li class="capitalize" ><%= unProducto.TipoDeCartel %></li>
+                <li class="capitalize"> <%= unProducto.ClasifiacionCartel %></li>
+               </ul>
                 </div>
-                <div class="listado_btn col-12 col-md-1 no-gutters">
-                <form action="/productos/borrar/<%= unProducto.id %>?_method=DELETE" method="POST">
-                    <button  class = "btn_borrar" type="submit">BORRAR</button>
-                </form>
+                <div class="listado_btn col-12 col-md-3  no-gutters">
+              
                     <form action="/productos/editar/<%= unProducto.id %>?_method=PUT" method="POST">
-                        <button class="btn_borrar" type="submit">EDITAR</button>
+                        <button class="btn-editar" type="submit">Editar datos</button>
+                    </form>
+                    <form action="/productos/borrar/<%= unProducto.id %>?_method=DELETE" method="POST">
+                        <button class="btn_borrar" type="submit">Eliminar</button>
                     </form>
                 </div>
             <% }) %>

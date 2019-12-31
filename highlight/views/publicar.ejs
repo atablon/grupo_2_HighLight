@@ -13,26 +13,26 @@
                     </p>
                     <p class="form-content">
                         
-                    <label for="domiclioCarel">Domicilio apróximado:</label>
-                        <input  id= "inputdireccion" type="text" name="domiclioCarel" required>
+                    <label for="domiclioCartel">Domicilio apróximado:</label>
+                        <input  id= "inputdireccion" type="text" name="domiclioCartel" required>
                         <em class="help">Ejemplo: Alberdi 8000</em>
                     </p>
                     <p class="form-content">
                         <label for="entreCalles1">Entre calle:</label>
-                        <input placeholder="Calle 2" class = "input_50"type="text" name="entreCalles1" class="input-medum">
+                        <input placeholder="Calle 2" required class = "input_50"type="text" name="entreCalles1" class="input-medum">
                     </p>
                    <p class="form-content">
                         <label for="entreCalles2">Y la calle:</label>
-                        <input placeholder="Calle 2" class="input_50" type="text" name="entreCalles2" class="input-medum">
+                        <input placeholder="Calle 2" required class="input_50" type="text" name="entreCalles2" class="input-medum">
                     </p>
                     <p class="form-content">
                         <label for="refubicacion">Referencias del lugar:</label>
-                        <textarea name="refubicacion"></textarea>
+                        <textarea name="refubicacion" required></textarea>
                     </p>
                     <p class="titulo-content margin">Detalle del cartel </p>
                     <p class="form-content">
                         <label for="tipoCartel">Tipo de cartel:</label>
-                        <select name="TipoDeCartel" id="tipoCartel">
+                        <select name="TipoDeCartel" id="tipoCartel" required>
                             <option value="" selected disabled hidden> Seleccionar </option>
                             <option value="Cartel Led"> Cartel Led </option>
                             <option value="Cartel de Pantalla">Cartel de Pantalla</option>
@@ -41,7 +41,7 @@
                     </p>
                     <p class="form-content">
                         <label for="ClasifiacionCarte">Clasificación: </label>
-                        <select name="ClasifiacionCartel">
+                        <select name="ClasifiacionCartel" requiredrequired >
                             <option value="" selected disabled hidden> Seleccionar </option>
                             <option value="Cartel de pared"> Cartel de pared</option>
                             <option value="Cartel de parada de colectivo">Cartel de parada de colectivo</option>
@@ -56,11 +56,11 @@
                     </p>
                     <p class="form-content input_50">
                         <label for="medidasCartelAncho">Ancho: </label>
-                         <input class="small" placeholder="100 metros" type="number"  name="medidasCartelAncho">  
+                         <input class="small" required placeholder="100 metros" type="number"  name="medidasCartelAncho">  
                     </p>
                     <p class="form-content input_50">
                         <label for="medidasCartelLargo">Largo: </label>
-                        <input class="small" placeholder="100 metros" type="number" name="medidasCartelLargo">
+                        <input class="small" required placeholder="100 metros" type="number" name="medidasCartelLargo">
                     </p>
 
                    
