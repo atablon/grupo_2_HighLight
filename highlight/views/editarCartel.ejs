@@ -1,0 +1,81 @@
+<%- include('partials/head.ejs') %>
+<%- include('partials/header_small.ejs') %>
+
+<main class="main-body">
+    <div class="contenedor-main container">
+        <h2 class="titulo-seccion">Publicar mi cartel</h2>
+
+        <div class="box-view">
+            <div class="box-container-view ">
+                <form
+                    action="/editar/cartel/<%= cartelElegido.id %>?_method=PUT" method="POST"
+                    
+                    class="ui-form">
+                    <p class="titulo-content">
+                      Modificar mi cartel
+                    </p>
+                    <p class="form-content">
+
+                        <label for="domiclioCarel">Domicilio apróximado:</label>
+                        <input value="<%= cartelElegido.domiclioCarel %>" id="inputdireccion" type="text" name="domiclioCarel" required>
+                        
+                    </p>
+                    <p class="form-content">
+                        <label for="entreCalles1">Entre calle:</label>
+                        <input  value="<%= cartelElegido.entreCalles1 %>" class="input_50" type="text" name="entreCalles1"
+                            class="input-medum">
+                    </p>
+                    <p class="form-content">
+                        <label for="entreCalles2">Y la calle:</label>
+                        <input  value="<%= cartelElegido.entreCalles2 %>"class="input_50" type="text" name="entreCalles2"
+                            class="input-medum">
+                    </p>
+                    <p class="form-content">
+                        <label for="refubicacion">Referencias del lugar:</label>
+                        <textarea name="refubicacion"><%= cartelElegido.refubicacion%></textarea>
+                    </p>
+                    <p class="titulo-content margin">Detalle del cartel </p>
+                    <p class="form-content">
+                       
+                        <label for="tipoCartel">Tipo de cartel:</label>
+                         <select name="TipoDeCartel" id="tipoCartel">
+                            <option value="Cartel Led" <%=("Cartel Led" == cartelElegido.TipoDeCartel) ? "selected" : ""%>>Cartel Led</option>
+                            <option value="Cartel de Pantalla" <%=("Cartel de Pantalla" == cartelElegido.TipoDeCartel) ? "selected" : ""%>>Cartel de Pantalla</option>
+                            <option value="Cartel de Ploteo" <%=("Cartel de Ploteo" == cartelElegido.TipoDeCartel) ? "selected" : ""%>>Cartel de Ploteo </option>
+                        </select>
+                    </p>
+                    <p class="form-content">
+                        <label for="ClasifiacionCarte">Clasificación </label>
+                        <select name="ClasifiacionCartel">
+                            <option value="Cartel de pared" <%=("Cartel de pared" == cartelElegido.ClasifiacionCartel) ? "selected" : ""%>> Cartel de pared</option>
+                            <option value="Cartel de parada de colectivo"<%=("Cartel de parada de colectivo" == cartelElegido.ClasifiacionCartel) ? "selected" : ""%>>Cartel de parada de colectivo</option>
+                            <option value="Cartel de ruta" <%=("Cartel de ruta" == cartelElegido.ClasifiacionCartel) ? "selected" : ""%>>Cartel de ruta </option>
+                            <option value="Cartel de autopista" <%=("Cartel de autopista" == cartelElegido.ClasifiacionCartel) ? "selected" : ""%>>Cartel de autopista </option>
+                            <option value="Cartel de tranporte público" <%=("Cartel de tranporte público" == cartelElegido.ClasifiacionCartel) ? "selected" : ""%>> Cartel de tranporte público </option>
+                        </select>
+                    </p>
+
+                    <p class="titulo-content margin">
+                        Medidas apróximadas
+                    </p>
+                    <p class="form-content input_50">
+                        <label for="medidasCartelAncho">Ancho: </label>
+                        <input class="small" value="<%= cartelElegido.medidasCartelAncho%>" placeholder="100 metros" type="number" name="medidasCartelAncho">
+                    </p>
+                    <p class="form-content input_50">
+                        <label for="medidasCartelLargo">Largo: </label>
+                        <input class="small" value="<%= cartelElegido.medidasCartelLargo%>" placeholder="100 metros" type="number" name="medidasCartelLargo">
+                    </p>
+
+
+                    <div class="box-buttom ">
+                        <button type="submit" class="btn">Modificar</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</main>
+
+<%- include('partials/footer.ejs') %>

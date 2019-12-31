@@ -1,0 +1,25 @@
+[
+    {
+        "id": 1,
+        "name": "Alicia Garrido",
+        "registro": "Alquilar",
+        "empresa": "Jhonson",
+        "rubro": "quimica y perfumeria",
+        "tel": "83399929",
+        "mail": "alicia@jhonson.com",
+        "pass": "XXX",
+        "pass2": "XXX"
+    },
+    {
+        "id": 2,
+        "name": "Pablo Alejando Rodriguez",
+        "registro": "Publicar",
+        "empresa": "Almirente",
+        "rubro": "publicaciodor",
+        "tel": "188199282",
+        "mail": "pablorodriguez@almirente.com",
+        "pass": "XXX",
+        "pass2": "XXX"
+    }
+   
+]

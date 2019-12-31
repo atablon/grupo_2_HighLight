@@ -7,10 +7,10 @@
 
         <div class="box-view container">
             <div class="box-container-view row">
-                <% productos.forEach(unProducto => { %>
+                <% productos.forEach(unProducto => { %> 
                 <div class="listado_productos col-12 col-md-11"> 
                 <h2> <%= unProducto.domiclioCarel %> </h2>
-                <p> Entre calles <%= unProducto.entreCalles1 %> y calle <%= unProducto.entreCalles2 %></p>
+                <p> Entre calles: <%= unProducto.entreCalles1 %> - <%= unProducto.entreCalles2 %></p>
                 <p> Referencias: <%= unProducto.refubicacion %></p>
                 <p> Tipo de cartel: <%= unProducto.TipoDeCartel %></p>
                 <p> Clasificación: <%= unProducto.ClasifiacionCartel %></p>

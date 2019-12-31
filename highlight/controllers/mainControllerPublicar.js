@@ -3,13 +3,24 @@ const path = require('path');
 
 /* ubicacion del archivo producto json*/
 const ubicacionProductosJSON = path.join(__dirname,'../data/productos_creados.json');
-const contenidoProductosJSON = fs.readFileSync(ubicacionProductosJSON, 'utf-8');
-let productos = JSON.parse(contenidoProductosJSON);
+const contenidoProductosJSON = fs.readFileSync(ubicacionProductosJSON, 'utf-8'); // leo el json
+let productos = JSON.parse(contenidoProductosJSON);// comvierto en array
+
+/* ordeno por el elemento id de cada obejto del array*/
+productos.sort(function (a, b) {
+    if (a.id < b.id) {
+        return 1;
+    }
+    if (a.name > b.name) {
+        return -1;
+    }
+    return 0;
+});
 
 
 const controller = {
 
-    publicar: (req, res) => {
+    crear: (req, res) => {
         res.render('publicar');
     },
     detalle: (req, res) => {
@@ -43,10 +54,10 @@ const controller = {
         // guardo el array completo en el archivo JSON
         fs.writeFileSync(ubicacionProductosJSON, contenidoAGuardar);
 
-        res.send("Listo")
+        res.redirect("/listado")
     }, 
     listado: (req, res) => {
-        res.render('listaProductos', { productos});
+        res.render('listaProductos', {productos});
     }, 
      borrarCartel: (req, res) => {
             let productosSinElQueBorramos = productos.filter(function (unProducto) {
@@ -60,8 +71,41 @@ const controller = {
          // guardo el array completo en el archivo JSON
          fs.writeFileSync(ubicacionProductosJSON, contenidoAGuardar);
          res.redirect('/listado');
+        }, 
+  
+    seleccionarCartel: (req, res) => {
+        let idCartel = req.params.id;
+        let cartelElegido = productos.find(function(cartel){
+           return cartel.id == idCartel
+
+        });
+    
+        res.render('editarCartel', {cartelElegido});
+    }, 
+
+    modificar: (req, res) => {
+
+        let productosSinElQueModificacmos = productos.filter(function (unProducto) {
+            return unProducto.id != req.params.id;
+        })
+        let idNumber = parseInt(req.params.id)
+        req.body = {
+            id: idNumber, 
+            ...req.body, 
         }
-        
+
+        /* Agrego el producto modificado */
+        productosSinElQueModificacmos.push(req.body)
+         
+        // Convierto el arrayDeProductos a JSON
+        let contenidoAGuardar = JSON.stringify(productosSinElQueModificacmos, null, ' ');
+
+        // guardo el array completo en el archivo JSON
+        fs.writeFileSync(ubicacionProductosJSON, contenidoAGuardar);
+        res.redirect('/listado');
+    } 
+   
+
     
 };
 module.exports = controller

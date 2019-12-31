@@ -15,20 +15,21 @@ router.get('/carrito', mainController.root_carrito);
 router.get('/resultado',mainController.root_resultado);
 router.get('/ingresar', mainController.ingresar);
 router.get('/registrar', mainController.registrar);
-router.get('/publicar', mainControllerPublicar.publicar);
 router.get('/detalle', mainControllerDetalle.detalle);
 router.get('/listado', mainControllerPublicar.listado);
+router.get('/products/create', mainControllerPublicar.crear);
+
 
 /* POST - para guardar un producto nuevo. */
-router.post('/crear/cartel', mainControllerPublicar.crearcartel);
+router.post('/products/create', mainControllerPublicar.crearcartel);
 
 /* DELETE - Borrar un Producto en DB */
 router.delete('/productos/borrar/:id', mainControllerPublicar.borrarCartel);
 
 
-/* PUT - Borrar un Producto en DB */
-router.put('/productos/editar/:id', mainControllerPublicar.editarCartel);
-
+/* Editar un producto */
+router.put('/productos/editar/:id', mainControllerPublicar.seleccionarCartel);
+router.put('/editar/cartel/:id', mainControllerPublicar.modificar);
 
 
 
