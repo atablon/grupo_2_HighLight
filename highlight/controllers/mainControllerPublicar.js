@@ -29,7 +29,8 @@ const controller = {
     crearcartel : (req, res) => {
         // array 
         let arrayDeProductos = [];
-
+        const contenidoProductosJSON = fs.readFileSync(ubicacionProductosJSON, 'utf-8'); // leo el json
+        let productos = JSON.parse(contenidoProductosJSON);// comvierto en array
         // Si el archivo no está vacío 
         
         if (contenidoProductosJSON != '') {
@@ -57,6 +58,8 @@ const controller = {
         res.redirect("/listado")
     }, 
     listado: (req, res) => {
+        const contenidoProductosJSON = fs.readFileSync(ubicacionProductosJSON, 'utf-8'); // leo el json
+        let productos = JSON.parse(contenidoProductosJSON);// comvierto en array
         res.render('listaProductos', {productos});
     }, 
      borrarCartel: (req, res) => {

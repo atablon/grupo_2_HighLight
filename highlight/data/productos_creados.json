@@ -1,7 +1,43 @@
 [
  {
+<<<<<<< HEAD
+=======
+  "id": 6,
+  "domiclioCartel": "Alberdi 7000",
+  "entreCalles1": "Paraná",
+  "entreCalles2": "Avenida Alvear",
+  "refubicacion": "mitad de cuadra paradas de colectivos ",
+  "TipoDeCartel": "Cartel de Ploteo",
+  "ClasifiacionCartel": "Cartel de pared",
+  "medidasCartelAncho": "300",
+  "medidasCartelLargo": "209"
+ },
+ {
+  "id": 5,
+  "domiclioCartel": "Alberdi 10000",
+  "entreCalles1": "Paraná",
+  "entreCalles2": "Avenida Alvear",
+  "refubicacion": "mitad de cuadra paradas de colectivos ",
+  "TipoDeCartel": "Cartel de Ploteo",
+  "ClasifiacionCartel": "Cartel de pared",
+  "medidasCartelAncho": "300",
+  "medidasCartelLargo": "209"
+ },
+ {
+  "id": 3,
+  "domiclioCartel": "Alberdi 9000",
+  "entreCalles1": "Paraná",
+  "entreCalles2": "Avenida Alvear",
+  "refubicacion": "mitad de cuadra paradas de colectivos ",
+  "TipoDeCartel": "Cartel de Ploteo",
+  "ClasifiacionCartel": "Cartel de pared",
+  "medidasCartelAncho": "300",
+  "medidasCartelLargo": "209"
+ },
+ {
+>>>>>>> 9053bcd0322b14341a97153f638025bdaa5e7706
   "id": 2,
-  "domiclioCartel": "Alberdi 8939",
+  "domiclioCartel": "Alberdi 8000",
   "entreCalles1": "Paraná",
   "entreCalles2": "Avenida Alvear",
   "refubicacion": "mitad de cuadra paradas de colectivos ",
@@ -12,7 +48,11 @@
  },
  {
   "id": 1,
+<<<<<<< HEAD
   "domiclioCartel": "Entre rios 994",
+=======
+  "domiclioCartel": "Entre rios 9941",
+>>>>>>> 9053bcd0322b14341a97153f638025bdaa5e7706
   "entreCalles1": "calle 3º",
   "entreCalles2": "Dr. Marengo",
   "refubicacion": "Referencias esquina",
