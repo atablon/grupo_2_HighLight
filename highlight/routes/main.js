@@ -19,7 +19,9 @@ router.get('/detalle', mainControllerDetalle.detalle);
 router.get('/listado', mainControllerPublicar.listado);
 router.get('/products/create', mainControllerPublicar.crear);
 
+/* Get para ser redirigido a la pagina de detalle */
 
+router.get('/detalle/:CartelId',mainControllerDetalle.detalle)
 /* POST - para guardar un producto nuevo. */
 router.post('/products/create', mainControllerPublicar.crearcartel);
 
