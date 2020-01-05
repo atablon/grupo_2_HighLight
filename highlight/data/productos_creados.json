@@ -2,6 +2,7 @@
  {
   "id": 1,
   "estrellas": 4,
+ "imagen": "imagen-1578197875414.jpeg",
   "domiclioCartel": "Avenida corrientes",
   "numero": "2311",
   "entreCalles1": "Paraná",
@@ -18,6 +19,7 @@
  {
   "id": 2,
   "estrellas": 4,
+ "imagen": "imagen-1578197875414.jpeg",
   "domiclioCartel": "General Roca",
   "numero": "2838",
   "entreCalles1": "Paraná+++",
@@ -34,6 +36,7 @@
  {
   "id": 3,
   "estrellas": 3,
+  "imagen": "imagen-1578197875414.jpeg",
   "domiclioCartel": "Paraná",
   "numero": "999",
   "entreCalles1": "Córdoba",
@@ -46,5 +49,22 @@
   "medidasCartelAlto": "8",
   "medidasCartelAncho": "8",
   "valor": "40000"
+ },
+ {
+  "id": 4,
+  "estrellas": 3,
+  "imagen": "imagen-1578197875414.jpeg",
+  "domiclioCartel": "Alberdi ",
+  "numero": "22",
+  "entreCalles1": "Alberdi",
+  "entreCalles2": "calle 20",
+  "refubicacion": "3232",
+  "TipoDeCartel": "Cartel de Pantalla",
+  "ClasifiacionCartel": "Cartel de ruta",
+  "expocision": "campanaslargas",
+  "trafico": "traficoEntre10y20",
+  "medidasCartelAlto": "12",
+  "medidasCartelAncho": "12",
+  "valor": "20000"
  }
 ]
