@@ -571,6 +571,11 @@ p {
   font-weight: 400;
 
 }
+.p_medidas {
+  font-size: 10px;
+  font-weight: 400;
+
+}
 
 .p_costo {
   font-size: 16px;
@@ -599,6 +604,16 @@ p {
   font-size: smaller;
   color: rgb(83, 92, 96);
 }
+/* Estilos para indicadores de medida */
+.arrow_height{
+  font-size: smaller;
+  color: rgb(83, 92, 96);
+}
+.arrow_width{
+  font-size: x-small;
+  color: rgb(83, 92, 96);
+}
+
 
 /* Resultados Producto */
 

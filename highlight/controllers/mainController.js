@@ -18,10 +18,13 @@ const controller = {
 	root_resultado: (req, res) => {
 		// Aca es donde debo incorporar la logica de busqueda y pasar como argumento de res.render('resultado', objetos encontrados) 
 		// hay que buscar en el json
-		//console.log(req.query.busqueda_cartel)
-		let cartelesDb = readFileSync('../data/productos_creados.json',{encoding:'utf-8'})
-		//console.log(cartelesDb);
-		res.render('resultado');	
+
+		let filePath = path.join(__dirname, '../data/productos_creados.json');
+		
+		let cartelesDb = JSON.parse(fs.readFileSync(filePath,{encoding:'utf-8'}));
+		console.log(cartelesDb[1]);
+		
+		res.render('resultado',{cartelesDb});	
 	},
 	ingresar: (req, res) => {
 		res.render('ingresar');

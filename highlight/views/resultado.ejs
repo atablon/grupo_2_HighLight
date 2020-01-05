@@ -9,14 +9,62 @@
             <h2 class="titulo-seccion"> Resultado de busqueda</h2>
             <div class="filtros">
                 <ul>
-                    <li>Por tido: XXX </li>
+                    <li>Por tipo: XXX </li>
                     <li>Por precio: XXX</li>
                     <li><a>Ver en mapa </a></li>
                 </ul>
             </div>
             <div class="row no-gutters">
 
-                <div class="col-12 col-md-6  bloque_resultado">
+<!-- Aca tengo que poner la inteligencia para la muestra de carteles, primero tengo que hacerlos del tipo referencia, para poder redireccionarlos a 
+la pagina de detalle, y luego hacer que carguen dinamicamente la imagen e informacion en cuestion -->
+                
+                
+               
+                    <div class="col-12 col-md-6  bloque_resultado">
+                        <a href="/detalle/<%= cartelesDb[0].id %>" > 
+                            <div class="row resultados_producto no-gutters">
+                                <div class="col-6">
+                                    <div class="img_producto">
+                                        <img src="/images/img_banner.svg" width="100%" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-6 producto_info">
+                                    <div class="flex-probar">
+                                        <div class="uno">
+                                            <em class="tipo_cartel">
+                                                <%= cartelesDb[0].tipo_cartel %>
+                                            </em>
+                                            <p class="estrellas">
+                                                <!-- Aca hace falta tener definido el puntaje del cartel y plotear las estrellas que haga falta -->
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star checked"></span>
+                                                <span class="fa fa-star n_checked"></span>
+                                                <span class="fa fa-star n_checked"></span>
+                                                <span class="fa fa-arrows-v arrow_height"></span>
+
+                                            </p>
+
+                                            <p class="p_direccion"><%= cartelesDb[0].domiclioCartel %></p>
+                                            <p class="p_calles"> Entre las calles <%= cartelesDb[0].entreCalles1%> y <%= cartelesDb[0].entreCalles2  %> </p>
+                                            <p class="p_medidas"> 
+                                                Medidas <span class="fa fa-arrows-v" class="arrow_height"></span>:  <%= cartelesDb[0].medidasCartelAncho %> x <%= cartelesDb[0].medidasCartelLargo %> cm 
+                                            </p>
+                                        </div>
+
+                                        <p class="p_costo">1 mes por $20.000,0</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </a>
+                    </div>
+                
+                    
+                
+                <!-- <div class="col-12 col-md-6  bloque_resultado">
                     <div class="row resultados_producto no-gutters">
                         <div class="col-6">
                             <div class="img_producto">
@@ -48,39 +96,7 @@
 
                     </div>
                 </div>
-                <div class="col-12 col-md-6  bloque_resultado">
-                    <div class="row resultados_producto no-gutters">
-                        <div class="col-6">
-                            <div class="img_producto">
-                                <img src="/images/img_banner.svg" width="100%" alt="">
-                            </div>
-                        </div>
-                        <div class="col-6 producto_info">
-                            <div class="flex-probar">
-                                <div class="uno">
-                                    <em class="tipo_cartel">
-                                        Cartel Medianera</em>
-                                    <p class="estrellas">
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star n_checked"></span>
-                                        <span class="fa fa-star n_checked"></span>
-
-                                    </p>
-
-                                    <p class="p_direccion">Alberdi 1829</p>
-                                    <p class="p_calles">Entre calles Francisco Alem y Pacifico Rodriguez</p>
-                                </div>
-
-                                <p class="p_costo">1 mes por $20.000,0</p>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
+            </div> -->
             <!-- Paginado de resultados de busqueda -->
             <div class="row p_paginado">
                 <div class="col-12 nopadding">
