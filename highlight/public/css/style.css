@@ -571,6 +571,7 @@ p {
   font-weight: 400;
 
 }
+
 .p_medidas {
   font-size: 10px;
   font-weight: 400;
@@ -604,12 +605,14 @@ p {
   font-size: smaller;
   color: rgb(83, 92, 96);
 }
+
 /* Estilos para indicadores de medida */
-.arrow_height{
+.arrow_height {
   font-size: smaller;
   color: rgb(83, 92, 96);
 }
-.arrow_width{
+
+.arrow_width {
   font-size: x-small;
   color: rgb(83, 92, 96);
 }
@@ -646,92 +649,93 @@ p {
 
 /* Estilos para listado de productos */
 
+.box-view.container {
+  padding: 0;
+}
+
 .listado_productos {
-  padding-bottom: 10px;
+  padding-bottom: 20px;
+  margin-bottom: 40px;
+}
+
+.listado_productos .box-img {
+  padding: 0;
+}
+
+.listado_productos .box-img img {
+  border: 1px solid #e5e5e5;
 }
 
 .listado_btn {
-  border-bottom: 1px dotted #e5e5e5;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-  text-align: left;
-  display: flex;
+  text-align: center;
 }
-
-
 
 .listado_productos h2 {
   font-size: 16px;
   font-weight: 600;
 }
 
-.btn_borrar {
+.listado_productos p {
+  font-size: 13px;
+}
+
+.listado_btn button {
   color: #10A3EB;
   border: none;
   font-size: 12px;
   cursor: pointer;
   background: none;
   cursor: pointer;
-  padding: 12px 0;
-  margin-left: 20px;
+  margin-left: 0px;
+  padding: 5px 12px;
 }
 
-
-button.btn_borrar:hover {
+.listado_btn button:hover {
   color: #105285;
-  background-color: none !important;
   cursor: pointer;
-
 }
 
-button.btn-editar {
+.listado_btn button.btn-edit {
+
   background-color: #10A3EB;
-  color: #fff;
-  padding: 12px 12px;
-  border-radius: 10px;
-  cursor: pointer;
   border: none;
-
+  padding: 4  px;
+  color: #ffffff;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
-button.btn-editar:hover {
+.listado_btn button.btn-edit:hover {
   background-color: #105285;
-  color: #fff;
+  cursor: pointer;
+}
+
 }
 
 .box_clasificacion {
-  font-size: 13px;
+  font-size: 12px;
   margin: 10px 0 0 0;
 
 }
-
 
 .box_clasificacion li {
   background-color: #eee;
   padding: 4px 8px;
   margin-right: 10px;
-  border-radius: 4px;
+  border-radius: 2px;
   color: #999999;
   display: inline-block;
+  margin-bottom: 6px;
 }
 
 @media (min-width:768px) {
 
   .listado_productos,
-  .listado_btn {
-    border-bottom: 1px dotted #e5e5e5;
-    margin-bottom: 30px;
-    padding: 0 10px 30px 0;
+  .listado_btn {}
 
-  }
-
-  .listado_btn {
-    text-align: right;
-  }
-
-  .btn_borrar {
-    padding: 0;
-  }
 
 
 }

@@ -41,15 +41,15 @@ const controller = {
       
         let cantidad = 0;
         switch (req.body.trafico) {
-            case 'trafico3000':
+            case 'Hasta 3000 personas':
                 cantidad =+ 1;
                 console.log(cantidad);
                 break;
-            case 'trafico10000':
+            case 'Hasta 10000 personas':
                 cantidad =+ 2;
                 console.log(cantidad);
                 break;
-            case 'traficoEntre10y20':
+            case 'Entre 10000 y 20000 personas':
                 cantidad =+ 3;
                 console.log(cantidad);
                 break;
