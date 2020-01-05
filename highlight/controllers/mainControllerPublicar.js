@@ -37,15 +37,32 @@ const controller = {
             // tomo el contenido y lo convierto en un formato de Array de objetos literales
             arrayDeProductos = JSON.parse(contenidoProductosJSON);
         }
-        console.log(req.body)
+        console.log(req.body.trafico)
+        let cantidad = 0;
+        switch (req.body.trafico) {
+            case 'trafico3000':
+                cantidad =+ 1;
+                console.log(cantidad);
+                break;
+            case 'trafico10000':
+                cantidad =+ 2;
+                console.log(cantidad);
+                break;
+            case 'traficoEntre10y20':
+                cantidad =+ 3;
+                console.log(cantidad);
+                break;
+            default:
+                cantidad =+ 4;
+        }
         // Genero el id para el producto
+      
         req.body = {
             id: arrayDeProductos.length + 1,
-            ...req.body, 
+            estrellas: cantidad,
+            ...req.body,
          
         };
-
-
         // Inserto el producto nuevo
         arrayDeProductos.push(req.body);
 

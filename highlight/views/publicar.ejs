@@ -14,8 +14,12 @@
                     <p class="form-content">
                         
                     <label for="domiclioCartel">Domicilio apróximado:</label>
-                        <input  id= "inputdireccion" type="text" name="domiclioCartel" required>
-                        <em class="help">Ejemplo: Alberdi 8000</em>
+                        <input  id= "inputdireccion" placeholder="Avenida Corrientes" type="text" name="domiclioCartel" required>
+                    </p>
+                    <p class="form-content">
+                    
+                        <label for="numero">Número o altura de calle:</label>
+                        <input id="numero" type="number" name="numero" required>
                     </p>
                     <p class="form-content">
                         <label for="entreCalles1">Entre calle:</label>
@@ -50,17 +54,39 @@
                             <option value="Cartel de tranporte público "> Cartel de tranporte público </option>
                         </select>
                     </p>
-                    
+                    <p class="form-content">
+                        <label for="expocision">Tipo de exposición:</label>
+                        <select name="expocision" id="expocision" required>
+                            <option value="" selected disabled hidden> Seleccionar </option>
+                            <option value="campanascortas"> Para campañas cortas </option>
+                            <option value="campanaslargas">Para campañas largas y alto rendimiento</option> 
+                        </select>
+                    </p>
+                    <p class="form-content">
+                        <label for="trafico">Tráfino apróximado:</label>
+                        <select name="trafico" id="trafico" required>
+                            <option value="" selected disabled hidden> Seleccionar </option>
+                            <option value="trafico3000">Hasta 3000 personas por día </option>
+                            <option value="trafico10000">Hasta 10000 personas por día</option>
+                            <option value="traficoEntre10y20">Entre 10000 y 2000 personas por día</option>
+                            <option value="traficoMas2000">Más de 20000 personas por día</option>
+                        </select>
+                    </p>
                     <p class="titulo-content margin">
                         Medidas apróximadas
                     </p>
                     <p class="form-content input_50">
-                        <label for="medidasCartelAncho">Ancho: </label>
-                         <input class="small" required placeholder="100 metros" type="number"  name="medidasCartelAncho">  
+                        <label for="medidasCartelAlto">Alto: </label>
+                         <input class="small" required placeholder="100 metros" type="number"  name="medidasCartelAlto">  
                     </p>
                     <p class="form-content input_50">
-                        <label for="medidasCartelLargo">Largo: </label>
-                        <input class="small" required placeholder="100 metros" type="number" name="medidasCartelLargo">
+                        <label for="medidasCartelAncho">Ancho: </label>
+                        <input class="small" required placeholder="100 metros" type="number" name="edidasCartelAncho">
+                    </p>
+                    <p class="titulo-content margin">Valor de alquiler por mes</p>
+                    <p class="form-content input_50">
+                        <label for="valor">Valor: </label>
+                        <input class="small" required  type="number" name="valor">
                     </p>
 
                    
