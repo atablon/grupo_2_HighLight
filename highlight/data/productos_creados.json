@@ -12,7 +12,7 @@
   "expocision": "campanascortas",
   "trafico": "traficoMas2000",
   "medidasCartelAlto": "10",
-  "edidasCartelAncho": "8",
+  "medidasCartelAncho": "8",
   "valor": "50000"
  },
  {
@@ -28,7 +28,7 @@
   "expocision": "campanascortas",
   "trafico": "traficoMas2000",
   "medidasCartelAlto": "10",
-  "edidasCartelAncho": "8",
+  "medidasCartelAncho": "8",
   "valor": "50000"
  },
  {
@@ -44,7 +44,7 @@
   "expocision": "campanascortas",
   "trafico": "traficoEntre10y20",
   "medidasCartelAlto": "8",
-  "edidasCartelAncho": "8",
+  "medidasCartelAncho": "8",
   "valor": "40000"
  }
 ]
