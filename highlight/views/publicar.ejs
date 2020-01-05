@@ -7,7 +7,7 @@
 
         <div class="box-view">
             <div class="box-container-view ">
-                <form action="/products/create" method="POST" class="ui-form">
+                <form action="/products/create" method="POST" class="ui-form" enctype="multipart/form-data">
                     <p class="titulo-content">
                         Ubicación del cartel
                     </p>
@@ -33,6 +33,11 @@
                         <label for="refubicacion">Referencias del lugar:</label>
                         <textarea name="refubicacion" required></textarea>
                     </p>
+
+                    <p class="form-content">
+                            <label for="imagen">Avatar:</label>  
+                            <input type="file" name="imagen" id="imagen">
+                        </p>
                     <p class="titulo-content margin">Detalle del cartel </p>
                     <p class="form-content">
                         <label for="tipoCartel">Tipo de cartel:</label>
@@ -81,7 +86,7 @@
                     </p>
                     <p class="form-content input_50">
                         <label for="medidasCartelAncho">Ancho: </label>
-                        <input class="small" required placeholder="100 metros" type="number" name="edidasCartelAncho">
+                        <input class="small" required placeholder="100 metros" type="number" name="medidasCartelAncho">
                     </p>
                     <p class="titulo-content margin">Valor de alquiler por mes</p>
                     <p class="form-content input_50">

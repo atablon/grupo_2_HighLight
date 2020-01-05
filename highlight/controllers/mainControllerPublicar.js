@@ -26,7 +26,8 @@ const controller = {
     detalle: (req, res) => {
         res.render('detalle');
     }, 
-    crearcartel : (req, res) => {
+    crearcartel : (req, res, next) => {
+  
         // array 
         let arrayDeProductos = [];
         const contenidoProductosJSON = fs.readFileSync(ubicacionProductosJSON, 'utf-8'); // leo el json
@@ -37,7 +38,7 @@ const controller = {
             // tomo el contenido y lo convierto en un formato de Array de objetos literales
             arrayDeProductos = JSON.parse(contenidoProductosJSON);
         }
-        console.log(req.body.trafico)
+      
         let cantidad = 0;
         switch (req.body.trafico) {
             case 'trafico3000':
@@ -56,10 +57,12 @@ const controller = {
                 cantidad =+ 4;
         }
         // Genero el id para el producto
-      
+        
+        let images = req.files[0].filename
         req.body = {
             id: arrayDeProductos.length + 1,
             estrellas: cantidad,
+            imagen: images,
             ...req.body,
          
         };
