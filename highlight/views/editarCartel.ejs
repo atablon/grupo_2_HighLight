@@ -21,6 +21,11 @@
                         
                     </p>
                     <p class="form-content">
+                    
+                        <label for="numero">Número o altura de calle:</label>
+                        <input value="<%= cartelElegido.numero %>" id="numero" type="number" name="numero" required>
+                    </p>
+                    <p class="form-content">
                         <label for="entreCalles1">Entre calle:</label>
                         <input  value="<%= cartelElegido.entreCalles1 %>" class="input_50" type="text" name="entreCalles1"
                             class="input-medum">
@@ -34,7 +39,7 @@
                         <label for="refubicacion">Referencias del lugar:</label>
                         <textarea name="refubicacion"><%= cartelElegido.refubicacion%></textarea>
                     </p>
-                    <p class="titulo-content margin">Detalle del cartel </p>
+                    <p class="titulo-content margin">Especificaciones </p>
                     <p class="form-content">
                        
                         <label for="tipoCartel">Tipo de cartel:</label>
@@ -54,18 +59,41 @@
                             <option value="Cartel de tranporte público" <%=("Cartel de tranporte público" == cartelElegido.ClasifiacionCartel) ? "selected" : ""%>> Cartel de tranporte público </option>
                         </select>
                     </p>
+                    <p class="form-content">
+                        <label for="expocision">Tipo de exposición:</label>
+                        <select name="expocision" id="expocision" required>
+                            
+                            <option value="Para campañas cortas" <%=("Para campañas cortas" == cartelElegido.expocision) ? "selected" : ""%>> Para campañas cortas </option>
+                            <option value="Para campañas largas"<%=("Para campañas largas" == cartelElegido.expocision) ? "selected" : ""%>>Para campañas largas</option>
+                        </select>
+                    </p>
+                    <p class="form-content">
+                        <label for="trafico">Tráfico apróx. por día:</label>
+                        <select name="trafico" id="trafico" required>
+                          
+                            <option value="Hasta 3000 personas"<%=("Hasta 3000 personas" == cartelElegido.trafico) ? "selected" : ""%>>Hasta 3000 personas </option>
+                            <option value="Hasta 10000 personas"<%=("Hasta 10000 persona" == cartelElegido.trafico) ? "selected" : ""%>>Hasta 10000 personas</option>
+                            <option value="Entre 10000 y 20000 personas"<%=("Entre 10000 y 20000 personas" == cartelElegido.trafico) ? "selected" : ""%>>Entre 10000 y 20000 personas</option>
+                            <option value="Más de 20000 personas"<%=("Más de 20000 personas" == cartelElegido.trafico) ? "selected" : ""%>>Más de 20000 personas</option>
+                        </select>
+                    </p>
 
                     <p class="titulo-content margin">
                         Medidas apróximadas
                     </p>
-                    <p class="form-content input_50">
-                        <label for="medidasCartelAncho">Ancho: </label>
-                        <input class="small" value="<%= cartelElegido.medidasCartelAncho%>" placeholder="100 metros" type="number" name="medidasCartelAncho">
-                    </p>
-                    <p class="form-content input_50">
-                        <label for="medidasCartelLargo">Largo: </label>
-                        <input class="small" value="<%= cartelElegido.medidasCartelLargo%>" placeholder="100 metros" type="number" name="medidasCartelLargo">
-                    </p>
+                <p class="form-content input_50">
+                    <label for="medidasCartelAlto">Alto: </label>
+                    <input class="small" value="<%= cartelElegido.medidasCartelAlto %>" required placeholder="6 metros" type="number" name="medidasCartelAlto">
+                </p>
+                <p class="form-content input_50">
+                    <label for="medidasCartelAncho">Ancho:</label>
+                    <input class="small" value="<%= cartelElegido.medidasCartelAncho %>" required placeholder="8 metros" type="number" name="medidasCartelAncho">
+                </p>
+                <p class="titulo-content margin">Valor de alquiler por mes</p>
+                <p class="form-content input_50">
+                    <label for="valor">Valor: </label>
+                    <input value="<%= cartelElegido.valor %>"" class="small" required placeholder="10000" type="number" name="valor">
+                </p>
 
 
                     <div class="box-buttom ">
