@@ -6,28 +6,40 @@
         <h2 class="titulo-seccion">Listado de carteles</h2>
 
         <div class="box-view container">
-            <div class="box-container-view row">
+            <div class="box-container-view">
                 <% productos.forEach(unProducto => { %> 
-                <div class="listado_productos col-12 col-md-9"> 
-                <h2 class="capitalize"> <%= unProducto.domiclioCartel %> </h2>
-                <p class="capitalize"><strong> Entre calles: </strong><%= unProducto.entreCalles1 %> - <%= unProducto.entreCalles2 %></p>
-                <p> <strong>Referencias:</strong> <%= unProducto.refubicacion %></p>
-                <p> <strong>Medidas:</strong> <%= unProducto.medidasCartelAncho %> x <%= unProducto.medidasCartelLargo %> metros.</p>
-
-                <ul class="box_clasificacion">
-                    
-                <li class="capitalize" ><%= unProducto.TipoDeCartel %></li>
-                <li class="capitalize"> <%= unProducto.ClasifiacionCartel %></li>
-               </ul>
-                </div>
-                <div class="listado_btn col-12 col-md-3  no-gutters">
-              
+                <div class="listado_productos">
+                <div class="row">
+                    <div class="col-12 col-md-4 box-img"> 
+                        <img src="/images/imagescartel/<%= unProducto.imagen %>" width="100%">
+                    </div>
+                    <div class="col-12 col-md-6">
+                       
+                        <h2 class="capitalize"> <%= unProducto.domiclioCartel %> <%= unProducto.numero %> | <%= unProducto.estrellas %> Estrellas</h2>
+                        <p class="capitalize"><strong> Entre calles: </strong><%= unProducto.entreCalles1 %> - <%= unProducto.entreCalles2 %></p>
+                        <p> <strong>Referencias:</strong> <%= unProducto.refubicacion %></p>
+                       
+                        <p><strong>Especificaciones:</strong></p>
+                        <p> Medida: <%= unProducto.medidasCartelAncho %> x <%= unProducto.medidasCartelAlto %> metros.</p>
+                        <p><%= unProducto.TipoDeCartel %> | <%= unProducto.ClasifiacionCartel %></p>
+                        <p><%= unProducto.expocision %> | <%= unProducto.trafico %> </p>
+                   
+                        <p><strong>Valor por mes: <%= unProducto.valor %></strong></p>
+                        </div>
+                    <div class="col-12 col-md-2 listado_btn">
                     <form action="/productos/editar/<%= unProducto.id %>?_method=PUT" method="POST">
-                        <button class="btn-editar" type="submit">Editar datos</button>
+                        <button class="btn-edit" type="submit">Editar datos</button>
                     </form>
                     <form action="/productos/borrar/<%= unProducto.id %>?_method=DELETE" method="POST">
-                        <button class="btn_borrar" type="submit">Eliminar</button>
+                        <button type="submit">Eliminar</button>
                     </form>
+                        
+                    </div>
+                   
+                  
+                </div>
+            
+                
                 </div>
             <% }) %>
         </div>

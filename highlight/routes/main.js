@@ -44,8 +44,8 @@ router.delete('/productos/borrar/:id', mainControllerPublicar.borrarCartel);
 
 
 /* Editar un producto */
-router.put('/productos/editar/:id', mainControllerPublicar.seleccionarCartel);
-router.put('/editar/cartel/:id', mainControllerPublicar.modificar);
+router.put('/productos/editar/:id', upload.any(), mainControllerPublicar.seleccionarCartel);
+router.put('/editar/cartel/:id', upload.any(),mainControllerPublicar.modificar);
 
 
 module.exports = router;

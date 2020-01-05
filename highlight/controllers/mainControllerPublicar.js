@@ -38,27 +38,28 @@ const controller = {
             // tomo el contenido y lo convierto en un formato de Array de objetos literales
             arrayDeProductos = JSON.parse(contenidoProductosJSON);
         }
-      
+             // damos valor a las estrellas
         let cantidad = 0;
         switch (req.body.trafico) {
-            case 'trafico3000':
+            case 'Hasta 3000 personas':
                 cantidad =+ 1;
                 console.log(cantidad);
                 break;
-            case 'trafico10000':
+            case 'Hasta 10000 personas':
                 cantidad =+ 2;
                 console.log(cantidad);
                 break;
-            case 'traficoEntre10y20':
+            case 'Entre 10000 y 20000 personas':
                 cantidad =+ 3;
                 console.log(cantidad);
                 break;
             default:
                 cantidad =+ 4;
         }
-        // Genero el id para el producto
+        // levanto la img
         
-        let images = req.files[0].filename
+        let images = req.files[0].filename;
+        
         req.body = {
             id: arrayDeProductos.length + 1,
             estrellas: cantidad,
@@ -111,9 +112,36 @@ const controller = {
         let productosSinElQueModificacmos = productos.filter(function (unProducto) {
             return unProducto.id != req.params.id;
         })
-        let idNumber = parseInt(req.params.id)
+        let idNumber = parseInt(req.params.id);
+        // damos valor a las estrellas
+        let cantidad = 0;
+        switch (req.body.trafico) {
+            case 'Hasta 3000 personas':
+                cantidad = + 1;
+                console.log(cantidad);
+                break;
+            case 'Hasta 10000 personas':
+                cantidad = + 2;
+                console.log(cantidad);
+                break;
+            case 'Entre 10000 y 20000 personas':
+                cantidad = + 3;
+                console.log(cantidad);
+                break;
+            default:
+                cantidad = + 4;
+        }
+
+        // levanto la img
+        let productoAModificar = productos.find(function (unProducto) {
+            return unProducto.id == req.params.id;
+        })
+        let imagen = productoAModificar.imagen
+   
         req.body = {
-            id: idNumber, 
+            id: idNumber,
+            estrellas: cantidad, 
+            imagen: imagen,
             ...req.body, 
         }
 
