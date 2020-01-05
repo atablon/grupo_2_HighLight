@@ -1,7 +1,5 @@
 [
  {
-<<<<<<< HEAD
-=======
   "id": 6,
   "domiclioCartel": "Alberdi 7000",
   "entreCalles1": "Paraná",
@@ -35,7 +33,6 @@
   "medidasCartelLargo": "209"
  },
  {
->>>>>>> 9053bcd0322b14341a97153f638025bdaa5e7706
   "id": 2,
   "domiclioCartel": "Alberdi 8000",
   "entreCalles1": "Paraná",
@@ -48,11 +45,7 @@
  },
  {
   "id": 1,
-<<<<<<< HEAD
-  "domiclioCartel": "Entre rios 994",
-=======
   "domiclioCartel": "Entre rios 9941",
->>>>>>> 9053bcd0322b14341a97153f638025bdaa5e7706
   "entreCalles1": "calle 3º",
   "entreCalles2": "Dr. Marengo",
   "refubicacion": "Referencias esquina",
