@@ -44,18 +44,18 @@
                         <p class="detalle_datos_adicionales"> <i class="fas fa-binoculars"></i> <%= cartelDetalle.expocision %> </p>
                         <p class="detalle_datos_adicionales"> <i class="fas fa-sign"></i> <%= cartelDetalle.ClasifiacionCartel %> </p>    
                         
+                        <form action="/carrito" method="POST">
+                            <div class="detalle_button_carrito">
+                                <button type="submit" class="btn">Agregar al carrito</button>
+                            </div>
+                        </form>
+
                     </div>
 
                     
                 </div>
-                <form action="/carrito" method="POST">
-                    <div class="box-buttom">
-                        <button type="submit" class="btn">Agregar al carrito</button>
-                    </div>
-                </form>
+              
             </div>
-
-        
 
     </div>
 </div>
