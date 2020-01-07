@@ -67,7 +67,7 @@ label {
   text-transform: uppercase;
   font-size: 28px;
   margin-bottom: 10px;
-  margin-top: 30px ;
+  margin-top: 30px;
   color: #10A3EB;
   display: inline-block;
 }
@@ -175,8 +175,8 @@ button.btn:focus {
 
 /* Estilos para el header media quary*/
 @media (min-width:100px) and (max-width: 767px) {
-  
-  ::placeholder{
+
+  ::placeholder {
     font-size: smaller;
   }
 
@@ -370,12 +370,34 @@ button.btn:focus {
   cursor: pointer;
 }
 
+.img_producto {
+
+}
+
+.img_producto img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+
+}
+
 @media (min-width:768px) {
 
   .lista-productos h2,
   .bloque-productos-destacados h2 {
     text-align: left;
     margin-bottom: 10px;
+  }
+
+  .img_producto {
+
+  }
+
+  .img_producto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+
   }
 }
 
@@ -580,9 +602,10 @@ em.tipo_cartel {
 
 .detalle_row {
   margin-bottom: 30px;
-  margin-top:30px ;
+  margin-top: 30px;
 }
-.detalle_button_carrito{
+
+.detalle_button_carrito {
   margin-top: 10px;
 }
 
@@ -709,6 +732,8 @@ p {
 .listado_productos .box-img img {
   border: 1px solid #e5e5e5;
   width: 100%;
+  height: 200px;
+  object-fit: cover;
 
 }
 
