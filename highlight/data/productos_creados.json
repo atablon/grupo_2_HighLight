@@ -49,5 +49,39 @@
   "medidasCartelAlto": "12",
   "medidasCartelAncho": "12",
   "valor": "20000"
+ },
+ {
+  "id": 4,
+  "estrellas": 3,
+  "imagen": "imagen-1578355389790.jpeg",
+  "domiclioCartel": "Avenida San Matin",
+  "numero": "893",
+  "entreCalles1": "Posdestá",
+  "entreCalles2": "Alvear",
+  "refubicacion": "Mitad de cuadra",
+  "TipoDeCartel": "Cartel de Pantalla",
+  "ClasifiacionCartel": "Cartel de parada de colectivo",
+  "expocision": "Para campañas cortas",
+  "trafico": "Entre 10000 y 20000 personas",
+  "medidasCartelAlto": "3",
+  "medidasCartelAncho": "3",
+  "valor": "20000"
+ },
+ {
+  "id": 5,
+  "estrellas": 3,
+  "imagen": "imagen-1578355395588.jpeg",
+  "domiclioCartel": "Avenida San Matin",
+  "numero": "893",
+  "entreCalles1": "Posdestá",
+  "entreCalles2": "Alvear",
+  "refubicacion": "Mitad de cuadra",
+  "TipoDeCartel": "Cartel de Pantalla",
+  "ClasifiacionCartel": "Cartel de parada de colectivo",
+  "expocision": "Para campañas cortas",
+  "trafico": "Entre 10000 y 20000 personas",
+  "medidasCartelAlto": "3",
+  "medidasCartelAncho": "3",
+  "valor": "20000"
  }
 ]
