@@ -62,6 +62,7 @@ label {
   font-size: 20px;
   margin-bottom: 20px;
 }
+
 .titulo-detalle {
   text-transform: uppercase;
   font-size: 30px;
@@ -560,16 +561,19 @@ em.tipo_cartel {
   padding: 10px 16px !important;
   padding-bottom: 20px;
 }
-.detalle_imagen{
+
+.detalle_imagen {
   display: inline-block;
   margin-top: 5px;
 }
-.p_detalle_costo{
+
+.p_detalle_costo {
   font-size: 16px;
   font-weight: 600;
   margin-top: 0px;
 }
-.detalle_row{
+
+.detalle_row {
   margin-bottom: 30px;
 }
 
@@ -610,7 +614,8 @@ p {
   margin-top: 20px;
 
 }
-.detalle_datos_adicionales{
+
+.detalle_datos_adicionales {
   font-size: 10px;
   font-weight: 300;
 }
@@ -688,9 +693,14 @@ p {
   margin-bottom: 40px;
 }
 
+.listado_productos .box-img {
+  text-align: center;
+}
 
 .listado_productos .box-img img {
   border: 1px solid #e5e5e5;
+  width: 100%;
+
 }
 
 .listado_btn {
@@ -776,6 +786,11 @@ p {
 
   .listado_productos .box-img {
     padding: 0;
+    text-align: center;
+  }
+
+  .listado_productos .box-img img {
+    width: 220px;
   }
 
 }

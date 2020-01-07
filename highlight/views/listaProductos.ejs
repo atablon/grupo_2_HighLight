@@ -11,13 +11,26 @@
                 <div class="listado_productos">
                 <div class="row">
                     <div class="col-12 col-md-4 box-img"> 
-                        <img src="/images/imagescartel/<%= unProducto.imagen %>" width="100%">
+                        <img src="/images/imagescartel/<%= unProducto.imagen %>" width="220px">
                     </div>
                     <div class="col-12 col-md-6">
+                        <p class="estrellas">
+                            <!-- Loop para plotear las estrellas rellenas o vacias del puntaje del cartel -->
+                            <% for(let j=0;j<unProducto.estrellas;j++){ %>
+                            <span class="fa fa-star checked"></span>
+                            <%}
+                                                        for(j=unProducto.estrellas; j<5;j++){
+                                                                                                    %>
+                            <span class="fa fa-star n_checked"></span>
+                            <%}%>
+                                                    
+                         </p>
                        
-                        <h2 class="capitalize"> <%= unProducto.domiclioCartel %> <%= unProducto.numero %> | <%= unProducto.estrellas %> Estrellas</h2>
-                  
-                        <p class="capitalize"><strong> Entre calles: </strong><%= unProducto.entreCalles1 %> - <%= unProducto.entreCalles2 %></p>
+                        <h2 class="capitalize"> <%= unProducto.domiclioCartel %> <%= unProducto.numero %> </h2>
+                       
+                        <p> Entre <%= unProducto.entreCalles1 %> y  <%= unProducto.entreCalles2 %>. <%= unProducto.barrio %>, <%= unProducto.provincia %></p>
+            
+                        
                         <p> <strong>Referencias:</strong> <%= unProducto.refubicacion %></p>
                        
                         <p><strong>Especificaciones:</strong></p>

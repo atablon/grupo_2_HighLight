@@ -16,7 +16,7 @@
                     </p>
                     <p class="form-content">
 
-                        <label for="domiclioCartel">Domicilio apróximado:</label>
+                        <label for="domiclioCartel">Domicilio:</label>
                         <input value="<%= cartelElegido.domiclioCartel %>" id="inputdireccion" type="text" name="domiclioCartel" required>
                         
                     </p>
@@ -25,6 +25,7 @@
                         <label for="numero">Número o altura de calle:</label>
                         <input value="<%= cartelElegido.numero %>" id="numero" type="number" name="numero" required>
                     </p>
+                        
                     <p class="form-content">
                         <label for="entreCalles1">Entre calle:</label>
                         <input  value="<%= cartelElegido.entreCalles1 %>" class="input_50" type="text" name="entreCalles1"
@@ -32,8 +33,16 @@
                     </p>
                     <p class="form-content">
                         <label for="entreCalles2">Y la calle:</label>
-                        <input  value="<%= cartelElegido.entreCalles2 %>"class="input_50" type="text" name="entreCalles2"
+                        <input  value="<%= cartelElegido.entreCalles2 %>" class="input_50" type="text" name="entreCalles2"
                             class="input-medum">
+                    </p>
+                    <p class="form-content">
+                        <label for="barrio">Barrio o localidad:</label>
+                        <input   value="<%= cartelElegido.barrio %>"id="barrio" type="text" name="barrio" required>
+                    </p>
+                    <p class="form-content">
+                        <label for="provincia">Provincia:</label>
+                        <input  value="<%= cartelElegido.provincia %>" id="provincia" type="text" name="provincia" required>
                     </p>
                     <p class="form-content">
                         <label for="refubicacion">Referencias del lugar:</label>
