@@ -30,7 +30,7 @@
 
 				<!-- LOGICA PARA IMPRIMIR LOS "RESULTADOS DE LAS BUSQUEDA" -->
 				
-				<% for(let i=0;i<cartelesDb.length;i++){ %>
+				<% for(let i=0;i < 4 ;i++){ %>
 					<div class="col-12 col-prod col-md-3">
 						<a href="/detalle/<%= cartelesDb[i].id %>" > 
 							<div class="producto">
@@ -38,18 +38,20 @@
 									<img src="/images/imagescartel/<%=cartelesDb[i].imagen%>" width="100%" alt="">
 								</div>
 								<div class="producto_info">
-									<p><strong><%= cartelesDb[i].domiclioCartel %></strong></p>
-										<p class="estrellas">
-											<!-- Loop para plotear las estrellas rellenas o vacias del puntaje del cartel -->
-											<% for(let j=0;j<cartelesDb[i].estrellas;j++){ %>
-											<span class="fa fa-star checked"></span>
-											<%}
-																						for(j=cartelesDb[i].estrellas; j<5;j++){
-																						%>
-											<span class="fa fa-star n_checked"></span>
-											<%}%>
+									<p class="estrellas">
+										<!-- Loop para plotear las estrellas rellenas o vacias del puntaje del cartel -->
+										<% for(let j=0;j<cartelesDb[i].estrellas;j++){ %>
+										<span class="fa fa-star checked"></span>
+										<%}
+																																			for(j=cartelesDb[i].estrellas; j<5;j++){
+																																			%>
+										<span class="fa fa-star n_checked"></span>
+										<%}%>
+																							
+																																		</p>
+									<p><%= cartelesDb[i].domiclioCartel %> <%= cartelesDb[i].numero %></p>
+									<p><%= cartelesDb[i].barrio %>, <%= cartelesDb[i].provincia %></p>
 										
-																					</p>
 									<p><strong>1 mes por $<%= cartelesDb[i].valor%></strong></p>
 									
 								</div>
@@ -119,54 +121,36 @@
 		<section class="bloque-productos-destacados container"> -->
 			<h2>Más carteles destacados</h2>
 			<div class="row">
-				<div class="col-6 col-prod col-md-3">
-					<div class="producto">
-						<div class="img_produto">
-							<img src="/images/img_banner.svg" width="100%" alt="">
+				<% for(let i=0;i < 4 ;i++){ %>
+				<div class="col-12 col-prod col-md-3">
+					<a href="/detalle/<%= cartelesDb[i].id %>">
+						<div class="producto">
+							<div class="img_producto">
+								<img src="/images/imagescartel/<%=cartelesDb[i].imagen%>" width="100%" alt="">
+							</div>
+							<div class="producto_info">
+								<p class="estrellas">
+									<!-- Loop para plotear las estrellas rellenas o vacias del puntaje del cartel -->
+									<% for(let j=0;j<cartelesDb[i].estrellas;j++){ %>
+									<span class="fa fa-star checked"></span>
+									<%}
+																																		for(j=cartelesDb[i].estrellas; j<5;j++){
+																																		%>
+									<span class="fa fa-star n_checked"></span>
+									<%}%>
+																						
+																																	</p>
+								<p><%= cartelesDb[i].domiclioCartel %> <%= cartelesDb[i].numero %></p>
+								<p><%= cartelesDb[i].barrio %>, <%= cartelesDb[i].provincia %></p>
+								
+													<p><strong>1 mes por $<%= cartelesDb[i].valor%></strong></p>
+				
+							</div>
 						</div>
-						<div class="producto_info">
-							<p>Cartel ..........</p>
-							<p><strong>1 mes $57783</strong></p>
-						</div>
-					</div>
-
+				
+					</a>
 				</div>
-				<div class="col-6 col-prod col-md-3 ">
-					<div class="producto">
-						<div class="img_produto">
-							<img src="/images/img_banner.svg" width="100%" alt="">
-						</div>
-						<div class="producto_info">
-							<p>Cartel ..........</p>
-							<p><strong>1 mes $57783</strong></p>
-						</div>
-					</div>
-
-				</div>
-				<div class="col-6 col-prod col-md-3 ">
-					<div class="producto">
-						<div class="img_produto">
-							<img src="/images/img_banner.svg" width="100%" alt="">
-						</div>
-						<div class="producto_info">
-							<p>Cartel ..........</p>
-							<p><strong>1 mes $57783</strong></p>
-						</div>
-					</div>
-
-				</div>
-				<div class="col-6 col-prod col-md-3 ">
-					<div class="producto">
-						<div class="img_produto">
-							<img src="/images/img_banner.svg" width="100%" alt="">
-						</div>
-						<div class="producto_info">
-							<p>Cartel ..........</p>
-							<p><strong>1 mes $57783</strong></p>
-						</div>
-					</div>
-
-				</div>
+				<%}%>
 
 			</div>
 		</section>
