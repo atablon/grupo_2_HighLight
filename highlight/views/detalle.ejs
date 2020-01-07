@@ -1,0 +1,63 @@
+<%- include('partials/head.ejs') %>
+
+<%- include('partials/header_medium.ejs') %>
+
+<!-- style.css -->
+<h1 class="titulo-detalle"> <%= cartelDetalle.domiclioCartel %> <%= cartelDetalle.numero %> </h1>
+
+<!-- Tengo que hacer un row, que se comporte de la siguiente forma
+1- En tamaño 320px debe tener la imagen/es por arriba y el detalle del producto, en este caso cartel por debajo.
+2- En tamaño más grande debe tener la imagen por la izquierda y el detalle por la derecha.
+3- En ambos casos debe tener los botones de agregar al carrito por debajo.
+4- Ver como incorporar el puntaje del cartel en algún lado.
+-->
+
+<!--  -->
+<div class = "container">
+    <div class = "row detalle_row">
+        <div class = "col-12 col-md-6">
+            <img class="detalle_imagen" src="/images/imagescartel/<%=cartelDetalle.imagen%>" width="100%" alt="">
+        </div>
+        <!-- Datos del Detalle -->
+        
+            <div class="col-12 col-md-6 detalle_producto_info">
+                <div class="flex-probar">
+                    <div class="uno">
+                        <p class="p_detalle_costo"> Valor mensual $<%= cartelDetalle.valor%></p>
+                        <p class="estrellas">
+                            <% for(let j=0;j<cartelDetalle.estrellas;j++){ %>
+                                <span class="fa fa-star checked"></span>
+                            <%}
+                            for(j=cartelDetalle.estrellas; j<5;j++){
+                            %>
+                             <span class="fa fa-star n_checked"></span>
+                            <%}%>
+                        </p>
+
+                        <p class="p_calles"> 
+                            <i class="fas fa-map-marker-alt"></i> <%= cartelDetalle.domiclioCartel %> <%= cartelDetalle.numero %> entre las calles <%= cartelDetalle.entreCalles1%> y <%= cartelDetalle.entreCalles2  %> </p>
+                        <p class="p_medidas"> 
+                            Medidas:  <span class="fas fa-arrows-alt-v" class=" arrow_height"></span> <%= cartelDetalle.medidasCartelAlto %> mts x <span class="fas fa-arrows-alt-h" class=" arrow_width"></span>  <%= cartelDetalle.medidasCartelAncho %> mts 
+                        </p>
+                        <p> Datos adicionales: </p>
+                        <p class="detalle_datos_adicionales"> <i class="fas fa-eye"></i> <%=cartelDetalle.trafico %> </p>
+                        <p class="detalle_datos_adicionales"> <i class="fas fa-binoculars"></i> <%= cartelDetalle.expocision %> </p>
+                        <p class="detalle_datos_adicionales"> <i class="fas fa-sign"></i> <%= cartelDetalle.ClasifiacionCartel %> </p>    
+                        
+                    </div>
+
+                    
+                </div>
+                <form action="/carrito" method="POST">
+                    <div class="box-buttom">
+                        <button type="submit" class="btn">Agregar al carrito</button>
+                    </div>
+                </form>
+            </div>
+
+        
+
+    </div>
+</div>
+
+<%- include('partials/footer.ejs') %>

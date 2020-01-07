@@ -1,0 +1,1 @@
+// Funciones destinadas al manejo de las base de datos

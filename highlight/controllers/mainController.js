@@ -1,22 +1,46 @@
 const fs = require('fs');
 const path = require('path');
 
-// ************ Function to Read an HTML File ************
-function readHTML (fileName) {
-	let filePath = path.join(__dirname, `/../views/${fileName}.html`);
-	let htmlFile = fs.readFileSync(filePath, 'utf-8');
-	return htmlFile;
-}
+// // ************ Function to Read an HTML File ************
+// function readHTML (fileName) {
+// 	let filePath = path.join(__dirname, `/../views/${fileName}.html`);
+// 	let htmlFile = fs.readFileSync(filePath, 'utf-8');
+// 	return htmlFile;
+// }
 
 const controller = {
 	root: (req, res) => {
-		let html = readHTML('index');
-		res.send(html);
+		res.render("index");
 	},
+<<<<<<< HEAD
 	root_registro: (req, res) => {
 		let html = readHTML('registro');
 		res.send(html);
 	},
+=======
+	root_carrito: (req, res) => {
+		res.render('carrito');
+	},
+	root_resultado: (req, res) => {
+		// Aca es donde debo incorporar la logica de busqueda y pasar como argumento de res.render('resultado', objetos encontrados) 
+		// hay que buscar en el json
+
+		let filePath = path.join(__dirname, '../data/productos_creados.json');
+		
+		let cartelesDb = JSON.parse(fs.readFileSync(filePath,{encoding:'utf-8'}));
+		console.log(cartelesDb[1]);
+		
+		res.render('resultado',{cartelesDb});	
+	},
+	ingresar: (req, res) => {
+		res.render('ingresar');
+	},
+	registrar: (req, res) => {
+		res.render('registro');
+	},
+	
+	
+>>>>>>> ac70bd2d1133b2c755263324c62a5359ac867541
 };
 
 

@@ -1,0 +1,107 @@
+
+<%- include('partials/head.ejs') %>
+
+
+    <%- include('partials/header_small.ejs') %>
+     <main class="main-body">
+        <!-- Carrito -->
+            <div class="contenedor-main container">
+                <h2 class="titulo-seccion"> Tu carrito</h2>
+            
+                 <div class="box-view"> 
+                    <div class="box-container-view container">
+                        <!--un item-->
+                     <div class="row"> 
+                         <div class="col-8 col-md-8">
+                             <ul class="carrito_cantidad">
+                                <li><h3>Estás alquilando por </h3></li>
+                                <li> <select>
+                                    <option value="1" selected>1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                </li>
+                                
+                                <li>
+                                    <h3>mes</h3>
+                                </li>           
+                            </ul>
+                        </div>
+                        <div class="col-4 col-md-4 box_valor">
+                            <h2><strong> $ 20.000 </strong></h2>
+                        </div>       
+                    </div>
+                    <div class="row item_chosse"> 
+
+                        <div class="col-2">
+                            <img src="/images/img_banner.svg" width="100%" alt="">
+                        </div>
+                        <div class="col-10"> 
+                            <em class="tipo_cartel"> Cartel Medianera</em>
+                         <h4>Alberdi 6739</h4>
+                           
+                         
+                            <ul class="acciones" > <li><a href="·">Eliminar de mi carrito</a></li></ul>
+                        </div>
+                    </div>
+                    <!--2 items-->
+                    <div class="row second-item">
+                        <div class="col-8 col-md-8">
+                            <ul class="carrito_cantidad">
+                                <li>
+                                    <h3>Estás alquilando por </h3>
+                                </li>
+                                <li> <select>
+                                        <option value="1" selected>1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                </li>
+                    
+                                <li>
+                                    <h3>mes</h3>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-4 col-md-4 box_valor">
+                            <h2><strong> $ 20.000 </strong></h2>
+                        </div>
+                    </div>
+                    <div class="row item_chosse">
+                    
+                        <div class="col-2">
+                            <img src="/images/img_banner.svg" width="100%" alt="">
+                        </div>
+                        <div class="col-10">
+                            <em class="tipo_cartel"> Cartel Medianera</em>
+                            <h4>Alberdi 6739</h4>
+                    
+                    
+                            <ul class="acciones">
+                                <li><a href="·">Eliminar de mi carrito</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-total">
+                    <div class="row">
+                        <div class="col-8 col-md-8"><h4>Total</h4></div>
+                        <div class="col-4 col-md-4 box_valor">
+                            <h2><strong> $ 40.000 </strong></h2>
+                        </div>
+                     </div>
+                </div>
+              
+                </div>
+                   <div class="action-carrito"> 
+                    <a href="index"> Agregar otro cartel</a>
+                    <button class="btn" value="Pagar ahora" >
+                               Pagar ahora</button>
+                       </div>
+                   </div>
+                </div>
+
+
+    </main>
+    <%- include('partials/footer.ejs') %>
+

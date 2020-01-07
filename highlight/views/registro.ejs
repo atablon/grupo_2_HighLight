@@ -1,0 +1,59 @@
+
+    <%- include('partials/head.ejs') %>
+
+    <%- include('partials/header_small.ejs') %>
+            
+    <main class="main-body">
+    <div class="contenedor-main container">
+        <h2 class="titulo-seccion"> Completá los datos</h2>
+    
+        <div class="box-view">
+            <div class="box-container-view ">
+                <form class="formBase">
+                    <p class="form-content">
+                            <label for="name">Nombre y apellido: </label>
+                            <input type="text" id="name">
+                    </p>
+                    <p class="form-content">
+                        <label for="registro">Quiero:</label>
+                      <select id="registro">
+                        <option value="" selected disabled hidden> Seleccionar </option>
+                          <option> Publicar </option>
+                         <option> Alquilar </option>
+                      </select>
+                    </p>
+                    <p class="form-content">
+                        <label for="empresa">Mi empresa:</label>
+                        <input type="text" id="empresa">
+                    </p>
+                    <p class="form-content">
+                    <label for="rubro">Nos dedicamos a:</label>
+                        <input type="text" id="rubro">
+                    </p>
+                    <p class="form-content">
+                        <label for="tel">Teléfono:</label>
+                        <input type="number" id="tel" placeholder="11 5 760 2881">
+                    </p>
+                    <p class="form-content">
+                        <label for="mail">E-mail:</label>
+                        <input type="email" id="mail" placeholder="juan@gmail.com">
+                    </p>
+                    <p class="form-content"><label for="pass">Contraseña:</label>
+                        <input type="password" id="pass">
+                        <em class="help">Debe tener un número + un caracter</em>
+                    </p>
+                    <p class="form-content"><label for="pass2">Repetir contraseña:</label>
+                        <input type="password" id="pass2">
+                    </p>
+                    <div class="box-buttom">
+                    <button type="submit" class ="btn"> Registrarme </button>
+                    </div>
+
+
+                </form>
+
+            </div>
+            </div>
+
+</main>
+    <%- include('partials/footer.ejs') %>

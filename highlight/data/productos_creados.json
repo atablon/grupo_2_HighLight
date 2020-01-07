@@ -1,0 +1,53 @@
+[
+ {
+  "id": 3,
+  "estrellas": 3,
+  "imagen": "imagen-1578197875414.jpeg",
+  "domiclioCartel": "Paraná",
+  "numero": "2000",
+  "entreCalles1": "Córdoba",
+  "entreCalles2": "Entre Ríos",
+  "refubicacion": "Esquina ",
+  "TipoDeCartel": "Cartel de Pantalla",
+  "ClasifiacionCartel": "Cartel de parada de colectivo",
+  "expocision": "Para campañas cortas",
+  "trafico": "Entre 10000 y 20000 personas",
+  "medidasCartelAlto": "8",
+  "medidasCartelAncho": "8",
+  "valor": "40000"
+ },
+ {
+  "id": 1,
+  "estrellas": 4,
+  "imagen": "imagen-1578197875414.jpeg",
+  "domiclioCartel": "Avenida corrientes",
+  "numero": "2311",
+  "entreCalles1": "Paraná",
+  "entreCalles2": "Dr. Marengo",
+  "refubicacion": "Esquina",
+  "TipoDeCartel": "Cartel de Ploteo",
+  "ClasifiacionCartel": "Cartel de parada de colectivo",
+  "expocision": "Para campañas cortas",
+  "trafico": "Más de 20000 personas",
+  "medidasCartelAlto": "10",
+  "medidasCartelAncho": "8",
+  "valor": "50000"
+ },
+ {
+  "id": 4,
+  "estrellas": 3,
+  "imagen": "imagen-1578197875414.jpeg",
+  "domiclioCartel": "Alberdi ",
+  "numero": "22",
+  "entreCalles1": "Alberdi",
+  "entreCalles2": "calle 20",
+  "refubicacion": "3232",
+  "TipoDeCartel": "Cartel de Pantalla",
+  "ClasifiacionCartel": "Cartel de ruta",
+  "expocision": "Para campañas cortas",
+  "trafico": "Entre 10000 y 20000 personas",
+  "medidasCartelAlto": "12",
+  "medidasCartelAncho": "12",
+  "valor": "20000"
+ }
+]
