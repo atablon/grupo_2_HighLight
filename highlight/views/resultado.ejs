@@ -20,40 +20,41 @@
 la pagina de detalle, y luego hacer que carguen dinamicamente la imagen e informacion en cuestion -->
                 
                 
-               
+               <% for(let i=0;i<cartelesDb.length;i++){ %>
                     <div class="col-12 col-md-6  bloque_resultado">
-                        <a href="/detalle/<%= cartelesDb[0].id %>" > 
+                        <a href="/detalle/<%= cartelesDb[i].id %>" > 
                             <div class="row resultados_producto no-gutters">
                                 <div class="col-6">
                                     <div class="img_producto">
-                                        <img src="/images/img_banner.svg" width="100%" alt="">
+                                        <img src="/images/imagescartel/<%=cartelesDb[i].imagen%>" width="100%" height="100%" alt="">
                                     </div>
                                 </div>
                                 <div class="col-6 producto_info">
                                     <div class="flex-probar">
                                         <div class="uno">
                                             <em class="tipo_cartel">
-                                                <%= cartelesDb[0].tipo_cartel %>
+                                                <%= cartelesDb[i].tipo_cartel %>
                                             </em>
                                             <p class="estrellas">
-                                                <!-- Aca hace falta tener definido el puntaje del cartel y plotear las estrellas que haga falta -->
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star checked"></span>
-                                                <span class="fa fa-star n_checked"></span>
-                                                <span class="fa fa-star n_checked"></span>
-                                                
+                                                <!-- Loop para plotear las estrellas rellenas o vacias del puntaje del cartel -->
+                                                <% for(let j=0;j<cartelesDb[i].estrellas;j++){ %>
+                                                    <span class="fa fa-star checked"></span>
+                                                <%}
+                                                for(j=cartelesDb[i].estrellas; j<5;j++){
+                                                %>
+                                                 <span class="fa fa-star n_checked"></span>
+                                                <%}%>
 
                                             </p>
 
-                                            <p class="p_direccion"><%= cartelesDb[0].domiclioCartel %></p>
-                                            <p class="p_calles"> Entre las calles <%= cartelesDb[0].entreCalles1%> y <%= cartelesDb[0].entreCalles2  %> </p>
+                                            <p class="p_direccion"><%= cartelesDb[i].domiclioCartel %></p>
+                                            <p class="p_calles"> Entre las calles <%= cartelesDb[i].entreCalles1%> y <%= cartelesDb[i].entreCalles2  %> </p>
                                             <p class="p_medidas"> 
-                                                Medidas:  <span class="fas fa-arrows-alt-v" class=" arrow_height"></span> <%= cartelesDb[0].medidasCartelAlto %>cm x <span class="fas fa-arrows-alt-h" class=" arrow_width"></span>  <%= cartelesDb[0].medidasCartelAncho %> cm 
+                                                Medidas:  <span class="fas fa-arrows-alt-v" class=" arrow_height"></span> <%= cartelesDb[i].medidasCartelAlto %> mts x <span class="fas fa-arrows-alt-h" class=" arrow_width"></span>  <%= cartelesDb[i].medidasCartelAncho %> mts 
                                             </p>
                                         </div>
 
-                                        <p class="p_costo">1 mes por $20.000,0</p>
+                                        <p class="p_costo">Valor mensual $<%= cartelesDb[i].valor%></p>
                                     </div>
 
                                 </div>
@@ -61,49 +62,17 @@ la pagina de detalle, y luego hacer que carguen dinamicamente la imagen e inform
                             </div>
                         </a>
                     </div>
-                
+                <%}%>
                     
                 
-                <!-- <div class="col-12 col-md-6  bloque_resultado">
-                    <div class="row resultados_producto no-gutters">
-                        <div class="col-6">
-                            <div class="img_producto">
-                                <img src="/images/img_banner.svg" width="100%" alt="">
-                            </div>
-                        </div>
-                        <div class="col-6 producto_info">
-                            <div class="flex-probar">
-                                <div class="uno">
-                                    <em class="tipo_cartel">
-                                        Cartel Medianera</em>
-                                    <p class="estrellas">
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star n_checked"></span>
-                                        <span class="fa fa-star n_checked"></span>
 
-                                    </p>
-
-                                    <p class="p_direccion">Alberdi 1829</p>
-                                    <p class="p_calles">Entre calles Francisco Alem y Pacifico Rodriguez</p>
-                                </div>
-
-                                <p class="p_costo">1 mes por $20.000,0</p>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div> -->
-            <!-- Paginado de resultados de busqueda -->
-            <div class="row p_paginado">
+            <!-- Paginado de resultados de busqueda/ para cuando la base de datos sea mucho mayor-->
+            <!-- <div class="row p_paginado">
                 <div class="col-12 nopadding">
                     <p class="paginado_contenido"> <a href="detalle.html">1</a> <a href="detalle.html">2</a> <a
                             href="detalle.html">3</a> <a href="detalle.html"><span class="arrow">&#10148;</span></a></p>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         </div>
