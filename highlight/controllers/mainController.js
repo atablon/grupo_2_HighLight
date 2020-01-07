@@ -10,21 +10,26 @@ const path = require('path');
 
 const controller = {
 	root: (req, res) => {
-		res.render("index");
+		
+		// Acceso a la base de datos (Actualmente en JSON)
+		
+		let filePath = path.join(__dirname, '../data/productos_creados.json');
+		let cartelesDb = JSON.parse(fs.readFileSync(filePath,{encoding:'utf-8'}));
+
+		res.render("index",{cartelesDb}); // Hago el render y envio los datos de los carteles que se van a plotear en la pantalla principal
 	},
 	root_carrito: (req, res) => {
 		res.render('carrito');
 	},
 	root_resultado: (req, res) => {
-		// Aca es donde debo incorporar la logica de busqueda y pasar como argumento de res.render('resultado', objetos encontrados) 
-		// hay que buscar en el json
-
+		
+		// Acceso a la base de datos (Actualmente en JSON)
 		let filePath = path.join(__dirname, '../data/productos_creados.json');
-		
 		let cartelesDb = JSON.parse(fs.readFileSync(filePath,{encoding:'utf-8'}));
-		console.log(cartelesDb[1]);
+		let busqueda=req.query.busqueda_cartel;
+		console.log(req.query.busqueda_cartel);
 		
-		res.render('resultado',{cartelesDb});	
+		res.render('resultado',{cartelesDb,busqueda});	
 	},
 	ingresar: (req, res) => {
 		res.render('ingresar');
