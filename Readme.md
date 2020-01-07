@@ -45,4 +45,4 @@ https://trello.com/b/2v6Z9lll/integradorgrupo2highlight
 
 ## Retrospectiva Sprint 2
 
-<a href="https://imgbb.com/"><img src="https://i.ibb.co/VVPrN84/Sprint-2-retro.png" alt="Sprint-2-retro" border="0"></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/GsMzCGL/Sprint-2-retro.png" alt="Sprint-2-retro" border="0"></a>
