@@ -18,7 +18,6 @@
   "medidasCartelAncho": "1",
   "valor": "50000"
  },
- 
  {
   "id": 2,
   "estrellas": 3,
@@ -94,5 +93,24 @@
   "medidasCartelAlto": "2",
   "medidasCartelAncho": "1",
   "valor": "20000"
+ },
+ {
+  "id": 6,
+  "estrellas": 1,
+  "imagen": "imagen-1578438713765.jpg",
+  "domiclioCartel": "Córdoba ",
+  "numero": "9894",
+  "entreCalles1": "Paraná",
+  "entreCalles2": "Entre Ríos",
+  "barrio": "San Nicolás",
+  "provincia": "Buenos Aires",
+  "refubicacion": "intersección 5 esquinas",
+  "TipoDeCartel": "Cartel de Pantalla",
+  "ClasifiacionCartel": "Cartel de pared",
+  "expocision": "Para campañas largas",
+  "trafico": "Hasta 3000 personas",
+  "medidasCartelAlto": "3",
+  "medidasCartelAncho": "2",
+  "valor": "10000"
  }
 ]

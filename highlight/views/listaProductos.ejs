@@ -19,8 +19,7 @@
                             <% for(let j=0;j<unProducto.estrellas;j++){ %>
                             <span class="fa fa-star checked"></span>
                             <%}
-                                                        for(j=unProducto.estrellas; j<5;j++){
-                                                                                                    %>
+                                 for(j=unProducto.estrellas; j<5;j++){ %>
                             <span class="fa fa-star n_checked"></span>
                             <%}%>
                                                     
@@ -41,9 +40,9 @@
                         <p><strong>Valor por mes: <%= unProducto.valor %></strong></p>
                         </div>
                     <div class="col-12 col-md-2 listado_btn">
-                    <form action="/productos/editar/<%= unProducto.id %>?_method=PUT" method="POST">
-                        <button class="btn-edit" type="submit">Editar datos</button>
-                    </form>
+                    <a href="/productos/editar/<%= unProducto.id %>">
+                       Editar datos</a>
+                
                     <form action="/productos/borrar/<%= unProducto.id %>?_method=DELETE" method="POST">
                         <button type="submit">Eliminar</button>
                     </form>

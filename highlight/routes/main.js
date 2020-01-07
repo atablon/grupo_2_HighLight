@@ -4,6 +4,8 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 
+// Esto es muller para levantar la imagen del cartel y guardarla en nuestra carpeta.
+// esto es un middleware podemos sacarlo afuera y llamarlo en cada ruta que necesitemos
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, __dirname + '/../public/images/imagescartel')
@@ -14,6 +16,7 @@ var storage = multer.diskStorage({
 })
 
 var upload = multer({ storage: storage })
+
 
 // ************ Controller Require ************
 const mainController = require('../controllers/mainController');
@@ -33,8 +36,8 @@ router.get('/listado', mainControllerPublicar.listado);
 router.get('/products/create', mainControllerPublicar.crear);
 
 /* Get para ser redirigido a la pagina de detalle */
-
 router.get('/detalle/:CartelId',mainControllerDetalle.detalle)
+
 /* POST - para guardar un producto nuevo. */
 router.post('/products/create',upload.any(), mainControllerPublicar.crearcartel);
 
@@ -43,7 +46,8 @@ router.delete('/productos/borrar/:id', mainControllerPublicar.borrarCartel);
 
 
 /* Editar un producto */
-router.put('/productos/editar/:id', upload.any(), mainControllerPublicar.seleccionarCartel);
+// en la ruta agregamos upload.any para llamar a middleware de imag. 
+router.get('/productos/editar/:id', mainControllerPublicar.seleccionarCartel);
 router.put('/editar/cartel/:id', upload.any(),mainControllerPublicar.modificar);
 
 

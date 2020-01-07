@@ -11,17 +11,12 @@
                     action="/editar/cartel/<%= cartelElegido.id %>?_method=PUT" method="POST"
                     
                     class="ui-form">
-                    <p class="titulo-content">
-                      Modificar mi cartel
-                    </p>
+                    <p class="titulo-content">Modificar mi cartel</p>
                     <p class="form-content">
-
                         <label for="domiclioCartel">Domicilio:</label>
-                        <input value="<%= cartelElegido.domiclioCartel %>" id="inputdireccion" type="text" name="domiclioCartel" required>
-                        
+                        <input value="<%= cartelElegido.domiclioCartel %>" id="inputdireccion" type="text" name="domiclioCartel" required>          
                     </p>
                     <p class="form-content">
-                    
                         <label for="numero">Número o altura de calle:</label>
                         <input value="<%= cartelElegido.numero %>" id="numero" type="number" name="numero" required>
                     </p>
@@ -59,7 +54,7 @@
                         </select>
                     </p>
                     <p class="form-content">
-                        <label for="ClasifiacionCarte">Clasificación </label>
+                        <label for="ClasifiacionCarte">Clasificación: </label>
                         <select name="ClasifiacionCartel">
                             <option value="Cartel de pared" <%=("Cartel de pared" == cartelElegido.ClasifiacionCartel) ? "selected" : ""%>> Cartel de pared</option>
                             <option value="Cartel de parada de colectivo"<%=("Cartel de parada de colectivo" == cartelElegido.ClasifiacionCartel) ? "selected" : ""%>>Cartel de parada de colectivo</option>
@@ -103,8 +98,6 @@
                     <label for="valor">Valor: </label>
                     <input value="<%= cartelElegido.valor %>"" class="small" required placeholder="10000" type="number" name="valor">
                 </p>
-
-
                     <div class="box-buttom ">
                         <button type="submit" class="btn">Modificar</button>
                     </div>

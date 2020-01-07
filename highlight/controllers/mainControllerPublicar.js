@@ -2,21 +2,25 @@ const fs = require('fs');
 const path = require('path');
 
 /* ubicacion del archivo producto json*/
-const ubicacionProductosJSON = path.join(__dirname,'../data/productos_creados.json');
-const contenidoProductosJSON = fs.readFileSync(ubicacionProductosJSON, 'utf-8'); // leo el json
-let productos = JSON.parse(contenidoProductosJSON);// comvierto en array
+const ubicacionProductosJSON = path.join(__dirname, '../data/productos_creados.json');
 
-/* ordeno por el elemento id de cada obejto del array*/
-productos.sort(function (a, b) {
-    if (a.id < b.id) {
-        return 1;
-    }
-    if (a.name > b.name) {
-        return -1;
-    }
-    return 0;
-});
+function traerData () {
+    const contenidoProductosJSON = fs.readFileSync(ubicacionProductosJSON, 'utf-8'); // leo el json
+    let productos = JSON.parse(contenidoProductosJSON);// comvierto en array
 
+    /* ordeno por el elemento id de cada obejto del array*/
+    productos.sort(function (a, b) {
+        if (a.id > b.id) {
+            return 1;
+        }
+        if (a.name > b.name) {
+            return -1;
+        }
+        return 0;
+    });
+
+    return productos;
+}
 
 const controller = {
 
@@ -56,8 +60,7 @@ const controller = {
             default:
                 cantidad =+ 4;
         }
-        // levanto la img
-        
+        // levanto la img del req
         let images = req.files[0].filename;
         
         req.body = {
@@ -67,7 +70,7 @@ const controller = {
             ...req.body,
          
         };
-        // Inserto el producto nuevo
+        // Inserto el producto nuevo en el array
         arrayDeProductos.push(req.body);
 
         // Convierto el arrayDeProductos a JSON
@@ -79,8 +82,18 @@ const controller = {
         res.redirect("/listado")
     }, 
     listado: (req, res) => {
-        const contenidoProductosJSON = fs.readFileSync(ubicacionProductosJSON, 'utf-8'); // leo el json
-        let productos = JSON.parse(contenidoProductosJSON);// comvierto en array
+        // const contenidoProductosJSON = fs.readFileSync(ubicacionProductosJSON, 'utf-8'); // leo el json
+        // let productos = JSON.parse(contenidoProductosJSON);// comvierto en array
+        // productos.sort(function (a, b) {
+        //     if (a.id < b.id) {
+        //         return 1;
+        //     }
+        //     if (a.name > b.name) {
+        //         return -1;
+        //     }
+        //     return 0;
+        // });
+        let productos = traerData();
         res.render('listaProductos', {productos});
     }, 
      borrarCartel: (req, res) => {
@@ -98,6 +111,7 @@ const controller = {
         }, 
   
     seleccionarCartel: (req, res) => {
+        let productos = traerData();
         let idCartel = req.params.id;
         let cartelElegido = productos.find(function(cartel){
            return cartel.id == idCartel
@@ -108,6 +122,8 @@ const controller = {
     }, 
 
     modificar: (req, res) => {
+
+        let productos = traerData();
 
         let productosSinElQueModificacmos = productos.filter(function (unProducto) {
             return unProducto.id != req.params.id;
