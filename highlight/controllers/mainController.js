@@ -13,6 +13,11 @@ const controller = {
 		let html = readHTML('index');
 		res.send(html);
 	},
+	root_registro: (req, res) => {
+		let html = readHTML('registro');
+		res.send(html);
+	},
 };
+
 
 module.exports = controller
