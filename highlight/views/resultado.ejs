@@ -45,8 +45,8 @@
 
                                             </p>
 
-                                            <p class="p_direccion"><%= cartelesDb[i].domiclioCartel %></p>
-                                            <p class="p_calles"> Entre las calles <%= cartelesDb[i].entreCalles1%> y <%= cartelesDb[i].entreCalles2  %> </p>
+                                            <p class="p_direccion"><%= cartelesDb[i].domiclioCartel %> <%= cartelesDb[i].numero %></p>
+                                            <p class="p_calles"> Entre las calles <%= cartelesDb[i].entreCalles1%> y <%= cartelesDb[i].entreCalles2  %>. <%= cartelesDb[i].barrio%>, <%= cartelesDb[i].provincia  %>  </p>
                                             <p class="p_medidas"> 
                                                 Medidas:  <span class="fas fa-arrows-alt-v" class=" arrow_height"></span> <%= cartelesDb[i].medidasCartelAlto %> mts x <span class="fas fa-arrows-alt-h" class=" arrow_width"></span>  <%= cartelesDb[i].medidasCartelAncho %> mts 
                                             </p>

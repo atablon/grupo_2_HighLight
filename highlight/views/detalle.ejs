@@ -3,8 +3,9 @@
 <%- include('partials/header_medium.ejs') %>
 
 <!-- style.css -->
-<h1 class="titulo-detalle"> <%= cartelDetalle.domiclioCartel %> <%= cartelDetalle.numero %> </h1>
-
+<div class="container">
+<h2 class="titulo-detalle"> <%= cartelDetalle.domiclioCartel %> <%= cartelDetalle.numero %> </h2>
+</div>
 <!-- Tengo que hacer un row, que se comporte de la siguiente forma
 1- En tamaño 320px debe tener la imagen/es por arriba y el detalle del producto, en este caso cartel por debajo.
 2- En tamaño más grande debe tener la imagen por la izquierda y el detalle por la derecha.

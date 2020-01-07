@@ -24,10 +24,6 @@ const mainControllerDetalle = require('../controllers/mainControllerDetalle');
 
 /* GET - home page. */
 router.get('/', mainController.root);
-<<<<<<< HEAD
-router.get('/registro', mainController.root_registro);
-=======
-
 router.get('/carrito', mainController.root_carrito);
 router.get('/resultado',mainController.root_resultado);
 router.get('/ingresar', mainController.ingresar);
@@ -51,7 +47,6 @@ router.put('/productos/editar/:id', upload.any(), mainControllerPublicar.selecci
 router.put('/editar/cartel/:id', upload.any(),mainControllerPublicar.modificar);
 
 
->>>>>>> ac70bd2d1133b2c755263324c62a5359ac867541
 module.exports = router;
 
 

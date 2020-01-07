@@ -65,9 +65,9 @@ label {
 
 .titulo-detalle {
   text-transform: uppercase;
-  font-size: 30px;
-  margin-bottom: 20px;
-  padding-left: 15px;
+  font-size: 28px;
+  margin-bottom: 10px;
+  margin-top: 30px ;
   color: #10A3EB;
   display: inline-block;
 }
@@ -580,6 +580,7 @@ em.tipo_cartel {
 
 .detalle_row {
   margin-bottom: 30px;
+  margin-top:30px ;
 }
 .detalle_button_carrito{
   margin-top: 10px;
@@ -605,13 +606,13 @@ p {
 }
 
 .p_calles {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
 
 }
 
 .p_medidas {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 400;
 
 }

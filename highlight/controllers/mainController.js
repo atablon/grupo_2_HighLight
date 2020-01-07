@@ -18,12 +18,6 @@ const controller = {
 
 		res.render("index",{cartelesDb}); // Hago el render y envio los datos de los carteles que se van a plotear en la pantalla principal
 	},
-<<<<<<< HEAD
-	root_registro: (req, res) => {
-		let html = readHTML('registro');
-		res.send(html);
-	},
-=======
 	root_carrito: (req, res) => {
 		res.render('carrito');
 	},
@@ -45,7 +39,6 @@ const controller = {
 	},
 	
 	
->>>>>>> ac70bd2d1133b2c755263324c62a5359ac867541
 };
 
 

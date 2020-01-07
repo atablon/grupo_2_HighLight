@@ -2,6 +2,27 @@
 <%- include('partials/head.ejs') %>
 <%- include('partials/header_small.ejs') %>
 
-    Ingresar
+    <main class="main-body">
+        <div class="contenedor-main container">
+            <h2 class="titulo-seccion"> Completá los datos</h2>
+    
+            <div class="box-view">
+                <div class="box-container-view ">
+                    <form class="formBase">
+                    <p class="form-content">
+                        <label for="mail">E-mail:</label>
+                        <input type="email" id="mail" placeholder="juan@gmail.com">
+                    </p>
+                    <p class="form-content"><label for="pass">Contraseña:</label>
+                        <input type="password" id="pass">
+                    </p>
+                    <div class="box-buttom">
+                        <button type="submit" class="btn"> Registrarme </button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+         </div>
+    </main>
     
 <%- include('partials/footer.ejs') %>
