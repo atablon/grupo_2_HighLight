@@ -6,7 +6,7 @@ const path = require('path');
 const controller = {
 
     detalle: (req, res) => {
-        let filePath = path.join(__dirname, '../data/productos_creados.json');
+        let filePath = path.join(__dirname, '../data/listaproductos.json');
 		
 		let cartelesDb = JSON.parse(fs.readFileSync(filePath,{encoding:'utf-8'}));
         let cartel_solicitado=req.params.CartelId;
