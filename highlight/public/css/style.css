@@ -131,15 +131,16 @@ button.btn:focus {
   width: 100%;
   position: relative;
   padding: 0;
-  visibility: hidden;
+  display: none;
 }
 
 /*no me funciona*/
 .toggle-nav:hover .box_nav {
   padding: 50px;
   background-color: blue;
-  visibility: visible;
+  display: block;
 }
+
 
 .buscador_medium {
   margin: 0px 10px;
@@ -370,9 +371,7 @@ button.btn:focus {
   cursor: pointer;
 }
 
-.img_producto {
-
-}
+.img_producto {}
 
 .img_producto img {
   width: 100%;
