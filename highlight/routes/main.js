@@ -24,8 +24,7 @@ const mainControllerPublicar = require('../controllers/mainControllerPublicar');
 const mainControllerDetalle = require('../controllers/mainControllerDetalle');
 
 /* para el nuevo publicar por pasos */
-const mainControllerPublicarPasos = require('../controllers/mainControlerPublicarPasos');
-
+const mainControllerPublicarPasos = require('../controllers/mainControllerProducts');
 
 
 /* GET - home page. */
@@ -35,16 +34,11 @@ router.get('/resultado',mainController.root_resultado);
 router.get('/ingresar', mainController.ingresar);
 router.get('/registrar', mainController.registrar);
 router.get('/detalle', mainControllerDetalle.detalle);
-router.get('/listado', mainControllerPublicar.listado);
+
 router.get('/products/create', mainControllerPublicar.crear);
-router.get('/products/publicar', mainControllerPublicarPasos.publicarPasoUno);
 
 
-/*POST Para guardar información del PASO UNO de publicar */
-router.post('/products/publicar', upload.any(), mainControllerPublicarPasos.crearPasoUno);
 
-/*POST Para guardar información del PASO DOS de publicar */
-router.post('/products/publicarDos', upload.any(), mainControllerPublicarPasos.crearPasoDos);
 
 
 
