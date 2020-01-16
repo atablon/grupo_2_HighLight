@@ -34,10 +34,10 @@ const controller = {
   
         // array 
         let arrayDeProductos = [];
-        const contenidoProductosJSON = fs.readFileSync(ubicacionProductosJSON, 'utf-8'); // leo el json
-        let productos = JSON.parse(contenidoProductosJSON);// comvierto en array
-        // Si el archivo no está vacío 
+            const contenidoProductosJSON = fs.readFileSync(ubicacionProductosJSON, 'utf-8'); // leo el json
+            let productos = JSON.parse(contenidoProductosJSON);// comvierto en array
         
+        // Si el archivo no está vacío  
         if (contenidoProductosJSON != '') {
             // tomo el contenido y lo convierto en un formato de Array de objetos literales
             arrayDeProductos = JSON.parse(contenidoProductosJSON);
@@ -79,7 +79,7 @@ const controller = {
         // guardo el array completo en el archivo JSON
         fs.writeFileSync(ubicacionProductosJSON, contenidoAGuardar);
 
-        res.redirect("/listado")
+        return res.redirect("/listado") // es mas perfomante tener return porque corta la ejecución.
     }, 
     listado: (req, res) => {
         // const contenidoProductosJSON = fs.readFileSync(ubicacionProductosJSON, 'utf-8'); // leo el json

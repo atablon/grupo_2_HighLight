@@ -1,0 +1,125 @@
+const fs = require('fs');
+const path = require('path');
+
+/* ubicacion del archivo producto json*/
+const ubicacionProductosJSON = path.join(__dirname, '../data/listaproductos.json');
+
+/* leer el archivo json y trar el array de la lista de productos */
+function productos() {
+    const contenidoProductosJSON = fs.readFileSync(ubicacionProductosJSON, 'utf-8'); // leo el json
+    let listaDeProductos = JSON.parse(contenidoProductosJSON);// comvierto en array
+    return listaDeProductos;
+    }
+
+/* Funcion para guardar el contenido del publicar paso uno del producto */
+function guardarProducto(nuevoProducto) {
+    // busco todos los productos
+    let listaDeProductos = productos();
+
+    // genero el nuevo producto + id
+    nuevoProducto = {
+        id: generarId(),
+        ...nuevoProducto
+    };
+    // guardo el nuevo prouducto
+    listaDeProductos.push(nuevoProducto);
+    // guardo la lista de productos al json
+    fs.writeFileSync(ubicacionProductosJSON, JSON.stringify(listaDeProductos, null, ' '));
+    }
+
+
+/* Funcion para generar ID*/
+function generarId() {
+    // busco todos los productos
+    let listaDeProductos = productos();
+    // me fijo si hay id asignado
+    if (listaDeProductos.length == 0) {
+        return 1
+    }
+    // busco el ultimoproducto para tomar el id y sumar uno
+    let ultimoProducto = listaDeProductos.pop();
+    return ultimoProducto.id + 1;
+    }
+
+/* Funcion para guardar el contenido del publicar paso DOS del producto */
+function guardarProductoPasoDos(datosPasoDos) {
+    // busco todos los productos
+    let listaDeProductos = productos();
+    let ultimoProducto = listaDeProductos.pop();
+
+    // Estoy creando el nuevo obejto agregando las nuevas propiedades. 
+    // Esto hay que revisarlo porque seguro hay algo mejor. 
+    ultimoProducto = {
+        id: ultimoProducto.id,
+        imagen: ultimoProducto.imagen,
+        domiclioCartel: ultimoProducto.domiclioCartel,
+        numero: ultimoProducto.numero,
+        entreCalles1: ultimoProducto.entreCalles1,
+        entreCalles2: ultimoProducto.entreCalles2,
+        barrio: ultimoProducto.barrio,
+        provincia: ultimoProducto.provincia,
+        refubicacion: ultimoProducto.refubicacion,
+        ...datosPasoDos
+    }
+
+    listaDeProductos.push(ultimoProducto);
+    // guardo la lista de productos al jsom
+    fs.writeFileSync(ubicacionProductosJSON, JSON.stringify(listaDeProductos, null, ' '));
+    }
+
+/* Funcion para asignar valor de estrellas */
+function asignarEstrellas(valor) {
+    let cantidadEstrellas = 0;
+    switch (valor) {
+        case 'Hasta 3000 personas':
+            cantidadEstrellas = + 1;
+            break;
+        case 'Hasta 10000 personas':
+            cantidadEstrellas = + 2;
+            break;
+        case 'Entre 10000 y 20000 personas':
+            cantidadEstrellas = + 3;
+            break;
+        default:
+            cantidadEstrellas = + 4;
+    }
+
+    return cantidadEstrellas
+
+}
+
+const controller = {
+        // get de publicar
+        publicarPasoUno: (req, res) => {
+            res.render('publicarPasoUno');
+        },
+
+
+        // Post de crear cartel
+        crearPasoUno: (req, res) => {
+            // guardar el producto
+            let images = req.files[0].filename;
+            req.body = {
+                imagen: images,
+                ...req.body,
+            };
+            guardarProducto(req.body)
+            res.render('publicarPasoDos');
+        },
+
+
+        // Post de crear cartel paso 2.
+        crearPasoDos: (req, res) => {
+
+            // guardar más datos al producto y calcular valor para las estrellas
+            req.body = {
+                estrellas: asignarEstrellas(req.body.trafico),
+                ...req.body,
+            };
+            guardarProductoPasoDos(req.body)
+            res.send("listo")
+        },
+
+    }
+
+module.exports = controller

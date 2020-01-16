@@ -63,14 +63,7 @@ label {
   margin-bottom: 20px;
 }
 
-.titulo-detalle {
-  text-transform: uppercase;
-  font-size: 28px;
-  margin-bottom: 10px;
-  margin-top: 30px;
-  color: #10A3EB;
-  display: inline-block;
-}
+
 
 button.btn,
 input.btn {
@@ -131,15 +124,16 @@ button.btn:focus {
   width: 100%;
   position: relative;
   padding: 0;
-  visibility: hidden;
+  display: none;
 }
 
 /*no me funciona*/
 .toggle-nav:hover .box_nav {
   padding: 50px;
   background-color: blue;
-  visibility: visible;
+  display: block;
 }
+
 
 .buscador_medium {
   margin: 0px 10px;
@@ -370,9 +364,7 @@ button.btn:focus {
   cursor: pointer;
 }
 
-.img_producto {
-
-}
+.img_producto {}
 
 .img_producto img {
   width: 100%;
@@ -591,10 +583,15 @@ em.tipo_cartel {
   margin-top: 5px;
 }
 
-.p_detalle_costo {
-  font-size: 16px;
-  font-weight: 600;
-  margin-top: 0px;
+
+.titulo-detalle {
+  font-size: 28px;
+  color: #105285;
+}
+
+
+.box-estrellas {
+  text-align: right;
 }
 
 .detalle_row {
@@ -605,6 +602,49 @@ em.tipo_cartel {
 .detalle_button_carrito {
   margin-top: 10px;
 }
+
+.ui-form-detalle {
+  margin: 40px 0;
+}
+
+.ui-form-detalle label {
+  font-size: 14px;
+  color: #999999;
+  margin: 10px 0;
+}
+
+.ui-form-detalle p {
+  margin: 10px 0;
+}
+
+.ui-form-detalle .p_detalle_costo {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 20px;
+  color: #444444;
+}
+
+.ui-form-detalle select {
+  border: none;
+  font-size: 14px;
+  color: #666666;
+}
+
+.ui-form-detalle input {
+  border: none;
+  font-size: 14px;
+  color: #666666;
+}
+
+@media (min-width: 768px) {
+  .ui-form-detalle .box-buttom .btn {
+    margin-left: 0;
+    width: 36%;
+  }
+}
+
+
+
 
 /* Estilos para la informacion en caja de producto */
 p {
@@ -649,11 +689,8 @@ p {
   font-weight: 300;
 }
 
-.flex-probar {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap
-}
+
+
 
 /* Estilos de la puntuacion con estrellas */
 .estrellas {
