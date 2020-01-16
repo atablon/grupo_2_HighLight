@@ -28,6 +28,10 @@ const mainRouter = require('./routes/main');
 app.use('/', mainRouter);
 
 
+const productsRouter = require('./routes/products');
+app.use('/products', productsRouter);
+
+
 
 // ************ DON'T TOUCH FROM HERE ************
 // ************ catch 404 and forward to error handler ************

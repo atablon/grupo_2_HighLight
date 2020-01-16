@@ -50,15 +50,7 @@ function guardarProductoPasoDos(datosPasoDos) {
     // Estoy creando el nuevo obejto agregando las nuevas propiedades. 
     // Esto hay que revisarlo porque seguro hay algo mejor. 
     ultimoProducto = {
-        id: ultimoProducto.id,
-        imagen: ultimoProducto.imagen,
-        domiclioCartel: ultimoProducto.domiclioCartel,
-        numero: ultimoProducto.numero,
-        entreCalles1: ultimoProducto.entreCalles1,
-        entreCalles2: ultimoProducto.entreCalles2,
-        barrio: ultimoProducto.barrio,
-        provincia: ultimoProducto.provincia,
-        refubicacion: ultimoProducto.refubicacion,
+        ...ultimoProducto,
         ...datosPasoDos
     }
 
@@ -90,13 +82,13 @@ function asignarEstrellas(valor) {
 
 const controller = {
         // get de publicar
-        publicarPasoUno: (req, res) => {
-            res.render('publicarPasoUno');
+        publicar: (req, res) => {
+        res.render('publicar_ubicacion');
         },
 
 
         // Post de crear cartel
-        crearPasoUno: (req, res) => {
+        ubicacion: (req, res) => {
             // guardar el producto
             let images = req.files[0].filename;
             req.body = {
@@ -104,12 +96,12 @@ const controller = {
                 ...req.body,
             };
             guardarProducto(req.body)
-            res.render('publicarPasoDos');
+            res.render('publicar_especificaciones');
         },
 
 
         // Post de crear cartel paso 2.
-        crearPasoDos: (req, res) => {
+        especificaciones: (req, res) => {
 
             // guardar más datos al producto y calcular valor para las estrellas
             req.body = {
@@ -117,8 +109,13 @@ const controller = {
                 ...req.body,
             };
             guardarProductoPasoDos(req.body)
-            res.send("listo")
+            res.redirect('listado');
         },
+    listado: (req, res) => {
+        
+        let listaDeProductos = productos();
+        res.render('listaProductos', { listaDeProductos });
+    }, 
 
     }
 
