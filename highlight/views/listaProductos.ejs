@@ -33,11 +33,12 @@
                         <p> <strong>Referencias:</strong> <%= unProducto.refubicacion %></p>
                        
                         <p><strong>Especificaciones:</strong></p>
-                        <p> Medida: <%= unProducto.medidasCartelAncho %> x <%= unProducto.medidasCartelAlto %> metros.</p>
+            
                         <p><%= unProducto.TipoDeCartel %> | <%= unProducto.ClasifiacionCartel %></p>
                         <p><%= unProducto.expocision %> | <%= unProducto.trafico %> </p>
+                        <p> Tamaño: <%= unProducto.medidasCartelAncho %> x <%= unProducto.medidasCartelAlto %> metros.</p>
                    
-                        <p><strong>Valor por mes: <%= unProducto.valor %></strong></p>
+                        <p><strong>Valor por mes: <%= unProducto.costo %></strong></p>
                         </div>
                     <div class="col-12 col-md-2 listado_btn">
                     <a href="/productos/editar/<%= unProducto.id %>">

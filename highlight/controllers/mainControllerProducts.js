@@ -11,14 +11,26 @@ function productos() {
     return listaDeProductos;
     }
 
+
+/* leer el archivo json sacar los que que no tienen datos completos */
+function productosFiltrados() {
+    const contenidoProductosJSON = fs.readFileSync(ubicacionProductosJSON, 'utf-8'); // leo el json
+    let listaDeProductos = JSON.parse(contenidoProductosJSON);// comvierto en array
+    let productosFiltrados = listaDeProductos.filter (function(producto){
+        return producto["DatosCompletos"] == undefined
+    })
+    return productosFiltrados;
+}
+
 /* Funcion para guardar el contenido del publicar paso uno del producto */
-function guardarProducto(nuevoProducto) {
+function guardarPrimeraParte (nuevoProducto) {
     // busco todos los productos
     let listaDeProductos = productos();
 
     // genero el nuevo producto + id
     nuevoProducto = {
         id: generarId(),
+        DatosCompletos: false,
         ...nuevoProducto
     };
     // guardo el nuevo prouducto
@@ -42,10 +54,11 @@ function generarId() {
     }
 
 /* Funcion para guardar el contenido del publicar paso DOS del producto */
-function guardarProductoPasoDos(datosPasoDos) {
+function guardarSegundaParte(datosPasoDos) {
     // busco todos los productos
     let listaDeProductos = productos();
     let ultimoProducto = listaDeProductos.pop();
+    delete ultimoProducto['DatosCompletos']
 
     // Estoy creando el nuevo obejto agregando las nuevas propiedades. 
     // Esto hay que revisarlo porque seguro hay algo mejor. 
@@ -75,7 +88,6 @@ function asignarEstrellas(valor) {
         default:
             cantidadEstrellas = + 4;
     }
-
     return cantidadEstrellas
 
 }
@@ -95,7 +107,7 @@ const controller = {
                 imagen: images,
                 ...req.body,
             };
-            guardarProducto(req.body)
+            guardarPrimeraParte(req.body)
             res.render('publicar_especificaciones');
         },
 
@@ -108,14 +120,16 @@ const controller = {
                 estrellas: asignarEstrellas(req.body.trafico),
                 ...req.body,
             };
-            guardarProductoPasoDos(req.body)
+            guardarSegundaParte(req.body)
             res.redirect('listado');
         },
     listado: (req, res) => {
-        
-        let listaDeProductos = productos();
+        let listaDeProductos = productosFiltrados();
         res.render('listaProductos', { listaDeProductos });
     }, 
+    editar: (req, res) => {
+
+    },
 
     }
 

@@ -2,82 +2,6 @@
  {
   "id": 1,
   "imagen": "imagen-1579213498135.jpg",
-  "domiclioCartel": "Avenida Corrientes",
-  "numero": "232",
-  "entreCalles1": "Córdoba",
-  "entreCalles2": "Dr. Marengo",
-  "barrio": "San Nicolás",
-  "provincia": "Buenos Aires",
-  "refubicacion": "Esquina",
-  "estrellas": 3,
-  "TipoDeCartel": "Cartel de Pantalla",
-  "ClasifiacionCartel": "Cartel de Vallas",
-  "expocision": "Para campañas largas",
-  "trafico": "Entre 10000 y 20000 personas",
-  "medidasCartelAlto": "4",
-  "medidasCartelAncho": "2",
-  "costo": "20000"
- },
- {
-  "id": 2,
-  "imagen": "imagen-1579213498135.jpg",
-  "domiclioCartel": "Pacífico Rodriguez",
-  "numero": "783",
-  "entreCalles1": "Córdoba",
-  "entreCalles2": "Dr. Marengo",
-  "barrio": "San Nicolás",
-  "provincia": "Buenos Aires",
-  "refubicacion": "Esquina",
-  "estrellas": 3,
-  "TipoDeCartel": "Cartel de Pantalla Digitales Indoor",
-  "ClasifiacionCartel": "Cartel de Vallas",
-  "expocision": "Para campañas largas",
-  "trafico": "Entre 10000 y 20000 personas",
-  "medidasCartelAlto": "4",
-  "medidasCartelAncho": "2",
-  "costo": "20.000"
- },
- {
-  "id": 3,
-  "imagen": "imagen-1579213498135.jpg",
-  "domiclioCartel": "Avenida Córdoba",
-  "numero": "2929",
-  "entreCalles1": "Córdoba",
-  "entreCalles2": "Dr. Marengo",
-  "barrio": "Microcentro",
-  "provincia": "Capitial Federal",
-  "refubicacion": "Cartel de vallas sobre lado derecho de la dirección de calle",
-  "estrellas": 4,
-  "TipoDeCartel": "Cartel de Pantalla Digitales Indoor",
-  "ClasifiacionCartel": "Cartel de Vallas",
-  "expocision": "Para campañas largas",
-  "trafico": "Hasta 40000 personas",
-  "medidasCartelAlto": "4",
-  "medidasCartelAncho": "2",
-  "costo": "10000"
- },
- {
-  "id": 4,
-  "imagen": "imagen-1579213498135.jpg",
-  "domiclioCartel": "Alberdi ",
-  "numero": "6663",
-  "entreCalles1": "22",
-  "entreCalles2": "caller 3",
-  "barrio": "San Nicolás",
-  "provincia": "Buenos Aires",
-  "refubicacion": "Referencias de mi lugar",
-  "estrellas": 3,
-  "TipoDeCartel": "Cartel de Pantalla Digitales Indoor",
-  "ClasifiacionCartel": "Cartel Frontlights y Backlights",
-  "expocision": "Para campañas cortas",
-  "trafico": "Entre 10000 y 20000 personas",
-  "medidasCartelAlto": "3",
-  "medidasCartelAncho": "10",
-  "costo": "20000"
- },
- {
-  "id": 6,
-  "imagen": "imagen-1579213498135.jpg",
   "domiclioCartel": "Avenida Monroe",
   "numero": "222",
   "entreCalles1": "calle 3º",
@@ -95,7 +19,7 @@
   "costo": "20000"
  },
  {
-  "id": 7,
+  "id": 2,
   "imagen": "imagen-1579214165960.jpg",
   "domiclioCartel": "Avenida Callao",
   "numero": "1350",
@@ -114,7 +38,7 @@
   "costo": "20000"
  },
  {
-  "id": 8,
+  "id": 3,
   "imagen": "imagen-1579214606898.jpg",
   "domiclioCartel": "Avenida Pueyrredon",
   "numero": "1620",
@@ -133,7 +57,7 @@
   "costo": "20000"
  },
  {
-  "id": 9,
+  "id": 4,
   "imagen": "imagen-1579214883758.jpg",
   "domiclioCartel": "Avenida Alvear",
   "numero": "890",
@@ -152,7 +76,7 @@
   "costo": "20000"
  },
  {
-  "id": 10,
+  "id": 5,
   "imagen": "imagen-1579215020453.jpg",
   "domiclioCartel": "Avenida Quintana",
   "numero": "1200",
@@ -171,7 +95,7 @@
   "costo": "15000"
  },
  {
-  "id": 11,
+  "id": 6,
   "imagen": "imagen-1579215138238.jpg",
   "domiclioCartel": "Avenida Cordoba",
   "numero": "1300",
@@ -190,7 +114,7 @@
   "costo": "15000"
  },
  {
-  "id": 12,
+  "id": 7,
   "imagen": "imagen-1579215336602.jpg",
   "domiclioCartel": "Avenida Corrientes",
   "numero": "2300",
@@ -209,7 +133,7 @@
   "costo": "15000"
  },
  {
-  "id": 13,
+  "id": 8,
   "imagen": "imagen-1579215490256.jpg",
   "domiclioCartel": "Avenida Libertador",
   "numero": "3400",
@@ -228,7 +152,7 @@
   "costo": "20000"
  },
  {
-  "id": 14,
+  "id": 9,
   "imagen": "imagen-1579215643041.jpg",
   "domiclioCartel": "Avenida Santa fe",
   "numero": "2200",
@@ -247,7 +171,7 @@
   "costo": "15000"
  },
  {
-  "id": 15,
+  "id": 10,
   "imagen": "imagen-1579215736451.jpg",
   "domiclioCartel": "Avenida 25 de Mayo",
   "numero": "3400",
@@ -266,7 +190,7 @@
   "costo": "30000"
  },
  {
-  "id": 16,
+  "id": 11,
   "imagen": "imagen-1579215909546.jpg",
   "domiclioCartel": "Avenida Belgrano",
   "numero": "1600",
@@ -285,7 +209,7 @@
   "costo": "25000"
  },
  {
-  "id": 17,
+  "id": 12,
   "imagen": "imagen-1579216051843.jpg",
   "domiclioCartel": "Avenida Alem",
   "numero": "3600",
@@ -304,7 +228,7 @@
   "costo": "25000"
  },
  {
-  "id": 18,
+  "id": 13,
   "imagen": "imagen-1579216143909.jpg",
   "domiclioCartel": "Avenida Huergo",
   "numero": "1600",
@@ -321,5 +245,25 @@
   "medidasCartelAlto": "4",
   "medidasCartelAncho": "12",
   "costo": "35000"
+ },
+ {
+  "id": 14,
+  "DatosCompletos":false,
+  "imagen": "imagen-1579264084278.jpg",
+  "domiclioCartel": "Avenida Corrientes",
+  "numero": "23",
+  "entreCalles1": "Alberdi",
+  "entreCalles2": "calle 20",
+  "barrio": "Boulogne ",
+  "provincia": "Buenos Aires",
+  "refubicacion": "Referencias",
+  "estrellas": 2,
+  "TipoDeCartel": "Cartel de Pantalla",
+  "ClasifiacionCartel": "Cartel de Kioscos, Diarios y Florerias",
+  "expocision": "Para campañas cortas",
+  "trafico": "Hasta 10000 personas",
+  "medidasCartelAlto": "3",
+  "medidasCartelAncho": "5",
+  "costo": "10000"
  }
 ]
