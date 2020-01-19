@@ -41,8 +41,7 @@
                         <p><strong>Valor por mes: <%= unProducto.costo %></strong></p>
                         </div>
                     <div class="col-12 col-md-2 listado_btn">
-                    <a href="/productos/editar/<%= unProducto.id %>">
-                       Editar datos</a>
+                    <a href="/products/editar/<%= unProducto.id %>">Editar datos</a>
                 
                     <form action="/productos/borrar/<%= unProducto.id %>?_method=DELETE" method="POST">
                         <button type="submit">Eliminar</button>

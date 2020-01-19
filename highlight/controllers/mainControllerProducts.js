@@ -22,6 +22,7 @@ function productosFiltrados() {
     return productosFiltrados;
 }
 
+
 /* Funcion para guardar el contenido del publicar paso uno del producto */
 function guardarPrimeraParte (nuevoProducto) {
     // busco todos los productos
@@ -92,6 +93,43 @@ function asignarEstrellas(valor) {
 
 }
 
+
+/* Funcion para saber el producto seleccionado */
+function productoSelect (id) {
+    let listaDeProductos = productos();
+    let idProducts = id;
+    let productSelect = listaDeProductos.find(function (productSelect) {
+        return productSelect.id == idProducts
+    });
+    return productSelect;
+  
+}
+
+function productosSinElModificar (id){
+    let listaDeProductos = productos();
+    let idProducts = id;
+    let productosSinElModificar = listaDeProductos.filter(function (productos) {
+        return productos.id != idProducts
+    });
+    return productosSinElModificar;
+}
+
+/* Funcion para guardar las modificaciones*/
+function guardarPrimeraParteModificada(datos) {
+    let listaDeProductos = productos();
+    listaDeProductos.push(datos);
+    // guardo la lista de productos al jsom
+    fs.writeFileSync(ubicacionProductosJSON, JSON.stringify(listaDeProductos, null, ' '));
+
+}
+
+
+
+
+
+
+/*********************************************************************************/
+
 const controller = {
         // get de publicar
         publicar: (req, res) => {
@@ -123,14 +161,46 @@ const controller = {
             guardarSegundaParte(req.body)
             res.redirect('listado');
         },
-    listado: (req, res) => {
-        let listaDeProductos = productosFiltrados();
-        res.render('listaProductos', { listaDeProductos });
-    }, 
-    editar: (req, res) => {
 
-    },
+        listado: (req, res) => {
+            let listaDeProductos = productosFiltrados();
+            res.render('listaProductos', {listaDeProductos});
+        }, 
 
-    }
+        modificar: (req, res) => {
+            let productSelect = productoSelect(req.params.id);
+            res.render("publicar_ubicacion_edit", {productSelect});
+        },
+
+        // Put para modificar un producto
+        ubicacion_modificar: (req, res) => {
+
+            /* Encuentro el producto sellecionado y paso img */
+            let productSelect = productoSelect(req.params.id);
+            let imagen = productSelect.imagen
+    
+            /* Junto información agrego cmapo de duplicado para luego borar en el paso 2 */
+            req.body = {
+                id: req.params.id,
+                imagen: imagen,
+                DatosCompletos: false,
+                duplicado: true,
+                ...req.body,
+            };
+
+            /* Guardo la información paso info y listado de productos*/
+            guardarPrimeraParteModificada(req.body)
+           
+            res.render('publicar_especificaciones_edit', { productSelect })
+          
+        },
+        especificaciones_modificar: (req,res) => {
+            // hay que seguir esto:
+            let productSelect = productoSelect(req.params.id);
+           
+
+        },
+   
+     }
 
 module.exports = controller
