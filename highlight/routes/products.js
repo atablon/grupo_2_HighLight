@@ -34,6 +34,13 @@ router.post('/publicar_especificaciones', upload.any(), mainControllerProducts.e
 /**********  Nuevo LISTADO ***********/
 router.get('/listado', mainControllerProducts.listado);
 
+/********** EDITAR ***********/
+router.get('/editar/:id', upload.any(), mainControllerProducts.modificar);
+router.put('/editar/:id', upload.any(), mainControllerProducts.ubicacion_modificar);
+router.put('/editar/:id', upload.any(), mainControllerProducts.especificaciones_modificar);
+
+
+
 
 module.exports = router;
 
