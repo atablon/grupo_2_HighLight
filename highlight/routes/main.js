@@ -18,13 +18,15 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage })
 
 
-// ************ Controller Require ************
+/************ Controllers Required ************/
+
 const mainController = require('../controllers/mainController');
 const mainControllerPublicar = require('../controllers/mainControllerPublicar');
 const mainControllerDetalle = require('../controllers/mainControllerDetalle');
 
 /* para el nuevo publicar por pasos */
 const mainControllerPublicarPasos = require('../controllers/mainControllerProducts');
+const usersConstroller = require('../controllers/usersController');
 
 
 /* GET - home page. */
@@ -32,7 +34,6 @@ router.get('/', mainController.root);
 router.get('/carrito', mainController.root_carrito);
 router.get('/resultado',mainController.root_resultado);
 router.get('/ingresar', mainController.ingresar);
-router.get('/registrar', mainController.registrar);
 router.get('/detalle', mainControllerDetalle.detalle);
 
 router.get('/products/create', mainControllerPublicar.crear);
