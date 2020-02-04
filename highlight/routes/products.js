@@ -37,7 +37,7 @@ router.get('/listado', mainControllerProducts.listado);
 /********** EDITAR ***********/
 router.get('/editar/:id', upload.any(), mainControllerProducts.modificar);
 router.put('/editar/:id', upload.any(), mainControllerProducts.ubicacion_modificar);
-router.put('/editar/:id', upload.any(), mainControllerProducts.especificaciones_modificar);
+router.put('/editar/especificaciones/:id', upload.any(), mainControllerProducts.especificaciones_modificar);
 
 
 

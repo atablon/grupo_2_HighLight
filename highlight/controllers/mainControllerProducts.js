@@ -59,10 +59,10 @@ function guardarSegundaParte(datosPasoDos) {
     // busco todos los productos
     let listaDeProductos = productos();
     let ultimoProducto = listaDeProductos.pop();
+    // borro la propiedad de datos completos
     delete ultimoProducto['DatosCompletos']
 
-    // Estoy creando el nuevo obejto agregando las nuevas propiedades. 
-    // Esto hay que revisarlo porque seguro hay algo mejor. 
+    // Estoy creando el nuevo obejto agregando las nuevas propiedades.  
     ultimoProducto = {
         ...ultimoProducto,
         ...datosPasoDos
@@ -114,6 +114,7 @@ function productosSinElModificar (id){
     return productosSinElModificar;
 }
 
+
 /* Funcion para guardar las modificaciones*/
 function guardarPrimeraParteModificada(datos) {
     let listaDeProductos = productos();
@@ -123,6 +124,29 @@ function guardarPrimeraParteModificada(datos) {
 
 }
 
+function guardarSeguntaParteModificada(datosPasoDos) {
+    // busco todos los productos
+    let listaDeProductos = productos();
+    let ultimoProducto = listaDeProductos.pop();
+    // borro la propiedad de datos completos
+    delete ultimoProducto['DatosCompletos']
+
+    let listaNueva = listaDeProductos.filter(function (producto) {
+        return producto.duplicado != true 
+    });
+
+
+    // Estoy creando el nuevo obejto agregando las nuevas propiedades.  
+    ultimoProducto = {
+        ...ultimoProducto,
+        ...datosPasoDos
+    }
+
+    listaNueva.push(ultimoProducto);
+
+    // guardo la lista de productos al jsom
+    fs.writeFileSync(ubicacionProductosJSON, JSON.stringify(listaNueva, null, ' '));
+}
 
 
 
@@ -179,7 +203,7 @@ const controller = {
             let productSelect = productoSelect(req.params.id);
             let imagen = productSelect.imagen
     
-            /* Junto información agrego cmapo de duplicado para luego borar en el paso 2 */
+            /* Junto información agrego campo de duplicado para luego borar en el paso 2 */
             req.body = {
                 id: req.params.id,
                 imagen: imagen,
@@ -195,10 +219,14 @@ const controller = {
           
         },
         especificaciones_modificar: (req,res) => {
-            // hay que seguir esto:
-            let productSelect = productoSelect(req.params.id);
-           
 
+            req.body = {
+                estrellas: asignarEstrellas(req.body.trafico),
+                ...req.body,
+            };
+            guardarSeguntaParteModificada(req.body)
+           
+            res.send("Hola");
         },
    
      }

@@ -7,69 +7,68 @@
 
         <div class="box-view">
             <div class="box-container-view ">
-                <form action="/products/publicar_especificaciones/<%= productSelect.id %>?_method=PUT" method="POST" class="ui-form" enctype="multipart/form-data">
+                <form action="/products/editar/especificaciones/<%= productSelect.id %>?_method=PUT" method="POST" class="ui-form" enctype="multipart/form-data">
                    
                 <p class="titulo-content margin">Especificaciones</p>
             <p class="form-content">
             <label for="tipoCartel">Tipo de cartel:</label>
                             <select name="TipoDeCartel" id="tipoCartel" required>
-                                    <option value="Cartel Led"> Cartel Led </option>
-                                    <option value="Cartel de Pantalla">Cartel de Pantalla Led</option>
-                                    <option value="Cartel de Pantalla Digitales Indoor">Cartel de Pantalla Led Digitales Indoor</option>
-                                    <option value="Cartel de Ploteo"> Cartel de Ploteo </option>
+                                    <option value="Cartel Led" <%=("Cartel Led" == productSelect.tipoCartel) ? "selected" : ""%>> Cartel Led </option>
+                                    <option value="Cartel de Pantalla" <%=("Cartel de Pantalla" == productSelect.tipoCartel) ? "selected" : ""%>>Cartel de Pantalla Led</option>
+                                    <option value="Cartel de Pantalla Digitales Indoor" <%=("Cartel de Pantalla Digitales Indoor" == productSelect.tipoCartel) ? "selected" : ""%>>Cartel de Pantalla Led Digitales Indoor</option>
+                                    <option value="Cartel de Ploteo"<%=("Cartel de Ploteo" == productSelect.tipoCartel) ? "selected" : ""%>> Cartel de Ploteo </option>
                                 </select>
                                 
 
                         </p>
                         <p class="form-content">
                             <label for="ClasifiacionCarte">Clasificación: </label>
-                            <select name="ClasifiacionCartel" requiredrequired>
-                                <option value="" selected disabled hidden> Seleccionar </option>
-                                <option value="Cartel de Refugios"> Cartel de Refugios</option>
-                                <option value="Cartel de Kioscos, Diarios y Florerias">Cartel de Kioscos, Diarios y Florerias</option>
-                                <option value="Cartel de Vallas">Cartel de Vallas </option>
-                                <option value="Cartel Frontlights y Backlights">Frontlights y Backlights</option>
-                                <option value="Cartel de Medianera">Cartel de Medianeras</option>
+                            <select name="ClasifiacionCartel"    required>
+                 
+                                <option value="Cartel de Refugios" <%=("Cartel de Refugios" == productSelect.ClasifiacionCartel) ? "selected" : ""%>> Cartel de Refugios</option>
+                                <option value="Cartel de Kioscos, Diarios y Florerias" <%=("Cartel de Kioscos, Diarios y Florerias" == productSelect.ClasifiacionCartel) ? "selected" : ""%>>Cartel de Kioscos, Diarios y Florerias</option>
+                                <option value="Cartel de Vallas" <%=("Cartel de Vallas" == productSelect.ClasifiacionCartel) ? "selected" : ""%>>Cartel de Vallas </option>
+                                <option value="Cartel Frontlights y Backlights" <%=("Cartel Frontlights y Backlights" == productSelect.ClasifiacionCartel) ? "selected" : ""%>>Frontlights y Backlights</option>
+                                <option value="Cartel de Medianera"<%=("Cartel de Medianera" == productSelect.ClasifiacionCartel) ? "selected" : ""%> >Cartel de Medianeras</option>
                             </select>
                         </p>
                         <p class="form-content">
                             <label for="expocision">Tipo de exposición:</label>
                             <select name="expocision" id="expocision" required>
-                                <option value="" selected disabled hidden> Seleccionar </option>
-                                <option value="Para campañas cortas"> Para campañas cortas </option>
-                                <option value="Para campañas largas">Para campañas largas</option>
+
+                                <option value="Para campañas cortas" <%=("Para campañas cortas" == productSelect.expocision) ? "selected" : ""%>> Para campañas cortas </option>
+                                <option value="Para campañas largas" <%=("Para campañas largas" == productSelect.expocision) ? "selected" : ""%>>Para campañas largas</option>
                             </select>
                         </p>
                         <p class="form-content">
                             <label for="trafico">Tráfico apróx. por día:</label>
                             <select name="trafico" id="trafico" required>
-                                <option value="" selected disabled hidden> Seleccionar </option>
-                                <option value="Hasta 3000 personas">Hasta 3000 personas </option>
-                                <option value="Hasta 10000 personas">Hasta 10000 personas</option>
-                                <option value="Entre 10000 y 20000 personas">Entre 10000 y 20000 personas</option>
-                                <option value="Más de 20000 personas">Más de 20000 personas</option>
+                                <option value="Hasta 3000 personas" <%=("Hasta 3000 personas" == productSelect.trafico) ? "selected" : ""%>>Hasta 3000 personas </option>
+                                <option value="Hasta 10000 personas"<%=("Hasta 10000 personas" == productSelect.trafico) ? "selected" : ""%>>Hasta 10000 personas</option>
+                                <option value="Entre 10000 y 20000 personas"<%=("Entre 10000 y 20000 personas" == productSelect.trafico) ? "selected" : ""%>>Entre 10000 y 20000 personas</option>
+                                <option value="Más de 20000 personas" <%=("Más de 20000 personas" == productSelect.trafico) ? "selected" : ""%>>Más de 20000 personas</option>
                             </select>
                         </p>
                         <p class="titulo-content margin">
                             Medidas apróximadas
                         </p>
                         <p class="form-content input_50">
-                            <label for="medidasCartelAlto">Alto: </label>
-                            <input class="small" required placeholder="6 metros" type="number" name="medidasCartelAlto">
+                            <label for="medidasCartelAlto">Alto (en metros): </label>
+                            <input class="small" required value="<%= productSelect.medidasCartelAlto%>" type="number" name="medidasCartelAlto">
                         </p>
                         <p class="form-content input_50">
-                            <label for="medidasCartelAncho">Ancho:</label>
-                            <input class="small" required placeholder="8 metros" type="number" name="medidasCartelAncho">
+                            <label for="medidasCartelAncho">Ancho (en metros): </label>
+                            <input class="small" required value="<%= productSelect.medidasCartelAncho%>" type="number" name="medidasCartelAncho">
                         </p>
                         <p class="titulo-content margin">Valor de alquiler por mes</p>
                         <p class="form-content input_50">
                             <label for="costo">Valor: </label>
-                            <input class="small" required placeholder="10000" type="number" name="costo" id="costo">
+                            <input class="small" required  value="<%= productSelect.costo %>" type="number" name="costo" id="costo">
                         </p>
 
 
                         <div class="box-buttom ">
-                            <button type="submit" class="btn">Publicar</button>
+                            <button type="submit" class="btn">Modificar datos</button>
                         </div>
                         </form>
 
