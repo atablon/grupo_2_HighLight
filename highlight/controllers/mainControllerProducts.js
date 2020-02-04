@@ -226,7 +226,8 @@ const controller = {
             };
             guardarSeguntaParteModificada(req.body)
            
-            res.send("Hola");
+            let listaDeProductos = productosFiltrados();
+            res.render('listaProductos', { listaDeProductos });
         },
    
      }
