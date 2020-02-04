@@ -131,7 +131,8 @@ const usersController = {
 				}
 
 				// Redireccionamos al visitante a la home, editar el html
-				return res.send('INGRESO CORRECTAMENTE ' + user.nombre );
+				return res.redirect('/users/perfil');
+				//res.send('INGRESO CORRECTAMENTE ' + user.nombre )
 			} else {
 				res.send('Credenciales inválidas');
 			}
@@ -139,7 +140,12 @@ const usersController = {
 			res.send('No hay usuarios registrados con ese email');
 		}
 
-    },
+	},
+	showProfile: (req,res)=>{
+		
+		let user=getUserById(req.session.userId);
+		res.render('perfil',{user}); 
+	},
 
 }
 

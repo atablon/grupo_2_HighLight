@@ -1,0 +1,36 @@
+<%- include('partials/head.ejs') %>
+<%- include('partials/header_home.ejs') %>
+
+<h1> Hola <%= user.nombre%> </h1>
+
+
+    <!-- Container -->
+    <!-- AGREGAR ESTILOS -->
+	<div class="container" style="margin-top: 40px;">
+		<div class="row">
+			<div class="col-md-3">
+				<img src="/images/imagenesperfil/<%=user.fotoPerfil%>" width="100%"> 
+            </div>
+            <div class="col-md-9">
+                <p> Nombre de usuario: <%= user.nombre %></p>
+                <p> Tipo de de usuario: <%= user.tipoUsuario %></p>
+                <p> Empresa: <%= user.empresa %></p>
+                <p> Rubro: <%= user.rubro %></p>
+                <p> Correo electronico: <%= user.email %></p>
+                <p> Telefono: <%= user.tel %></p>
+            </div>
+		</div>
+	</div>
+	<!-- //Container -->
+
+<%- include('partials/footer.ejs') %> 
+
+<!--   "id": 1,
+  "nombre": "Alberto Jorge Tablon",
+  "tipoUsuario": "Publicar",
+  "empresa": "GCBA",
+  "rubro": "Obra publica",
+  "tel": "4698103281",
+  "email": "a.jtablon@gmail.com",
+  "fotoPerfil": "foto_perfil-1579575508955.jpg",
+  "pass": "$2b$10$2/wKV3ZPXkLQdsA9pHfrz.vGR1JoSa0Kwj2R7pGjlvuAzAZJM3GE2" -->

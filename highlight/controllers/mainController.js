@@ -1,8 +1,22 @@
 const fs = require('fs');
 const path = require('path');
 
-// // ************ Function to Read an HTML File ************
 
+// Constants
+const userFilePath = path.join(__dirname, '../data/users.json');
+
+// Helper Functions
+function getAllUsers() {
+	let usersFileContent = fs.readFileSync(userFilePath, 'utf-8');
+	let finalUsers = usersFileContent == '' ? [] : JSON.parse(usersFileContent);
+	return finalUsers;
+}
+
+function getUserById(id) {
+	let allUsers = getAllUsers();
+	let userById = allUsers.find(oneUser => oneUser.id == id);
+	return userById;
+}
 
 const controller = {
 	root: (req, res) => {
@@ -11,8 +25,20 @@ const controller = {
 		
 		let filePath = path.join(__dirname, '../data/productos_creados.json');
 		let cartelesDb = JSON.parse(fs.readFileSync(filePath,{encoding:'utf-8'}));
+		let user = [];
+		
 
-		res.render("index",{cartelesDb}); // Hago el render y envio los datos de los carteles que se van a plotear en la pantalla principal
+		console.log(req.session.userId);// para debug
+		
+		if(req.session.userId!= undefined){
+			user = getUserById(req.session.userId);
+			console.log(user);
+		}else{
+			console.log('NO HAY PERSONA LOGUEADA');
+			
+		}
+		res.render("index",{cartelesDb, user}); 
+	
 	},
 	root_carrito: (req, res) => {
 		res.render('carrito');

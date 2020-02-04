@@ -97,7 +97,10 @@ button.btn:focus {
   border-bottom: 1px solid #e5e5e5;
   background-color: #ffffff;
 }
-
+/* .profile_bar{
+  border: solid;
+  border-width: thin;
+} */
 .header_row {
   align-items: center;
 
