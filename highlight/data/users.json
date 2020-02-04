@@ -1,25 +1,13 @@
 [
-    {
-        "id": 1,
-        "name": "Alicia Garrido",
-        "registro": "Alquilar",
-        "empresa": "Jhonson",
-        "rubro": "quimica y perfumeria",
-        "tel": "83399929",
-        "mail": "alicia@jhonson.com",
-        "pass": "XXX",
-        "pass2": "XXX"
-    },
-    {
-        "id": 2,
-        "name": "Pablo Alejando Rodriguez",
-        "registro": "Publicar",
-        "empresa": "Almirente",
-        "rubro": "publicaciodor",
-        "tel": "188199282",
-        "mail": "pablorodriguez@almirente.com",
-        "pass": "XXX",
-        "pass2": "XXX"
-    }
-   
+ {
+  "id": 1,
+  "nombre": "Alberto Jorge Tablon",
+  "tipoUsuario": "Publicar",
+  "empresa": "GCBA",
+  "rubro": "Obra publica",
+  "tel": "4698103281",
+  "email": "a.jtablon@gmail.com",
+  "fotoPerfil": "foto_perfil-1579575508955.jpg",
+  "pass": "$2b$10$2/wKV3ZPXkLQdsA9pHfrz.vGR1JoSa0Kwj2R7pGjlvuAzAZJM3GE2"
+ }
 ]

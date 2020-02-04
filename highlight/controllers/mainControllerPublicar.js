@@ -6,7 +6,7 @@ const ubicacionProductosJSON = path.join(__dirname, '../data/productos_creados.j
 
 function traerData () {
     const contenidoProductosJSON = fs.readFileSync(ubicacionProductosJSON, 'utf-8'); // leo el json
-    let productos = JSON.parse(contenidoProductosJSON);// comvierto en array
+    let productos = JSON.parse(contenidoProductosJSON);// convierto en array
 
     /* ordeno por el elemento id de cada obejto del array*/
     productos.sort(function (a, b) {

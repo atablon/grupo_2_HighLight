@@ -5,6 +5,8 @@ const express = require('express');
 const logger = require('morgan');
 const path = require('path');
 const methodOverride = require('method-override');
+const session = require('express-session');
+
 
 // ************ express() - (don't touch) ************
 const app = express();
@@ -16,6 +18,12 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(cookieParser());
 
+app.use(session({
+  secret: 'register-login',
+  resave: false,
+  saveUninitialized: true
+}));
+
 // ************ Template Engine - (don't touch) ************
 app.set('view engine', 'ejs');
 
@@ -23,13 +31,24 @@ app.set('view engine', 'ejs');
 app.use(methodOverride('_method'));
 
 // ************ WRITE YOUR CODE FROM HERE ************
-// ************ Route System require and use() ************
-const mainRouter = require('./routes/main');
-app.use('/', mainRouter);
 
+// ************ Route System require and use() ************
+
+// ******* Paquetes Requeridos ********
+
+const mainRouter = require('./routes/main');
 
 const productsRouter = require('./routes/products');
+
+const usersRoutes = require('./routes/usersRoutes');
+
+// **** Rutas a usar ****
+
+app.use('/', mainRouter);
+
 app.use('/products', productsRouter);
+
+app.use('/users', usersRoutes);
 
 
 
