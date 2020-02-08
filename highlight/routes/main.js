@@ -18,15 +18,9 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage })
 
 
-/************ Controllers Required ************/
-
+// ************ Controller Require ************
 const mainController = require('../controllers/mainController');
-const mainControllerPublicar = require('../controllers/mainControllerPublicar');
 const mainControllerDetalle = require('../controllers/mainControllerDetalle');
-
-/* para el nuevo publicar por pasos */
-const mainControllerPublicarPasos = require('../controllers/mainControllerProducts');
-const usersConstroller = require('../controllers/usersController');
 
 
 /* GET - home page. */
@@ -34,9 +28,10 @@ router.get('/', mainController.root);
 router.get('/carrito', mainController.root_carrito);
 router.get('/resultado',mainController.root_resultado);
 router.get('/ingresar', mainController.ingresar);
+router.get('/registrar', mainController.registrar);
 router.get('/detalle', mainControllerDetalle.detalle);
 
-router.get('/products/create', mainControllerPublicar.crear);
+
 
 
 
@@ -45,18 +40,6 @@ router.get('/products/create', mainControllerPublicar.crear);
 
 /* Get para ser redirigido a la pagina de detalle */
 router.get('/detalle/:CartelId',mainControllerDetalle.detalle)
-
-/* POST - para guardar un producto nuevo. */ 
-router.post('/products/create',upload.any(), mainControllerPublicar.crearcartel);/* si es una sola imagen poner .single(nombrename del input. )
-
-/* DELETE - Borrar un Producto en DB */
-router.delete('/productos/borrar/:id', mainControllerPublicar.borrarCartel);
-
-
-/* Editar un producto */
-// en la ruta agregamos upload.any para llamar a middleware de imag. 
-router.get('/productos/editar/:id', mainControllerPublicar.seleccionarCartel);
-router.put('/editar/cartel/:id', upload.any(),mainControllerPublicar.modificar);
 
 
 module.exports = router;
