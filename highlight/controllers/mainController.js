@@ -26,7 +26,7 @@ const controller = {
 		let filePath = path.join(__dirname, '../data/productos_creados.json');
 		let cartelesDb = JSON.parse(fs.readFileSync(filePath,{encoding:'utf-8'}));
 		let user = [];
-		
+		//
 
 		console.log(req.session.userId);// para debug
 		
