@@ -9,5 +9,16 @@
   "email": "betun54@gmail.com",
   "fotoPerfil": "foto_perfil-1580840043326.jpg",
   "pass": "$2b$10$p0OVRoOxUu/cCFkdNrig3egcxntSsmbrJBs1LEMo79nKHEt0OLoFu"
+ },
+ {
+  "id": 2,
+  "nombre": "patricia",
+  "tipoUsuario": "Alquilar",
+  "empresa": "Palmera S.A ",
+  "rubro": "Importación ",
+  "tel": "1157601816",
+  "email": "patomartins@gmail.com",
+  "fotoPerfil": "foto_perfil-1580859676854.jpeg",
+  "pass": "$2b$10$Aa2UJgM6JDoydJUZambST.0iObqt66rizXVCI08IMXhTiH6B3JsvS"
  }
 ]

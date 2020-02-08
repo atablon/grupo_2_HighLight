@@ -26,20 +26,19 @@ const mainControllerProducts = require('../controllers/mainControllerProducts');
 router.get('/publicar', mainControllerProducts.publicar);
 
 /*POST Para guardar información del PASO UNO de publicar */
-router.post('/publicar_ubicacion', upload.any(), mainControllerProducts.ubicacion);
+router.post('/publicar_ubicacion', upload.any(), mainControllerProducts.publicarProducto);
 
-/*POST Para guardar información del PASO DOS de publicar */
-router.post('/publicar_especificaciones', upload.any(), mainControllerProducts.especificaciones);
 
 /**********  Nuevo LISTADO ***********/
 router.get('/listado', mainControllerProducts.listado);
 
 /********** EDITAR ***********/
 router.get('/editar/:id', upload.any(), mainControllerProducts.modificar);
-router.put('/editar/:id', upload.any(), mainControllerProducts.ubicacion_modificar);
-router.put('/editar/especificaciones/:id', upload.any(), mainControllerProducts.especificaciones_modificar);
+router.put('/editar/:id', upload.any(), mainControllerProducts.modificarProducto);
 
 
+/********** ELIMINAR ***********/
+router.delete('/borrar/:id', mainControllerProducts.eliminar);
 
 
 module.exports = router;

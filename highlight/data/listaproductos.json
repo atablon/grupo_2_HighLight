@@ -228,23 +228,22 @@
   "costo": "25000"
  },
  {
-  "id": "1",
-  "imagen": "imagen-1579213498135.jpg",
-  "duplicado": true,
-  "domiclioCartel": "Avenida Monroe",
-  "numero": "222",
-  "entreCalles1": "calle 3º",
-  "entreCalles2": "Dr. Marengo",
-  "barrio": "San Nicolás",
-  "provincia": "Buenos Aires",
-  "refubicacion": " referencias",
+  "id": 13,
+  "imagen": "imagen-1580861935486.png",
   "estrellas": 3,
-  "TipoDeCartel": "Cartel Led",
-  "ClasifiacionCartel": "Cartel de Vallas",
+  "domiclioCartel": "Alberdi 8939",
+  "numero": "8383",
+  "entreCalles1": "Paraná",
+  "entreCalles2": "marengo",
+  "barrio": "San Nicolás",
+  "provincia": "Capital Federal",
+  "refubicacion": "222",
+  "TipoDeCartel": "Cartel de Pantalla Digitales Indoor",
+  "ClasifiacionCartel": "Cartel de Kioscos, Diarios y Florerias",
   "expocision": "Para campañas largas",
   "trafico": "Entre 10000 y 20000 personas",
   "medidasCartelAlto": "3",
-  "medidasCartelAncho": "4",
-  "costo": "20000"
+  "medidasCartelAncho": "3",
+  "costo": "10000"
  }
 ]

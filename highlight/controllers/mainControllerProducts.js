@@ -31,7 +31,6 @@ function guardarPrimeraParte (nuevoProducto) {
     // genero el nuevo producto + id
     nuevoProducto = {
         id: generarId(),
-        DatosCompletos: false,
         ...nuevoProducto
     };
     // guardo el nuevo prouducto
@@ -54,24 +53,7 @@ function generarId() {
     return ultimoProducto.id + 1;
     }
 
-/* Funcion para guardar el contenido del publicar paso DOS del producto */
-function guardarSegundaParte(datosPasoDos) {
-    // busco todos los productos
-    let listaDeProductos = productos();
-    let ultimoProducto = listaDeProductos.pop();
-    // borro la propiedad de datos completos
-    delete ultimoProducto['DatosCompletos']
 
-    // Estoy creando el nuevo obejto agregando las nuevas propiedades.  
-    ultimoProducto = {
-        ...ultimoProducto,
-        ...datosPasoDos
-    }
-
-    listaDeProductos.push(ultimoProducto);
-    // guardo la lista de productos al jsom
-    fs.writeFileSync(ubicacionProductosJSON, JSON.stringify(listaDeProductos, null, ' '));
-    }
 
 /* Funcion para asignar valor de estrellas */
 function asignarEstrellas(valor) {
@@ -105,14 +87,6 @@ function productoSelect (id) {
   
 }
 
-function productosSinElModificar (id){
-    let listaDeProductos = productos();
-    let idProducts = id;
-    let productosSinElModificar = listaDeProductos.filter(function (productos) {
-        return productos.id != idProducts
-    });
-    return productosSinElModificar;
-}
 
 
 /* Funcion para guardar las modificaciones*/
@@ -121,32 +95,8 @@ function guardarPrimeraParteModificada(datos) {
     listaDeProductos.push(datos);
     // guardo la lista de productos al jsom
     fs.writeFileSync(ubicacionProductosJSON, JSON.stringify(listaDeProductos, null, ' '));
-
 }
 
-function guardarSeguntaParteModificada(datosPasoDos) {
-    // busco todos los productos
-    let listaDeProductos = productos();
-    let ultimoProducto = listaDeProductos.pop();
-    // borro la propiedad de datos completos
-    delete ultimoProducto['DatosCompletos']
-
-    let listaNueva = listaDeProductos.filter(function (producto) {
-        return producto.duplicado != true 
-    });
-
-
-    // Estoy creando el nuevo obejto agregando las nuevas propiedades.  
-    ultimoProducto = {
-        ...ultimoProducto,
-        ...datosPasoDos
-    }
-
-    listaNueva.push(ultimoProducto);
-
-    // guardo la lista de productos al jsom
-    fs.writeFileSync(ubicacionProductosJSON, JSON.stringify(listaNueva, null, ' '));
-}
 
 
 
@@ -160,31 +110,19 @@ const controller = {
         res.render('publicar_ubicacion');
         },
 
-
         // Post de crear cartel
-        ubicacion: (req, res) => {
+        publicarProducto: (req, res) => {
             // guardar el producto
             let images = req.files[0].filename;
             req.body = {
                 imagen: images,
-                ...req.body,
-            };
-            guardarPrimeraParte(req.body)
-            res.render('publicar_especificaciones');
-        },
-
-
-        // Post de crear cartel paso 2.
-        especificaciones: (req, res) => {
-
-            // guardar más datos al producto y calcular valor para las estrellas
-            req.body = {
                 estrellas: asignarEstrellas(req.body.trafico),
                 ...req.body,
             };
-            guardarSegundaParte(req.body)
-            res.redirect('listado');
+            guardarPrimeraParte(req.body)
+            res.redirect('listado');    
         },
+
 
         listado: (req, res) => {
             let listaDeProductos = productosFiltrados();
@@ -197,7 +135,7 @@ const controller = {
         },
 
         // Put para modificar un producto
-        ubicacion_modificar: (req, res) => {
+        modificarProducto: (req, res) => {
 
             /* Encuentro el producto sellecionado y paso img */
             let productSelect = productoSelect(req.params.id);
@@ -207,29 +145,31 @@ const controller = {
             req.body = {
                 id: req.params.id,
                 imagen: imagen,
-                DatosCompletos: false,
-                duplicado: true,
                 ...req.body,
             };
 
             /* Guardo la información paso info y listado de productos*/
             guardarPrimeraParteModificada(req.body)
-           
+        
             res.render('publicar_especificaciones_edit', { productSelect })
           
-        },
-        especificaciones_modificar: (req,res) => {
+        }, 
 
-            req.body = {
-                estrellas: asignarEstrellas(req.body.trafico),
-                ...req.body,
-            };
-            guardarSeguntaParteModificada(req.body)
-           
-            let listaDeProductos = productosFiltrados();
-            res.render('listaProductos', { listaDeProductos });
-        },
-   
+            eliminar: (req, res) => {
+                // TERMINAR PATO    
+             //   let productosSinElQueBorramos = productos.filter(function (unProducto) {
+              //      return unProducto.id != req.params.id;
+               // })
+                // guardo el array con los productos finales
+
+                // Convierto el arrayDeProductos a JSON
+              //  let contenidoAGuardar = JSON.stringify(productosSinElQueBorramos, null, ' ');
+
+            
+                let listaDeProductos = productosFiltrados();
+                res.render('listaProductos', { listaDeProductos });
+            }, 
+        
      }
 
 module.exports = controller
