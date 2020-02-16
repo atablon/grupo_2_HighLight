@@ -8,7 +8,6 @@ const sequelize = db.sequelize;
 /*********************************************************************************/
 
 const controller = {
-    // get de publicar
 
     index: (req, res) => {
         // sequelize
