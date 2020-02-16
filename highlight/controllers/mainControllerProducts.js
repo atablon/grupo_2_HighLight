@@ -1,6 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
+
+//const db = require("../database/models")
+//const sequelize = db.sequelize;
+
 /* ubicacion del archivo producto json*/
 const ubicacionProductosJSON = path.join(__dirname, '../data/listaproductos.json');
 
@@ -107,7 +111,7 @@ function guardarPrimeraParteModificada(datos) {
 const controller = {
         // get de publicar
         publicar: (req, res) => {
-        res.render('publicar_ubicacion');
+        res.render('publish_sign');
         },
 
         // Post de crear cartel
@@ -126,16 +130,16 @@ const controller = {
 
         listado: (req, res) => {
             let listaDeProductos = productosFiltrados();
-            res.render('listaProductos', {listaDeProductos});
+            res.render('list_sign', {listaDeProductos});
         }, 
 
-        modificar: (req, res) => {
+        edicion: (req, res) => {
             let productSelect = productoSelect(req.params.id);
-            res.render("publicar_ubicacion_edit", {productSelect});
+            res.render("edit_sign", {productSelect});
         },
 
         // Put para modificar un producto
-        modificarProducto: (req, res) => {
+       guardarEdicion: (req, res) => {
 
             /* Encuentro el producto sellecionado y paso img */
             let productSelect = productoSelect(req.params.id);
@@ -150,8 +154,8 @@ const controller = {
 
             /* Guardo la información paso info y listado de productos*/
             guardarPrimeraParteModificada(req.body)
-        
-            res.render('publicar_especificaciones_edit', { productSelect })
+            let listaDeProductos = productosFiltrados();
+            res.render('list_sign', { listaDeProductos });
           
         }, 
 
@@ -169,7 +173,8 @@ const controller = {
                 let listaDeProductos = productosFiltrados();
                 res.render('listaProductos', { listaDeProductos });
             }, 
-        
+
+       
      }
 
 module.exports = controller

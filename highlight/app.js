@@ -44,13 +44,13 @@ const productsRouter = require('./routes/products');
 
 const usersRoutes = require('./routes/usersRoutes');
 
+
+
 // **** Rutas a usar ****
-
 app.use('/', mainRouter);
-
 app.use('/products', productsRouter);
-
 app.use('/users', usersRoutes);
+
 
 
 

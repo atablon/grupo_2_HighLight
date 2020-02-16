@@ -33,12 +33,13 @@ router.post('/publicar_ubicacion', upload.any(), mainControllerProducts.publicar
 router.get('/listado', mainControllerProducts.listado);
 
 /********** EDITAR ***********/
-router.get('/editar/:id', upload.any(), mainControllerProducts.modificar);
-router.put('/editar/:id', upload.any(), mainControllerProducts.modificarProducto);
+router.get('/editar/:id', upload.any(), mainControllerProducts.edicion);
+router.put('/editar/:id', upload.any(), mainControllerProducts.guardarEdicion);
 
 
 /********** ELIMINAR ***********/
 router.delete('/borrar/:id', mainControllerProducts.eliminar);
+
 
 
 module.exports = router;
