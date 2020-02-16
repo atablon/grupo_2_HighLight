@@ -408,5 +408,23 @@
   "medidasCartelAlto": "22",
   "medidasCartelAncho": "2",
   "costo": "100000000"
+ },
+ {
+  "id": "14",
+  "imagen": "imagen-1581833311316.png",
+  "domiclioCartel": "Alberdi 8939",
+  "numero": "8282",
+  "entreCalles1": "calle 3º",
+  "entreCalles2": "Dr. Marengo",
+  "barrio": "San Nicolás",
+  "provincia": "Buenos Aires",
+  "refubicacion": " dsdasdasdasdsa",
+  "TipoDeCartel": "Cartel Led",
+  "ClasifiacionCartel": "Cartel de Vallas",
+  "expocision": "Para campañas largas",
+  "trafico": "Entre 10000 y 20000 personas",
+  "medidasCartelAlto": "22",
+  "medidasCartelAncho": "2",
+  "costo": "100000000"
  }
 ]
