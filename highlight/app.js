@@ -39,17 +39,17 @@ app.use(methodOverride('_method'));
 // ******* Paquetes Requeridos ********
 
 const mainRouter = require('./routes/main');
-
-const productsRouter = require('./routes/products');
-
+const productsRouter = require('./routes/productsRoutes');
 const usersRoutes = require('./routes/usersRoutes');
-
+// con base de datos
+const signRoutes = require('./routes/signRoutes');
 
 
 // **** Rutas a usar ****
 app.use('/', mainRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRoutes);
+app.use('/sign', signRoutes);
 
 
 

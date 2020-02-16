@@ -19,26 +19,26 @@ var upload = multer({ storage: storage })
 
 
 // ************ Controller Require ************
-const mainControllerProducts = require('../controllers/mainControllerProducts');
+const productsController = require('../controllers/productsController');
 
 
 /**********  Nuevo PUBLICAR ***********/  
-router.get('/publicar', mainControllerProducts.publicar);
+router.get('/publicar', productsController.publicar);
 
 /*POST Para guardar información del PASO UNO de publicar */
-router.post('/publicar_ubicacion', upload.any(), mainControllerProducts.publicarProducto);
+router.post('/publicar_ubicacion', upload.any(), productsController.publicarProducto);
 
 
 /**********  Nuevo LISTADO ***********/
-router.get('/listado', mainControllerProducts.listado);
+router.get('/listado', productsController.listado);
 
 /********** EDITAR ***********/
-router.get('/editar/:id', upload.any(), mainControllerProducts.edicion);
-router.put('/editar/:id', upload.any(), mainControllerProducts.guardarEdicion);
+router.get('/editar/:id', upload.any(), productsController.edicion);
+router.put('/editar/:id', upload.any(), productsController.guardarEdicion);
 
 
 /********** ELIMINAR ***********/
-router.delete('/borrar/:id', mainControllerProducts.eliminar);
+router.delete('/borrar/:id', productsController.eliminar);
 
 
 
