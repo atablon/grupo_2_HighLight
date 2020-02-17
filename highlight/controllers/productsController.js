@@ -41,7 +41,8 @@ function guardarPrimeraParte (nuevoProducto) {
     listaDeProductos.push(nuevoProducto);
     // guardo la lista de productos al json
     fs.writeFileSync(ubicacionProductosJSON, JSON.stringify(listaDeProductos, null, ' '));
-    }
+
+}
 
 
 /* Funcion para generar ID*/
