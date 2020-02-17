@@ -26,4 +26,7 @@ const signController = require('../controllers/signController');
 /********   **  Nuevo PUBLICAR ***********/
 router.get('/index', signController.index);
 
+router.get('/publish', signController.publish);
+
+
 module.exports = router;
