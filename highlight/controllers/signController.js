@@ -1,7 +1,6 @@
 
 const fs = require('fs');
 const path = require('path');
-
 const db = require("../src/database/models")
 
 
@@ -11,17 +10,16 @@ const db = require("../src/database/models")
 const controller = {
 
     index: (req, res) => {
-        db.tecnología 
+        db.tecnologia 
         .findAll()
         .then(resultados => {
-              res.render(resultados)
+              res.send(resultados)
            })
          .catch(function (error) {
             console.log(error)
            })
          
     }
-
 
 
 }

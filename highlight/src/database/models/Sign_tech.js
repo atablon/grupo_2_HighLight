@@ -2,7 +2,7 @@
 // modelode datos de tabla sings_techs
 module.exports = (sequelize, dataType) => {
 
-  let alias = "tecnología";
+  let alias = "tecnologia";
 
     let col = {
          id: {
@@ -17,8 +17,8 @@ module.exports = (sequelize, dataType) => {
         timestamps: false
     }
 
-  let tecnología = sequelize.define(alias, col, config)
-  return tecnología;
+  let tecnologia = sequelize.define(alias, col, config)
+  return tecnologia;
 
     }
 
