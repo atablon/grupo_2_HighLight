@@ -10,15 +10,16 @@ const sequelize = db.sequelize;
 const controller = {
 
     index: (req, res) => {
-        // sequelize
-        // .query ("SELECT * FROM")
-        // .then(results => {
-        //     res.send (results)
-        // })
-        // .cacth(error => {
-        //     console.log (error)
-        // })
-   //res.render("sign/index")
+           sequelize.query ("SELECT * FROM users")
+           .then(results => {
+               //res.send (results)
+               res.render("sign/index");
+           })
+           .catch(error => {
+               console.log (error);
+           });
+        console.log(db.sequelize);
+        
     },
 
 }
