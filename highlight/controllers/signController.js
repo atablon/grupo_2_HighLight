@@ -1,8 +1,9 @@
 
-const express = require('express');
-const router = express.Router();
+const fs = require('fs');
+const path = require('path');
+
 const db = require("../src/database/models")
-const sequelize = db.sequelize
+
 
 
 /*********************************************************************************/
@@ -10,12 +11,12 @@ const sequelize = db.sequelize
 const controller = {
 
     index: (req, res) => {
-        db.user 
+        db.tecnología 
         .findAll()
         .then(resultados => {
               res.render(resultados)
            })
-       .catch(function (error) {
+         .catch(function (error) {
             console.log(error)
            })
          

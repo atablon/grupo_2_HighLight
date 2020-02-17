@@ -9,8 +9,8 @@ module.exports = (sequelize, dataType) => {
             type: dataType.INTEGER,
             primaryKey: true,
             },
-        name: dataType.STRING,
-       }
+        sign_type: dataType.STRING,
+        }
 
     let config = {
         tableName: "sign_types",

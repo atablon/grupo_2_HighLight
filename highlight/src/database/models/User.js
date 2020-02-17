@@ -10,11 +10,10 @@ module.exports = (sequelize, dataType) => {
             primaryKey: true,
             autoIncrement: true
             },
-            name: dataType.STRING,
-            surname: dataType.STRING,
+            user_name: dataType.STRING,
             email: dataType.STRING,
-            userType: dataType.STRING,
-            password: dataType.STRING,
+            user_type: dataType.STRING,
+            user_password: dataType.STRING,
             profile_picture: dataType.STRING,
             }
 
@@ -24,7 +23,7 @@ module.exports = (sequelize, dataType) => {
         }
 
     let user = sequelize.define(alias, col, config);
-    
+
     return user;
 
 }
