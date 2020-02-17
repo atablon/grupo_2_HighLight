@@ -19,7 +19,16 @@ module.exports = (sequelize, dataType) => {
         timestamps: false
     }
 
-    let order = sequelize.define(alias, col, config)
+
+    let order = sequelize.define(alias, col, config);
+
+    order.associate = (models) => {
+        order.belongsTo(models.user, {
+            as:"user", 
+            foreingKey: "user_id"
+        })
+
+    }
     return order;
 
 }

@@ -10,33 +10,18 @@ const sequelize = db.sequelize
 const controller = {
 
     index: (req, res) => {
-        db.tecnologia 
+        db.user 
         .findAll()
-        .then(results => {
-            res.send(results)
-        })
-        .catch(function(error) {
+        .then(resultados => {
+              res.render(resultados)
+           })
+       .catch(function (error) {
             console.log(error)
-        })
-  
-        
-        //  sequelize.query('SELECT * FROM tecnologia')
-        //   .then(resultados => {
-        //       console.log(resultados)
-        //       res.render("sign/index", { user: resultados } )
+           })
          
-        //    })
-        //    .catch(function (error) {
-        //        console.log(error)
-        //     })
-           // res.render("sign/index")
-       // res.send(console.log(sequ))
-    },
+    }
 
-    publish: (req, res) => {
-        
-        Sign_techs
-    },
+
 
 }
 
