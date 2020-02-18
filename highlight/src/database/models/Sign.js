@@ -4,7 +4,7 @@ module.exports = (sequelize, dataTypes) => {
 
     let cols = {
         id:{
-            type: dataType.INTEGER,
+            type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement:true
         },
@@ -12,7 +12,7 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING
         },
         street_number:{
-            type: dataType.INTEGER
+            type: dataTypes.INTEGER
         },
         street_1:{
             type: dataTypes.STRING
@@ -30,31 +30,31 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING
         },
         star:{
-            type: dataType.INTEGER
+            type: dataTypes.INTEGER
         },
         picture_filename:{
             type: dataTypes.STRING
         },
         tech_id:{
-            type: dataType.INTEGER
+            type: dataTypes.INTEGER
         },
         type_id:{
-            type: dataType.INTEGER
+            type: dataTypes.INTEGER
         },
         height:{
-            type: dataType.DECIMAL
+            type: dataTypes.DECIMAL
         },
         width:{
-            type: dataType.DECIMAL
+            type: dataTypes.DECIMAL
         },
         sight_rate:{
-            type: dataType.DECIMAL
+            type: dataTypes.DECIMAL
         },
         monthly_cost:{
-            type: dataType.DECIMAL
+            type: dataTypes.DECIMAL
         },
         user_id:{
-            type: dataType.INTEGER
+            type: dataTypes.INTEGER
         },
     };
 
@@ -67,7 +67,7 @@ module.exports = (sequelize, dataTypes) => {
 
     Sign.associate = function(models){
         
-        
+
     }
     return Sign;
 }

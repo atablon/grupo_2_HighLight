@@ -12,8 +12,8 @@ module.exports = (sequelize, dataType) => {
         },
         user_id: dataType.INTEGER,
         total_cost: dataType.DECIMAL,
-    }
->
+    };
+
     let config = {
         tableName: "orders",
         timestamps: false
