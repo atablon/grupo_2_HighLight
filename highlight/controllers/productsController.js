@@ -110,9 +110,12 @@ function guardarPrimeraParteModificada(datos) {
 const controller = {
         // get de publicar
         publicar: (req, res) => {
-          
-        res.render('publish_sign');
-        },
+        //   db.tecnologia.findAll()
+        //      .then( type => {
+        //      res.render('publish_sign', {type:type});
+        // })
+        res.render('publish_sign')
+    },
 
         // Post de crear cartel
         publicarProducto: (req, res) => {
