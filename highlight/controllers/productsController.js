@@ -28,6 +28,7 @@ function productosFiltrados() {
 /* Funcion para guardar el contenido del publicar paso uno del producto */
 function guardarPrimeraParte (nuevoProducto) {
     // busco todos los productos
+    //db.Sign.find
     let listaDeProductos = productos();
 
     // genero el nuevo producto + id

@@ -10,15 +10,18 @@ const db = require("../src/database/models")
 const controller = {
 
     index: (req, res) => {
-    
+      //  res.render('sign/index');
        
-        db.tecnologia
+        db.Sign
         .findAll()
         .then(resultados => {
-              res.send(resultados)
+              //res.send(resultados);
+              console.log(resultados);
+              res.render('sign/index');
+              
            })
          .catch(function (error) {
-            console.log(error)
+            //console.log(error)
            })
          
     }

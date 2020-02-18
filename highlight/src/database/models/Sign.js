@@ -41,17 +41,17 @@ module.exports = (sequelize, dataTypes) => {
         type_id:{
             type: dataTypes.INTEGER
         },
-        height:{
-            type: dataTypes.DECIMAL
+        heigth:{
+            type: dataTypes.DECIMAL(10,2)
         },
         width:{
-            type: dataTypes.DECIMAL
+            type: dataTypes.DECIMAL(10,2)
         },
         sight_rate:{
-            type: dataTypes.DECIMAL
+            type: dataTypes.INTEGER
         },
         monthly_cost:{
-            type: dataTypes.DECIMAL
+            type: dataTypes.DECIMAL(10,2)
         },
         user_id:{
             type: dataTypes.INTEGER
@@ -65,9 +65,9 @@ module.exports = (sequelize, dataTypes) => {
 
     const Sign = sequelize.define(alias,cols,config);
 
-    Sign.associate = function(models){
+    // Sign.associate = function(models){
         
 
-    }
+    // }
     return Sign;
 }
