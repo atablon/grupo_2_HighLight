@@ -1,9 +1,7 @@
 const fs = require('fs');
 const path = require('path');
+const db = require("../src/database/models")
 
-
-//const db = require("../database/models")
-//const sequelize = db.sequelize;
 
 /* ubicacion del archivo producto json*/
 const ubicacionProductosJSON = path.join(__dirname, '../data/listaproductos.json');
@@ -112,12 +110,13 @@ function guardarPrimeraParteModificada(datos) {
 const controller = {
         // get de publicar
         publicar: (req, res) => {
+          
         res.render('publish_sign');
         },
 
         // Post de crear cartel
         publicarProducto: (req, res) => {
-            // guardar el producto
+            guardar el producto
             let images = req.files[0].filename;
             req.body = {
                 imagen: images,
@@ -125,7 +124,31 @@ const controller = {
                 ...req.body,
             };
             guardarPrimeraParte(req.body)
-            res.redirect('listado');    
+          
+
+        //********** INTEGRANDO CON BASE */
+           // let images = req.files[0].filename;
+           // db.tecnologia.create({
+            //    sign_tech: req.body.numero
+                // address: req.body.domiclioCartel, 
+                // street_number: req.body.numero, 
+                // street_1: req.body.entreCalles1, 
+                // street_2: req.body.entreCalles2, 
+                // city: req.body.barrio, 
+                // state: req.body.provincia, 
+                // reference: req.body.refubicacion, 
+                // star: asignarEstrellas(req.body.trafico),
+                // picture_filename: images, 
+                // tech_id: req.body.tipoCartel, 
+                // type_id: req.body.ClasifiacionCartel, 
+                // heigth: req.body.medidasCartelAlto, 
+                // width: req.body.medidasCartelAncho,
+                // sigth_rate: req.body.expocision,
+                // monthy_cost: req.body.costo,
+                //user_id: req.body,
+               
+            }) 
+            res.redirect('listado'); 
         },
 
 

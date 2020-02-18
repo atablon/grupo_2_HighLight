@@ -24,8 +24,13 @@ module.exports = (sequelize, dataType) => {
 
     let user = sequelize.define(alias, col, config);
 
+    user.associate = (models) => {
+        user.hasMany(models.order, {
+            as: "orderUser",
+            foreingKey: "user_id"
+        })
+    }
+
     return user;
 
 }
-
-

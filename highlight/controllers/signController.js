@@ -10,7 +10,9 @@ const db = require("../src/database/models")
 const controller = {
 
     index: (req, res) => {
-        db.tecnologia 
+    
+       
+        db.tecnologia
         .findAll()
         .then(resultados => {
               res.send(resultados)
