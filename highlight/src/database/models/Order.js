@@ -17,7 +17,7 @@ module.exports = (sequelize, dataType) => {
     let config = {
         tableName: "orders",
         timestamps: false
-    }
+    };
 
 
     let order = sequelize.define(alias, col, config);
@@ -28,7 +28,7 @@ module.exports = (sequelize, dataType) => {
             foreingKey: "user_id"
         })
 
-    }
+    };
     return order;
 
 }
