@@ -116,7 +116,7 @@ const controller = {
 
         // Post de crear cartel
         publicarProducto: (req, res) => {
-            guardar el producto
+//            guardar el producto
             let images = req.files[0].filename;
             req.body = {
                 imagen: images,
@@ -124,7 +124,7 @@ const controller = {
                 ...req.body,
             };
             guardarPrimeraParte(req.body)
-          
+            res.redirect('listado'); 
 
         //********** INTEGRANDO CON BASE */
            // let images = req.files[0].filename;
@@ -147,8 +147,8 @@ const controller = {
                 // monthy_cost: req.body.costo,
                 //user_id: req.body,
                
-            }) 
-            res.redirect('listado'); 
+            //}) 
+           
         },
 
 
