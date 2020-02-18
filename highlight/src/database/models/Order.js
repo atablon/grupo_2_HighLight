@@ -11,11 +11,11 @@ module.exports = (sequelize, dataType) => {
             autoIncrement:true
         },
         user_id: dataType.INTEGER,
-        total_cost: dataType.INTEGER,
+        total_cost: dataType.DECIMAL,
     }
-
+>
     let config = {
-        tableName: "order",
+        tableName: "orders",
         timestamps: false
     }
 
@@ -24,7 +24,7 @@ module.exports = (sequelize, dataType) => {
 
     order.associate = (models) => {
         order.belongsTo(models.user, {
-            as:"user", 
+            as:"userorde", 
             foreingKey: "user_id"
         })
 
