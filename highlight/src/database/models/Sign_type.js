@@ -2,7 +2,7 @@
 // modelode datos de tabla sings_type
 module.exports = (sequelize, dataType) => {
 
-    let alias = "tipificacion";
+    let alias = "Sign_type";
 
     let col = {
         id: {
