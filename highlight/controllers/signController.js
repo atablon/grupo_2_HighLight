@@ -8,6 +8,9 @@ const db = require("../src/database/models")
 /*********************************************************************************/
 
 const controller = {
+    index: (req, res) =>{
+        res.render('sign/index')
+    } 
 // Ejemplo 1 
     // index: async (req, res) => {
     //   //res.render('sign/index');
@@ -21,19 +24,19 @@ const controller = {
 
     // Ejemplo 2
 // 
-        index: async (req, res) => {
-            let signs = db.Sign_tech.findAll();
-            let type = db.Sign_type.findAll();
-        Promise
-            .all([signs, type])
-            .then(results => {
-                return res.render('sign/index', { signs: results[0], type: results[1] });
-            })
-                .catch(function (error) {
-                    console.log(error)
-                })
+        // index: async (req, res) => {
+        //     let signs = db.Sign_tech.findAll();
+        //     let type = db.Sign_type.findAll();
+        // Promise
+        //     .all([signs, type])
+        //     .then(results => {
+        //         return res.render('sign/index', { signs: results[0], type: results[1] });
+        //     })
+        //         .catch(function (error) {
+        //             console.log(error)
+        //         })
 
-        }
+        // }
 
 
 }
