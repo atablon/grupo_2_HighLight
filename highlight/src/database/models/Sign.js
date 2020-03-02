@@ -1,3 +1,5 @@
+
+
 module.exports = (sequelize, dataTypes) => {
     
     let alias = 'Sign';
@@ -59,15 +61,50 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     let config = {
-        // El nombre de la tabla es igual que el nombre de este modelo hecho minuscula y en plural
+        tableName:'signs',// El nombre de la tabla es igual que el nombre de este modelo hecho minuscula y en plural
         timestamps: false
     };
 
     const Sign = sequelize.define(alias,cols,config);
 
-    // Sign.associate = function(models){
-        
+    
 
-    // }
+    Sign.associate = function(models){
+
+        /* Relacion con Sign_tech */
+
+        Sign.belongsTo(models.Sign_tech,{
+            as:'techs',
+            foreignKey:'tech_id'
+        });
+
+        /* Relacion con Sign_type */
+
+        Sign.belongsTo(models.Sign_type,{
+            as:'types',
+            foreignKey:'type_id'
+        });
+
+        /* Relacion con User */
+
+        Sign.belongsTo(models.User,{
+            as:'users',
+            foreignKey:'user_id'
+        });
+
+        /* Relacion con Orders a traves de tabla intermedia signs_orders */
+
+        Sign.belongsToMany(models.Order,{
+            as:'orders',
+            through:'signs_orders',
+            foreignKey:'sign_id',
+            otherKey:'order_id',
+            timestamps: false
+        })
+    }
+
+    
+
+
     return Sign;
 }

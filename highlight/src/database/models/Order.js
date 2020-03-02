@@ -1,8 +1,10 @@
-
-// modelode datos de tabla sings_type
+// Modelo de entidad de Order
+// DER:
+// - Relacion 1 -> N con Signs
+// - Una te
 module.exports = (sequelize, dataType) => {
 
-    let alias = "order";
+    let alias = "Order";
 
     let col = {
         id: {
@@ -15,21 +17,36 @@ module.exports = (sequelize, dataType) => {
     };
 
     let config = {
-        tableName: "orders",
+        //tableName: "orders", // El plural del nombre del modelo (en ingles) sera la tabla que busque
         timestamps: false
     };
 
 
-    let order = sequelize.define(alias, col, config);
+    let Order = sequelize.define(alias, col, config);
 
-    order.associate = (models) => {
-        order.belongsTo(models.user, {
-            as:"userorde", 
+    Order.associate = (models) => {
+
+        /* Relacion con User */
+
+        Order.belongsTo(models.User, {
+            as:"users", 
             foreingKey: "user_id"
         })
 
+        /* Relacion con Sign a traves de tabla intermedia signs_orders */
+
+        Order.belongsToMany(models.Sign,{
+            as:'signs',
+            through: 'signs_orders', // la tabla que los relaciona en la base de datos
+            foreingKey: 'order_id',
+            otherKey:'sign_id',
+            timestamps: false
+        })
+
     };
-    return order;
+
+
+    return Order;
 
 }
 

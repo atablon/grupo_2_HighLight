@@ -2,7 +2,7 @@
 // modelode datos de tabla sings_type
 module.exports = (sequelize, dataType) => {
 
-    let alias = "user";
+    let alias = "User";
 
     let col = {
         id: {
@@ -18,19 +18,35 @@ module.exports = (sequelize, dataType) => {
             }
 
     let config = {
-        tableName: "users",
+    //    tableName: "users", //el nombre del modelo en plural (de ingles) y minuscula
         timestamps: false
         }
 
-    let user = sequelize.define(alias, col, config);
+    let User = sequelize.define(alias, col, config);
 
-    user.associate = (models) => {
-        user.hasMany(models.order, {
-            as: "orderUser",
+    
+
+    User.associate = (models) => {
+        
+        /* Relacion con Order */
+
+        User.hasMany(models.Order, {
+            as: "orders",
             foreingKey: "user_id"
-        })
+        });
+
+        /* Relacion con Sign */
+
+        User.hasMany(models.Sign,{
+            as:'signs',
+            foreingKey:'user_id'
+        });
+
+
     }
 
-    return user;
+
+
+    return User;
 
 }
