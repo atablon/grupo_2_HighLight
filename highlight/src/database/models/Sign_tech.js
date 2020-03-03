@@ -17,7 +17,7 @@ module.exports = (sequelize, dataType) => {
           }
 
       let config = {
-        //tableName: "sign_techs", //no deberia hacer falta de acuerdo a como fue nombrado 
+        tableName: "sign_techs",
         timestamps: false
       }
 
@@ -29,7 +29,7 @@ module.exports = (sequelize, dataType) => {
 
       /* Relacion con Sign */
 
-      Sign_tech.hasMany(models.Sign_tech,{
+      Sign_tech.hasMany(models.Sign , {
         as:'signs',
         foreignKey:'tech_id'
       });

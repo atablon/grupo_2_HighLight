@@ -10,14 +10,16 @@ const db = require("../src/database/models")
 const controller = {
 
     index: (req, res) => {
-       // res.render('sign/index');
+      //  res.send('hola');
        
         db.Sign
-        .findAll()
+        .findAll({
+          include: ['users']
+        })
         .then(resultados => {
-              //res.send(resultados);
+              return res.send(resultados);
               console.log(resultados);
-              res.render('sign/index',{resultados:signs});
+              res.render('sign/index',{resultados});
               
            })
          .catch(function (error) {
