@@ -17,7 +17,11 @@ module.exports = (sequelize, dataType) => {
           }
 
       let config = {
+<<<<<<< HEAD
         tableName: "sign_techs",
+=======
+        tableName: "sign_techs", //no deberia hacer falta de acuerdo a como fue nombrado 
+>>>>>>> 289109001fef8ed0f99b811a5c2c007984d2e41d
         timestamps: false
       }
 
@@ -29,7 +33,11 @@ module.exports = (sequelize, dataType) => {
 
       /* Relacion con Sign */
 
+<<<<<<< HEAD
       Sign_tech.hasMany(models.Sign , {
+=======
+      Sign_tech.hasMany(models.Sign,{
+>>>>>>> 289109001fef8ed0f99b811a5c2c007984d2e41d
         as:'signs',
         foreignKey:'tech_id'
       });

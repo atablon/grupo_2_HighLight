@@ -3,7 +3,28 @@
 Hola
 
 
+<<<<<<< HEAD
 <!-- <%=resultados[1].id%> -->
+=======
+>>>>>>> 289109001fef8ed0f99b811a5c2c007984d2e41d
 
+
+<%= type[1].sign_type %>
+
+
+<select name="TipoDeCartel" id="tipoCartel" required>
+        <option value="" selected disabled hidden> Seleccionar </option>
+<% tech.forEach(cartel => { %>
+    <option value="<%= cartel.id %>"><%= cartel.sign_tech %> </option>
+<% });%>
+</select>
+
+
+<select name="TipoDeCartel" id="tipoCartel" required>
+    <option value="" selected disabled hidden> Seleccionar </option>
+    <% type.forEach(cartel => { %>
+    <option value="<%= cartel.id %>"><%= cartel.sign_type %> </option>
+    <% });%>
+</select>
 
 <%- include('../partials/footer.ejs') %>
