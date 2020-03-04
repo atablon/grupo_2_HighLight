@@ -5,4 +5,22 @@ Hola
 
 
 
+<%= type[1].sign_type %>
+
+
+<select name="TipoDeCartel" id="tipoCartel" required>
+        <option value="" selected disabled hidden> Seleccionar </option>
+<% tech.forEach(cartel => { %>
+    <option value="<%= cartel.id %>"><%= cartel.sign_tech %> </option>
+<% });%>
+</select>
+
+
+<select name="TipoDeCartel" id="tipoCartel" required>
+    <option value="" selected disabled hidden> Seleccionar </option>
+    <% type.forEach(cartel => { %>
+    <option value="<%= cartel.id %>"><%= cartel.sign_type %> </option>
+    <% });%>
+</select>
+
 <%- include('../partials/footer.ejs') %>

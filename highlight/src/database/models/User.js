@@ -39,7 +39,7 @@ module.exports = (sequelize, dataType) => {
 
         User.hasMany(models.Sign,{
             as:'signs',
-            foreingKey:'user_id'
+            foreignKey:'user_id'
         });
 
 

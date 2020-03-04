@@ -110,17 +110,18 @@ function guardarPrimeraParteModificada(datos) {
 
 const controller = {
         // get de publicar
-        publicar: (req, res) => {
-        //   db.tecnologia.findAll()
-        //      .then( type => {
-        //      res.render('publish_sign', {type:type});
-        // })
-        res.render('publish_sign')
-    },
-
+        publicar: async (req, res) => {
+            let tech = db.Sign_tech.findAll();
+            let type = db.Sign_type.findAll();
+            Promise
+                .all([tech, type])
+                .then(results => {
+                    return res.render('publish_sign',{ tech: results[0], type: results[1] });
+                })
+        },
+        
         // Post de crear cartel
         publicarProducto: (req, res) => {
-//            guardar el producto
             let images = req.files[0].filename;
             req.body = {
                 imagen: images,
@@ -128,35 +129,45 @@ const controller = {
                 ...req.body,
             };
             guardarPrimeraParte(req.body)
-            res.redirect('listado'); 
+            res.redirect('/listado'); 
 
         //********** INTEGRANDO CON BASE */
-           // let images = req.files[0].filename;
-           // db.tecnologia.create({
-            //    sign_tech: req.body.numero
-                // address: req.body.domiclioCartel, 
-                // street_number: req.body.numero, 
-                // street_1: req.body.entreCalles1, 
-                // street_2: req.body.entreCalles2, 
-                // city: req.body.barrio, 
-                // state: req.body.provincia, 
-                // reference: req.body.refubicacion, 
-                // star: asignarEstrellas(req.body.trafico),
-                // picture_filename: images, 
-                // tech_id: req.body.tipoCartel, 
-                // type_id: req.body.ClasifiacionCartel, 
-                // heigth: req.body.medidasCartelAlto, 
-                // width: req.body.medidasCartelAncho,
-                // sigth_rate: req.body.expocision,
-                // monthy_cost: req.body.costo,
-                //user_id: req.body,
-               
-            //}) 
+        //    let images = req.files[0].filename;
+        //    db.Sign.create({
+        //         sign_tech: req.body.numero,
+        //         address: req.body.domiclioCartel, 
+        //         street_number: req.body.numero, 
+        //         street_1: req.body.entreCalles1, 
+        //         street_2: req.body.entreCalles2, 
+        //         city: req.body.barrio, 
+        //         state: req.body.provincia, 
+        //         reference: req.body.refubicacion, 
+        //         star: asignarEstrellas(req.body.trafico),
+        //         picture_filename: images, 
+        //         tech_id: req.body.tipoCartel, 
+        //         type_id: req.body.ClasifiacionCartel, 
+        //         heigth: req.body.medidasCartelAlto, 
+        //         width: req.body.medidasCartelAncho,
+        //         sigth_rate: req.body.expocision,
+        //         monthy_cost: req.body.costo,
+        //         user_id: req.session.user.id,
+        //        //   req.body.user_id = 1;
+        //     })
+        //        .then(() => res.redirect('listado'))
+        //        .catch (error => console.log(error))
            
         },
 
 
         listado: (req, res) => {
+          // esto no me anda por el user_id 
+        //  db.Sign.findAll()
+        //      .then(listaDeProductos => {
+        //          return res.render('list_sign', {listaDeProductos});
+        //     })
+        //     .catch(function (error) {
+        //          console.log(error)
+        //      })   
             let listaDeProductos = productosFiltrados();
             res.render('list_sign', {listaDeProductos});
         }, 
@@ -169,7 +180,7 @@ const controller = {
         // Put para modificar un producto
        guardarEdicion: (req, res) => {
 
-            /* Encuentro el producto sellecionado y paso img */
+            /* Encuentro el producto selecionado y paso img */
             let productSelect = productoSelect(req.params.id);
             let imagen = productSelect.imagen
     
