@@ -5,26 +5,25 @@ module.exports = (sequelize, dataType) => {
     let alias = "User";
 
     let col = {
-        id: {
+        id:{
             type: dataType.INTEGER,
             primaryKey: true,
-            autoIncrement: true
-            },
-            user_name: dataType.STRING,
-            email: dataType.STRING,
-            user_type: dataType.STRING,
-            user_password: dataType.STRING,
-            profile_picture: dataType.STRING,
-            }
+            autoIncrement:true
+        },
+        user_name: dataType.STRING,
+        email: dataType.STRING,
+        user_type: dataType.STRING,
+        user_password: dataType.STRING,
+        profile_picture: dataType.STRING,
+        }
 
     let config = {
-    //    tableName: "users", //el nombre del modelo en plural (de ingles) y minuscula
+        tableName: "users", //el nombre del modelo en plural (de ingles) y minuscula
         timestamps: false
-        }
+    }
 
     let User = sequelize.define(alias, col, config);
 
-    
 
     User.associate = (models) => {
         
@@ -32,7 +31,7 @@ module.exports = (sequelize, dataType) => {
 
         User.hasMany(models.Order, {
             as: "orders",
-            foreingKey: "user_id"
+            foreignKey: "user_id"
         });
 
         /* Relacion con Sign */

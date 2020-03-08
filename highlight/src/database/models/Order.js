@@ -17,7 +17,7 @@ module.exports = (sequelize, dataType) => {
     };
 
     let config = {
-        //tableName: "orders", // El plural del nombre del modelo (en ingles) sera la tabla que busque
+        tableName: "orders", // El plural del nombre del modelo (en ingles) sera la tabla que busque
         timestamps: false
     };
 

@@ -7,6 +7,26 @@ const db = require("../src/database/models")
 /*********************************************************************************/
 
 
+<<<<<<< HEAD
+    index: (req, res) => {
+      //  res.send('hola');
+       
+        db.Sign
+        .findAll({
+          include: ['users']
+        })
+        .then(resultados => {
+              return res.send(resultados);
+              console.log(resultados);
+              res.render('sign/index',{resultados});
+              
+           })
+         .catch(function (error) {
+            //console.log(error)
+           })
+         
+    }
+=======
 
 const controller = {
     index: async (req, res) => {
@@ -23,6 +43,7 @@ const controller = {
        }
 }
        
+>>>>>>> 289109001fef8ed0f99b811a5c2c007984d2e41d
 
 
 module.exports = controller

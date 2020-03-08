@@ -15,6 +15,8 @@ En base a cierta información que se le solicitará al cliente que complete, nue
 - [Introducción](#Introducción)
 - [Referencias](#Referencias)
 - [Wireframe](#emphasis)
+- [Tablero Trello](#Trello)
+- []
 
 
 ---

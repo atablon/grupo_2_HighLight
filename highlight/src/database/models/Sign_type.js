@@ -17,7 +17,7 @@ module.exports = (sequelize, dataType) => {
         }
 
     let config = {
-    //    tableName: "sign_types", // deberia ser el plural(del ingles) del nombre del modelo en este caso el plural de Sign_type osea Sign_types
+        tableName: "sign_types", // deberia ser el plural(del ingles) del nombre del modelo en este caso el plural de Sign_type osea Sign_types
         timestamps: false
         }
 
