@@ -122,39 +122,41 @@ const controller = {
         
         // Post de crear cartel
         publicarProducto: (req, res) => {
-            let images = req.files[0].filename;
-            req.body = {
-                imagen: images,
-                estrellas: asignarEstrellas(req.body.trafico),
-                ...req.body,
-            };
-            guardarPrimeraParte(req.body)
-            res.redirect('/listado'); 
+            // let images = req.files[0].filename;
+            // req.body = {
+            //     imagen: images,
+            //     estrellas: asignarEstrellas(req.body.trafico),
+            //     ...req.body,
+            // };
+            // guardarPrimeraParte(req.body)
+            // res.redirect('/listado'); 
 
         //********** INTEGRANDO CON BASE */
-        //    let images = req.files[0].filename;
-        //    db.Sign.create({
-        //         sign_tech: req.body.numero,
-        //         address: req.body.domiclioCartel, 
-        //         street_number: req.body.numero, 
-        //         street_1: req.body.entreCalles1, 
-        //         street_2: req.body.entreCalles2, 
-        //         city: req.body.barrio, 
-        //         state: req.body.provincia, 
-        //         reference: req.body.refubicacion, 
-        //         star: asignarEstrellas(req.body.trafico),
-        //         picture_filename: images, 
-        //         tech_id: req.body.tipoCartel, 
-        //         type_id: req.body.ClasifiacionCartel, 
-        //         heigth: req.body.medidasCartelAlto, 
-        //         width: req.body.medidasCartelAncho,
-        //         sigth_rate: req.body.expocision,
-        //         monthy_cost: req.body.costo,
-        //         user_id: req.session.user.id,
-        //        //   req.body.user_id = 1;
-        //     })
-        //        .then(() => res.redirect('listado'))
-        //        .catch (error => console.log(error))
+        console.log("creando")
+           let images = req.files[0] ? req.files[0].filename : '';
+
+           db.Sign.create({
+                sign_tech: req.body.numero,
+                address: req.body.domiclioCartel, 
+                street_number: req.body.numero, 
+                street_1: req.body.entreCalles1, 
+                street_2: req.body.entreCalles2, 
+                city: req.body.barrio, 
+                state: req.body.provincia, 
+                reference: req.body.refubicacion, 
+                star: asignarEstrellas(req.body.trafico),
+                picture_filename: images, 
+                tech_id: req.body.tipoCartel, 
+                type_id: req.body.ClasifiacionCartel, 
+                heigth: req.body.medidasCartelAlto, 
+                width: req.body.medidasCartelAncho,
+                sigth_rate: req.body.expocision,
+                monthy_cost: req.body.costo,
+                //user_id: req.session.user.id,
+                user_id: 1
+            })
+               .then(() => res.redirect('/products/listado'))
+               .catch (error => console.log(error))
            
         },
 

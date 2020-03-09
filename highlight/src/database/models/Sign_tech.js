@@ -35,7 +35,6 @@ module.exports = (sequelize, dataType) => {
         foreignKey:'tech_id'
       });
     }
-
   return Sign_tech;
 
 }

@@ -25,33 +25,25 @@ const controller = {
           include: ['signs','users']
         });
         Promise
-        .all([tech, type, sign, users, orders])
+        .all([tech, type, sign, users])
         .then (results => {
-            console.log(results[4]);
+            console.log(results[1]);
             //return res.render('sign/index', { tech: results[0], type: results[1], sign: results[2]  });
-            return res.send({tech: results[0], type: results[1], sign: results[2], user: results[3], orders: results[4]});
+            return res.send({tech: results[0], type: results[1], sign: results[2], user: results[3]});
         })
 
-       }
-}
-       
+    }, 
 
+    publish: (req, res) => {
+          res.render("sign/viewPublish"); 
+        },
+    sign_list: (req, res) => {
+          res.send("Publicado")
+        }
+
+      }
 
 module.exports = controller
 
-
-// const controller = {
-    
-//     index: (req, res) => {
-//         db.Sign_tech.findAll()
-//         .then(results => {
-//             console.log(results)
-//                return res.render('sign/index', {results});
-//            })
-//         .catch(function (error) {
-//              console.log(error)
-//         })
-//     } 
-// }
 
 

@@ -23,8 +23,13 @@ var upload = multer({ storage: storage })
 const signController = require('../controllers/signController');
 
 
-/********   **  Nuevo PUBLICAR ***********/
+/********** Nuevo PUBLICAR ***********/
 router.get('/index', signController.index);
 
+/********** VISTA PUBLICAR ***********/
+router.get('/publish', signController.publish);
+
+/**********  Guardar PUBLICAR ***********/
+router.post('/sign_list', upload.any(), signController.sign_list);
 
 module.exports = router;

@@ -8,7 +8,7 @@
 
 .ui-form {}
 
-.ui-item{
+.ui-item {
     display: inline-block;
 }
 
@@ -93,7 +93,21 @@
         width: 40%;
         margin-left: 24%;
         font-size: 11px;
-    
+
         padding: 0;
     }
+}
+
+.error {
+    border: 1px solid tomato !important;
+}
+
+.error~.feedback {
+    display: block !important;
+
+}
+
+.feedback {
+    display: none;
+    color: tomato
 }

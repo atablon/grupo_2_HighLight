@@ -26,7 +26,7 @@ const productsController = require('../controllers/productsController');
 router.get('/publicar', productsController.publicar);
 
 /*POST Para guardar información del PASO UNO de publicar */
-router.post('/listado', upload.any(), productsController.listado);
+router.post('/', upload.any(), productsController.publicarProducto);
 
 
 /**********  Nuevo LISTADO ***********/
