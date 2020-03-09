@@ -9,7 +9,8 @@ let allInput = Array.from(form.elements)
 allInput.pop()
 
 
-let camposConError = {};
+// Guardamos los campos con error en este objeto. 
+let inputError = {};
 
 // Comemzamos a validar los campos del formulario
 
@@ -78,16 +79,17 @@ form.addEventListener('submit', function (event) {
     for (const input of allInput) {
         let valueInput = input.value.trim();
         if (validator.isEmpty(valueInput)) {
-            camposConError[input.name] = true;
+            inputError[input.name] = true;
             /// esto tengo que revisarlo porque no anda con la img. !VERRRRRRR
-            //  input.classList.add("error")
+              input.classList.add("error")
             // input.nextElementSibling.innerHTML = `El campo <b>${input.dataset.type}</b> no puede estar vacío`
 
         }
     }
 
-    if (Object.keys(camposConError).length > 0) {
+    if (Object.keys(inputError).length > 0) {
         event.preventDefault();
+        
     }
 })
 
