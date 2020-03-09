@@ -48,9 +48,9 @@ let camposConError = {};
             } 
 
 
-            /// PREGUNTAR ESTA VALIDACIÓN
+            /// PREGUNTAR ESTA VALIDACIÓN !VERRRRRRR
             if (input.name === "picture_filename") {
-                input.addEventListener("bluer", function () {
+                input.addEventListener("blur", function () {
                     // array de extensiones permitidas
                     let validateExt = ["jpg", "png", "gif", "svg"] 
                     // levanto la extensión para saber la extensión que quiere subir. 
@@ -79,8 +79,9 @@ form.addEventListener('submit', function (event) {
         let valueInput = input.value.trim();
         if (validator.isEmpty(valueInput)) {
             camposConError[input.name] = true;
-            input.classList.add("error")
-            input.nextElementSibling.innerHTML = `El campo <b>${input.dataset.type}</b> no puede estar vacío`
+            /// esto tengo que revisarlo porque no anda con la img. !VERRRRRRR
+            //  input.classList.add("error")
+            // input.nextElementSibling.innerHTML = `El campo <b>${input.dataset.type}</b> no puede estar vacío`
 
         }
     }

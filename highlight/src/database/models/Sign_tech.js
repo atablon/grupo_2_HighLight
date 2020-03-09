@@ -29,6 +29,7 @@ module.exports = (sequelize, dataType) => {
 
       /* Relacion con Sign */
 
+      
       Sign_tech.hasMany(models.Sign , {
         as:'signs',
         foreignKey:'tech_id'
