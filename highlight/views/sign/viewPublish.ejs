@@ -1,0 +1,113 @@
+<%- include('../partials/head.ejs') %>
+<%- include('../partials/header_small.ejs') %>
+
+
+<main class="main-body">
+    <div class="contenedor-main container">
+        <h2 class="titulo-seccion">Publicar mi cartel</h2>
+        <div class="box-view">
+            <div class="box-container-view ">
+                <form action="/sign/sign_list" method="POST" class="ui-form" enctype="multipart/form-data" id="publishForm">
+                    <p class="titulo-content">
+                        Ubicación del cartel
+                    </p>
+                    <p class="form-content">
+        
+                        <label for="address">Domicilio apróximado:</label>
+                        <input id="address" placeholder="Avenida Corrientes" type="text" name="address" data-type="domicilio">    
+                        <span class="feedback"></span>
+                    </p>
+                    <p class="form-content">
+        
+                        <label for="street_number">Número o altura de calle:</label>
+                        <input id="street_number" type="text" name="street_number" data-type="número">
+                        <span class="feedback"></span>
+                    </p>
+                    <p class="form-content">
+                        <label for="street_1">Entre calle:</label>
+                        <input placeholder="Calle 2" class="input_50" type="text" name="street_1" class="input-medum" data-type="calle">
+                        <span class="feedback"></span>
+                    </p>
+                    <p class="form-content">
+                        <label for="street_2">Y la calle:</label>
+                        <input placeholder="Calle 2" class="input_50" type="text" name="street_2" class="input-medum" data-type="calle">
+                        <span class="feedback"></span>
+                    </p>
+                    <p class="form-content">
+                        <!--aca puedo tener un array de barrios e imprimir en un combo.-->
+                        <label for="city">Barrio o localidad:</label>
+                        <input id="city" type="text" name="city" data-type="barrio o localidad">
+                        <span class="feedback"></span>
+                    </p>
+                    <p class="form-content">
+                        <label for="state">Provincia:</label>
+                        <input id="state" type="text" name="state" data-type="provincia">
+                        <span class="feedback"></span>
+                    </p>
+                    <p class="form-content">
+                        <label for="reference">Referencias del lugar:</label>
+                        <textarea name="reference" id= "reference" data-type="referencias"></textarea>
+                        <span class="feedback"></span>
+                    </p>
+                    <p class="form-content">
+                        <label for="picture_filename">Imagen:</label>
+                        <input type="file" name="picture_filename" id="picture_filename" data-type="imagen">
+                        <span class="feedback"></span>  
+                    </p>
+
+                    <p class="titulo-content margin">Especificaciones</p>
+                    <p class="form-content">
+                        <label for="tech_id">Tipo de cartel:</label>
+                        <select name="tech_id" id="tech_id" data-type="especificaciones">
+                            <option value="" selected disabled hidden> Seleccionar </option>
+                                <option value="/">prueba </option>
+                        </select>
+                        <span class="feedback"></span>
+                    </p>
+                    <p class="form-content">
+                        <label for="type_id">Clasificación: </label>
+                        <select name="type_id" id="type_id" data-type="Clasificacion">
+                            <option value="" selected disabled hidden> Seleccionar </option>
+                            <option value="/">prueba </option>
+                        </select>
+                        <span class="feedback"></span>
+                    </p>
+                    <p class="form-content">
+                        <label for="sight_rate">Tráfico apróx. por día:</label>
+                        <select name="sight_rate" id="sight_rate" data-type="peatón">
+                            <option value="" selected disabled hidden> Seleccionar </option>
+                            <option value="Hasta 3000 personas">Hasta 3000 personas </option>
+                            <option value="Hasta 10000 personas">Hasta 10000 personas</option>
+                            <option value="Entre 10000 y 20000 personas">Entre 10000 y 20000 personas</option>
+                            <option value="Más de 20000 personas">Más de 20000 personas</option>
+                        </select>
+                        <span class="feedback"></span>
+                    </p>
+                  
+                    <p class="form-content input_50">
+                        <label for="heigth">Alto: </label>
+                        <input class="small" placeholder="6 metros" type="text" name="heigth" data-type="altura">
+                        <span class="feedback"></span>
+                    </p>
+                    <p class="form-content input_50">
+                        <label for="width">Ancho:</label>
+                        <input class="small" placeholder="8 metros" type="text" name="width" data-type="ancho">
+                        <span class="feedback"></span>
+                    </p>
+                   
+                    <p class="form-content input_50">
+                        <label for="monthly_cost">Costo de alquiler: </label>
+                        <input class="small" placeholder="10000" type="text" name="monthly_cost" id="monthly_cost" data-type="costo">
+                        <span class="feedback"></span>
+                    </p>
+
+                    <div class="box-buttom ">
+                        <button type="submit" class="btn">Continuar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="/js/validator.min.js"></script>
+<script src="/js/publish_validator.js"></script>
