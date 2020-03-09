@@ -13,7 +13,7 @@ module.exports = (sequelize, dataType) => {
             autoIncrement:true
         },
         user_id: dataType.INTEGER,
-        total_cost: dataType.DECIMAL,
+        total_cost: dataType.DECIMAL(10,0),
     };
 
     let config = {
@@ -30,7 +30,7 @@ module.exports = (sequelize, dataType) => {
 
         Order.belongsTo(models.User, {
             as:"users", 
-            foreingKey: "user_id"
+            foreignKey: "user_id"
         })
 
         /* Relacion con Sign a traves de tabla intermedia signs_orders */
@@ -38,7 +38,7 @@ module.exports = (sequelize, dataType) => {
         Order.belongsToMany(models.Sign,{
             as:'signs',
             through: 'signs_orders', // la tabla que los relaciona en la base de datos
-            foreingKey: 'order_id',
+            foreignKey: 'order_id',
             otherKey:'sign_id',
             timestamps: false
         })

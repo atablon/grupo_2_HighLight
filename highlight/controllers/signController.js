@@ -16,12 +16,14 @@ const controller = {
           include: ['signs']
         });
         let sign = db.Sign.findAll({
-          include: ['techs','types','users',]//'orders']
+          include: ['techs','types','users','orders']
         });
         let users = db.User.findAll({
           include: ['signs']
         });
-        let orders = db.Order.findAll();
+        let orders = db.Order.findAll({
+          include: ['signs','users']
+        });
         Promise
         .all([tech, type, sign, users, orders])
         .then (results => {
