@@ -38,43 +38,66 @@ const controller = {
      * Se muestra formulario de publicacion de cartel
      */
     publish: (req, res) => {
-      res.render("sign/viewPublish");
-      
-    },
-    sign_list: (req, res) => {
-      // Aca tengo que crear el cartel y levantar la dB de los usuarios que se encuentra en session y mostrarlos
-      // 1. Verficar que usuario es el que esta creando en la sesion
-      // 2. Parsear todos los datos provenientes del formulario, osea la verificacion del back
-      // 3. Crear el registro en la dB
-      
-      //Comienzo de creacion del registro en la dB
-    
-  
-      console.log("creando")
-      // Ojo que aca tiene que ir lo que va en la imagen por defecto "default_img.png"
-      console.log(req.body);
-     
+          let tech = db.Sign_tech.findAll();
+          let type = db.Sign_type.findAll();
+          Promise
+          .all([tech, type])
+          .then(results => {
+            return res.render("sign/viewPublish", {tech: results[0], type: results[1]}); 
+          })
+         
+        },
+    publishPost: (req,res)=>{
 
       let additionalData = {
-          images: req.files[0] ? req.files[0].filename : 'no_image.png',
-          user_id: 1 //req.session.user.id != undefined ? req.session.user.id: 1 // por ahora no esta implementado
-       }
+        images: req.files[0] ? req.files[0].filename : 'no_image.png',
+        user_id: 1 //req.session.user.id != undefined ? req.session.user.id: 1 // por ahora no esta implementado
+     }
 
-      let signData = {
-        ...req.body,
-        ...additionalData
-      };
+    let signData = {
+      ...req.body,
+      ...additionalData
+    };
+    console.log(signData);
+    
+//    res.send(signData);
 
-      res.send(signData);
+    // db.Sign.create(signData)
+    //   .then(() => res.redirect('/products/listado'))
+    //   .catch(error => console.log(error));
+    return res.redirect('/sign/sign_list');
 
-      // db.Sign.create(signData)
-      //   .then(() => res.redirect('/products/listado'))
-      //   .catch(error => console.log(error));
+    },
+    sign_list: async (req, res) => {
+          db.Sign.findAll({
+            include: ['techs', 'types', 'users', 'orders']
+          })
+          .then(results => {
+                          
+             return res.render('sign/signList', {sign:results})
+             //return res.send (results)
+            })
+        }, 
+    edit:(req, res) => {
 
-
-      return console.log('PUBLICADO');
+      let idNumber = req.params.id; 
+   /// VER por que no un findONE .. no me funciona
+      db.Sign.findOne({  
+        where: {
+            id: idNumber
+         }, 
+        include: ['techs', 'types', 'users', 'orders']
+       })
+      .then(results => {
       
-    }
+        //return res.send(results)
+        return res.render('sign/editSign', { sign: results})
+      
+      })
+  }, 
+    delete: (req, res) => {
+      res.send("delete")
+    },
  }
 
 module.exports = controller

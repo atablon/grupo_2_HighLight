@@ -17,12 +17,9 @@
                         <input id="inputdireccion" placeholder="Avenida Corrientes" type="text" name="domiclioCartel">
                     </p>
                     <p class="form-content">
-
                         <label for="numero">Número o altura de calle:</label>
                         <input id="numero" type="number" name="numero">
                     </p>
-
-
                     <p class="form-content">
                         <label for="entreCalles1">Entre calle:</label>
                         <input placeholder="Calle 2"  class="input_50" type="text" name="entreCalles1"
@@ -56,9 +53,7 @@
                         <label for="tipoCartel">Tipo de cartel:</label>
                         <select name="TipoDeCartel" id="tipoCartel">
                             <option value="" selected disabled hidden> Seleccionar </option>
-                            <% tech.forEach(cartel => { %>
-                            <option value="<%= cartel.id %>"><%= cartel.sign_tech %> </option>
-                            <% });%>
+                            <option value="Para campañas cortas"> Para campañas cortas </option>
                         </select>
                     
                     
@@ -67,9 +62,7 @@
                         <label for="ClasifiacionCarte">Clasificación: </label>
                         <select name="ClasifiacionCartel" requiredrequired>
                             <option value="" selected disabled hidden> Seleccionar </option>
-                            <% type.forEach(cartel => { %>
-                            <option value="<%= cartel.id %>"><%= cartel.sign_type %> </option>
-                            <% });%>
+                            <option value="Para campañas cortas"> Para campañas cortas </option>
                         </select>
                     </p>
                     <p class="form-content">

@@ -14,9 +14,7 @@ var storage = multer.diskStorage({
         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
     }
 })
-
 var upload = multer({ storage: storage })
-
 
 
 // ************ Controller Require ************
@@ -30,6 +28,21 @@ router.get('/index', signController.index);
 router.get('/publish', signController.publish);
 
 /**********  Guardar PUBLICAR ***********/
-router.post('/sign_list', upload.any(), signController.sign_list);
+router.post('/sign_list', upload.any(), signController.publishPost);
+
+
+/**********  Publico el listado completo que tiene el usuario actual ***********/
+router.get('/sign_list', signController.sign_list);
+
+//
+
+/********** EDITAR ***********/
+router.get('/edit/:id', upload.any(), signController.edit);
+// router.put('/edit/:id', upload.any(), signController.editSave);
+
+
+/********** ELIMINAR ***********/
+router.delete('/delete/:id', signController.delete);
+
 
 module.exports = router;
