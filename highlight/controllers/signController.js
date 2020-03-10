@@ -34,14 +34,48 @@ const controller = {
 
     }, 
 
+    /**
+     * Se muestra formulario de publicacion de cartel
+     */
     publish: (req, res) => {
-          res.render("sign/viewPublish"); 
-        },
+      res.render("sign/viewPublish");
+      
+    },
     sign_list: (req, res) => {
-          res.send("Publicado")
-        }
+      // Aca tengo que crear el cartel y levantar la dB de los usuarios que se encuentra en session y mostrarlos
+      // 1. Verficar que usuario es el que esta creando en la sesion
+      // 2. Parsear todos los datos provenientes del formulario, osea la verificacion del back
+      // 3. Crear el registro en la dB
+      
+      //Comienzo de creacion del registro en la dB
+    
+  
+      console.log("creando")
+      // Ojo que aca tiene que ir lo que va en la imagen por defecto "default_img.png"
+      console.log(req.body);
+     
 
-      }
+      let additionalData = {
+          images: req.files[0] ? req.files[0].filename : 'no_image.png',
+          user_id: 1 //req.session.user.id != undefined ? req.session.user.id: 1 // por ahora no esta implementado
+       }
+
+      let signData = {
+        ...req.body,
+        ...additionalData
+      };
+
+      res.send(signData);
+
+      // db.Sign.create(signData)
+      //   .then(() => res.redirect('/products/listado'))
+      //   .catch(error => console.log(error));
+
+
+      return console.log('PUBLICADO');
+      
+    }
+ }
 
 module.exports = controller
 

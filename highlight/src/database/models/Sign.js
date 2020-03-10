@@ -49,9 +49,6 @@ module.exports = (sequelize, dataTypes) => {
         width:{
             type: dataTypes.DECIMAL(10,2)
         },
-        sight_rate:{
-            type: dataTypes.INTEGER
-        },
         monthly_cost:{
             type: dataTypes.DECIMAL(10,2)
         },
