@@ -1,0 +1,56 @@
+<!--Esto hya que hacerlo en todas las vistas-->
+<%- include('../partials/head.ejs') %>
+<%- include('../partials/header_small.ejs') %>
+
+
+<main class="main-body">
+    <div class="contenedor-main container">
+        <h2 class="titulo-seccion">Listado de carteles</h2>
+
+        <div class="box-view container">
+            <div class="box-container-view">
+                <% sign.forEach(oneSign => { %>
+                <div class="listado_productos">
+                    <div class="row">
+                        <div class="col-12 col-md-4 box-img">
+                           <img src="/images/imagescartel/<%= oneSign.picture_filename%>">
+                        </div>
+
+                    <div class="col-12 col-md-6">
+                        <p class="estrellas">
+                            <% for(let j=0;j<oneSign.star;j++){ %>
+                                <span class="fa fa-star checked"></span>
+                             <%} for(j=oneSign.star; j<5;j++){ %>
+                                    <span class="fa fa-star n_checked"></span>
+                            <%}%>
+                        </p>
+                        <h2 class="capitalize"> <%= oneSign.address %> <%= oneSign.street_number %> </h2>
+                        <p> Entre <%= oneSign.street_1 %> y <%= oneSign.street_2 %>. <%= oneSign.city %>, <%= oneSign.state %></p>
+
+                            <p> <strong>Tipo de cartel:</strong> <%= oneSign.techs.sign_tech %></p>
+                            <p> <strong>Clasificacion:</strong> <%= oneSign.techs.sign_tech %></p>
+                            <p> <strong>Referencias:</strong> <%= oneSign.reference %></p>
+                            <p><strong>Medida:</strong> <%= oneSign.heigth %> x <%= oneSign.width %> metros.</p>
+                            <p><strong>Valor por mes: $ <%= oneSign.monthly_cost %></strong></p>
+                           
+                    </div>
+                    <div class="col-12 col-md-2 listado_btn">
+                        <a href="/sign/edit/<%= oneSign.id %>">Editar</a>
+                    
+                        <form action="/sign/delete/<%= oneSign.id %>?_method=DELETE" method="POST">
+                            <button type="submit">Eliminar</button>
+                        </form>
+                    </div>
+                </div>
+             </div>
+            <% });%>
+        </div>
+    </div>
+    </div>
+</main>
+
+
+  
+   
+
+<%- include('../partials/footer.ejs') %>

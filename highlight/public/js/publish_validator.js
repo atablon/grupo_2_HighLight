@@ -29,6 +29,7 @@ let inputError = {};
                     // cuando completa el campo remuevo todo.
                     this.classList.remove("error")
                     this.nextElementSibling.innerHTML = ``
+                    delete inputError[input.name];
 
                 }
             
@@ -82,14 +83,14 @@ form.addEventListener('submit', function (event) {
             inputError[input.name] = true;
             /// esto tengo que revisarlo porque no anda con la img. !VERRRRRRR
               input.classList.add("error")
-            // input.nextElementSibling.innerHTML = `El campo <b>${input.dataset.type}</b> no puede estar vacío`
+             input.nextElementSibling.innerHTML = `El campo <b>${input.dataset.type}</b> no puede estar vacío`
 
         }
     }
 
+    console.log(inputError)
     if (Object.keys(inputError).length > 0) {
         event.preventDefault();
-        
     }
 })
 

@@ -30,4 +30,14 @@ router.get('/publish', signController.publish);
 /**********  Guardar PUBLICAR ***********/
 router.post('/sign_list', upload.any(), signController.sign_list);
 
+
+/********** EDITAR ***********/
+router.get('/edit/:id', upload.any(), signController.edit);
+// router.put('/edit/:id', upload.any(), signController.editSave);
+
+
+/********** ELIMINAR ***********/
+router.delete('/delete/:id', signController.delete);
+
+
 module.exports = router;

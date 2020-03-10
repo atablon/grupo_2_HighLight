@@ -35,11 +35,47 @@ const controller = {
     }, 
 
     publish: (req, res) => {
-          res.render("sign/viewPublish"); 
+          let tech = db.Sign_tech.findAll();
+          let type = db.Sign_type.findAll();
+          Promise
+          .all([tech, type])
+          .then(results => {
+            return res.render("sign/viewPublish", {tech: results[0], type: results[1]}); 
+          })
+         
         },
-    sign_list: (req, res) => {
-          res.send("Publicado")
-        }
+    sign_list: async (req, res) => {
+          db.Sign.findAll({
+            include: ['techs', 'types', 'users', 'orders']
+          })
+          .then(results => {
+              console.log(results);
+             
+             return res.render('sign/signList', {sign:results})
+             //return res.send (results)
+            })
+        }, 
+    edit:(req, res) => {
+
+      let idNumber = req.params.id; 
+   /// VER por que no un findONE .. no me funciona
+      db.Sign.findOne({  
+        where: {
+            id: idNumber
+         }, 
+        include: ['techs', 'types', 'users', 'orders']
+       })
+      .then(results => {
+      
+        //return res.send(results)
+        return res.render('sign/editSign', { sign: results})
+      
+      })
+  }, 
+    delete: (req, res) => {
+      res.send("delete")
+    },
+
 
       }
 
