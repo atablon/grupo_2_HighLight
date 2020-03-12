@@ -47,10 +47,13 @@ const controller = {
           })
          
         },
+/** 
+ * Controlador para crear producto en funcion del formulario 
+*/
     publishPost: (req,res)=>{
 
       let additionalData = {
-        images: req.files[0] ? req.files[0].filename : 'no_image.png',
+        picture_filename: req.files[0] ? req.files[0].filename : 'no_image.png',
         user_id: 1 //req.session.user.id != undefined ? req.session.user.id: 1 // por ahora no esta implementado
      }
 
@@ -58,16 +61,17 @@ const controller = {
       ...req.body,
       ...additionalData
     };
-    console.log(signData);
-    
-//    res.send(signData);
 
-    // db.Sign.create(signData)
-    //   .then(() => res.redirect('/products/listado'))
-    //   .catch(error => console.log(error));
-    return res.redirect('/sign/sign_list');
+    /**@todo validacion por parte del back con la funcion validateDataDb */
+
+    db.Sign.create(signData)// Se crea registro nuevo de cartel en la base de datos
+      .then( () => res.redirect('/sign/sign_list') ) 
+      .catch( error => {return res.send(signData)} ); // por el asincronismo debo ponerlo aqui
+    
 
     },
+
+/** Controlador que se encarga de listar todos los cartels que dispone el usuario en cuestion */
     sign_list: async (req, res) => {
           db.Sign.findAll({
             include: ['techs', 'types', 'users', 'orders']
@@ -75,14 +79,14 @@ const controller = {
           .then(results => {
                           
              return res.render('sign/signList', {sign:results})
-             //return res.send (results)
+             
             })
         }, 
     edit:(req, res) => {
 
       let idNumber = req.params.id; 
-   /// VER por que no un findONE .. no me funciona
-      db.Sign.findOne({  
+  /**@todo pato quiere ver porque usa no le funciona un findOne */
+      db.Sign.findAll({  
         where: {
             id: idNumber
          }, 
