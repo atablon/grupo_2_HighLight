@@ -1,0 +1,23 @@
+<%- include('../partials/head.ejs') %>
+<%- include('../partials/header_home.ejs') %>
+
+<h1> Hola <%= user.user_name%> </h1>
+
+
+	<div class="container" style="margin-top: 40px;">
+		<div class="row">
+			<div class="col-md-3">
+				<img src="/images/imagenesperfil/<%=user.profile_picture%>" width="100%"> 
+            </div>
+            <div class="col-md-9">
+                <p> Nombre de usuario: <%= user.user_name %></p>
+                <p> Tipo de de usuario: <%= user.user_type %></p>
+                <p> Correo electronico: <%= user.email %></p>
+                <p> poner boto para ir al listado de carteles del usuario</p>
+                
+            </div>
+		</div>
+	</div>
+	<!-- //Container -->
+
+<%- include('../partials/footer.ejs') %> 

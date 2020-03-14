@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-
+const db = require('../src/database/models');
 
 // Constants
 const userFilePath = path.join(__dirname, '../data/users.json');
@@ -22,7 +22,9 @@ const controller = {
 	root: (req, res) => {
 		
 		// Acceso a la base de datos (Actualmente en JSON)
-		
+		/**
+		 * @todo limpiar todas estas lecturas y hacer una buena busqueda de la informacion para la pantalla principal en la base de datos 
+		 * */
 		let filePath = path.join(__dirname, '../data/productos_creados.json');
 		let cartelesDb = JSON.parse(fs.readFileSync(filePath,{encoding:'utf-8'}));
 		let user = [];
@@ -31,6 +33,7 @@ const controller = {
 		console.log(req.session.userId);// para debug
 		
 		if(req.session.userId!= undefined){
+
 			user = getUserById(req.session.userId);
 			console.log(user);
 		}else{

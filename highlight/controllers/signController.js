@@ -47,10 +47,13 @@ const controller = {
           })
          
         },
-    publishPost: (req,res) => {
+/** 
+ * Controlador para crear producto en funcion del formulario 
+*/
+    publishPost: (req,res)=>{
 
       let additionalData = {
-        images: req.files[0] ? req.files[0].filename : 'no_image.png',
+        picture_filename: req.files[0] ? req.files[0].filename : 'no_image.png',
         user_id: 1 //req.session.user.id != undefined ? req.session.user.id: 1 // por ahora no esta implementado
      }
 
@@ -58,27 +61,29 @@ const controller = {
       ...req.body,
       ...additionalData
     };
-  
-    
-//    res.send(signData);
 
-    // db.Sign.create(signData)
-    //   .then(() => res.redirect('/products/listado'))
-    //   .catch(error => console.log(error));
-    return res.redirect('/sign/sign_list');
+    /**@todo validacion por parte del back con la funcion validateDataDb */
+
+    db.Sign.create(signData)// Se crea registro nuevo de cartel en la base de datos
+      .then( () => res.redirect('/sign/sign_list') ) 
+      .catch( error => {return res.send(signData)} ); // por el asincronismo debo ponerlo aqui
+    
 
     },
+
+/** Controlador que se encarga de listar todos los cartels que dispone el usuario en cuestion */
     sign_list: async (req, res) => {
           db.Sign.findAll({
             include: ['techs', 'types', 'users', 'orders']
           })
           .then(results => {            
              return res.render('sign/signList', {sign:results})
+             
             })
         }, 
     edit:(req, res) => {
       let idNumber = req.params.id; 
-      let sign = db.Sign.findOne({
+     let sign = db.Sign.findOne({  
         where: {
           id: idNumber
         },
