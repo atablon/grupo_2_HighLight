@@ -1,6 +1,33 @@
 <%- include('../partials/head.ejs') %>
 <%- include('../partials/header_small.ejs') %>
 
+<%= sign.types.sign_type %>
+<%= sign.type_id %>
+<p>nnn </p>
+<%= type[0].id %>
+<%= type[0].sign_type %>
+
+
+<p>nnn </p>
+<%= tech[0].id %>
+<%= tech[0].sign_tech %>
+
+
+
+
+<select name="tech_id" id="tech_id" data-type="Clasificacion">
+    <% tech.forEach(tech => { %>
+    <option value="<%= tech.id %>" <%= tech.id == sign.tech_id ? "selected" : "" %>><%= tech.sign_tech %> </option>
+    <% });%>
+</select>
+
+
+
+
+
+ 
+
+
 
 <main class="main-body">
     <div class="contenedor-main container">
@@ -9,13 +36,8 @@
             <div class="box-container-view ">
                 <form action="/sign/sign_list" method="POST" class="ui-form" enctype="multipart/form-data"
                     id="publishForm">
-                    <p class="titulo-content">
-                        Ubicación del cartel
-                        <%= sign.address %>
-                     
-                    </p>
+                    <p class="titulo-content"> Ubicación del cartel</p>
                     <p class="form-content">
-
                         <label for="address">Domicilio apróximado:</label>
                         <input id="address" value="<%= sign.address %>" type="text" name="address"
                             data-type="domicilio">
@@ -34,6 +56,7 @@
                             class="input-medum" data-type="calle">
                         <span class="feedback"></span>
                     </p>
+                   
                     <p class="form-content">
                         <label for="street_2">Y la calle:</label>
                         <input class="input_50" value="<%= sign.street_2 %>" type="text" name="street_2"
@@ -67,33 +90,23 @@
                     <p class="titulo-content margin">Especificaciones</p>
                     <p class="form-content">
                         <label for="tech_id">Tipo de cartel:</label>
-                        <select name="tech_id" id="tech_id" data-type="especificaciones">
-
-                        </select>
+                            <select name="tech_id" id="tech_id" data-type="Clasificacion">
+                                <% tech.forEach(tech => { %>
+                                <option value="<%= tech.id %>" <%= tech.id == sign.tech_id ? "selected" : "" %>><%= tech.sign_tech %> </option>
+                                <% });%>
+                            </select>
+                     
                         <span class="feedback"></span>
                     </p>
                     <p class="form-content">
                         <label for="type_id">Clasificación: </label>
                         <select name="type_id" id="type_id" data-type="Clasificacion">
-
-
-                            <option value="Cartel de Refugios"
-                                <%=("Cartel de Refugios" == sign.type) ? "selected" : ""%>> Cartel de Refugios
-                            </option>
-                            <option value="Cartel de Kioscos, Diarios y Florerias"
-                                <%=("Cartel de Kioscos, Diarios y Florerias" == sign.type) ? "selected" : ""%>>Cartel
-                                de Kioscos, Diarios y Florerias</option>
-                            <option value="Cartel de Vallas"
-                                <%=("Cartel de Vallas" == sign.type) ? "selected" : ""%>>
-                                Cartel de Vallas </option>
-                            <option value="Cartel Frontlights y Backlights"
-                                <%=("Cartel Frontlights y Backlights" == sign.type) ? "selected" : ""%>>Frontlights y
-                                Backlights</option>
-                            <option value="Cartel de Medianera"
-                                <%=("Cartel de Medianera" == sign.type) ? "selected" : ""%>>Cartel de Medianeras
-                            </option>
-
+                            <% type.forEach(type => { %>
+                                <!-- comparo cual es el type y si está seleccionado sumo seleted al opction para que se muestre con esa opción-->
+                            <option value="<%= type.id %>" <%= type.id == sign.type_id ? "selected" : "" %>><%= type.sign_type %> </option>
+                            <% });%>
                         </select>
+                      
                         <span class="feedback"></span>
                     </p>
                     <p class="form-content">

@@ -27,7 +27,7 @@ const controller = {
         Promise
         .all([tech, type, sign, users])
         .then (results => {
-            console.log(results[1]);
+           
             //return res.render('sign/index', { tech: results[0], type: results[1], sign: results[2]  });
             return res.send({tech: results[0], type: results[1], sign: results[2], user: results[3]});
         })
@@ -47,7 +47,7 @@ const controller = {
           })
          
         },
-    publishPost: (req,res)=>{
+    publishPost: (req,res) => {
 
       let additionalData = {
         images: req.files[0] ? req.files[0].filename : 'no_image.png',
@@ -58,7 +58,7 @@ const controller = {
       ...req.body,
       ...additionalData
     };
-    console.log(signData);
+  
     
 //    res.send(signData);
 
@@ -72,29 +72,41 @@ const controller = {
           db.Sign.findAll({
             include: ['techs', 'types', 'users', 'orders']
           })
-          .then(results => {
-                          
+          .then(results => {            
              return res.render('sign/signList', {sign:results})
-             //return res.send (results)
             })
         }, 
     edit:(req, res) => {
-
       let idNumber = req.params.id; 
-   /// VER por que no un findONE .. no me funciona
-      db.Sign.findOne({  
+      let sign = db.Sign.findOne({
         where: {
-            id: idNumber
-         }, 
+          id: idNumber
+        },
         include: ['techs', 'types', 'users', 'orders']
-       })
-      .then(results => {
-      
-        //return res.send(results)
-        return res.render('sign/editSign', { sign: results})
-      
       })
-  }, 
+      let tech = db.Sign_tech.findAll();
+      let type = db.Sign_type.findAll();
+
+      Promise
+      .all([sign, tech, type])
+      .then(results => {
+        return res.render('sign/editSign', {sign:results[0], tech:results[1], type:results[2]})
+      })
+
+      // let idNumber = req.params.id; 
+      // let sign = db.Sign.findOne ({
+      //   where: {
+      //     id: idNumber
+      //   },
+      //   include: ['techs', 'types', 'users', 'orders']
+      // })
+      // Promise 
+      // .all([sign])
+      // .then(results => {
+      //   return res.render('sign/editSign', {sign:results[0]})
+      // })
+    }, 
+    
     delete: (req, res) => {
       res.send("delete")
     },

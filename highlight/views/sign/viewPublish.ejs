@@ -3,6 +3,10 @@
 
 
 <main class="main-body">
+
+     
+
+
     <div class="contenedor-main container">
         <h2 class="titulo-seccion">Publicar mi cartel</h2>
         <div class="box-view">
@@ -69,12 +73,14 @@
                     <p class="form-content">
                         <label for="type_id">Clasificación: </label>
                         <select name="type_id" id="type_id" data-type="Clasificacion">
-                            <option value="" selected disabled hidden> Seleccionar </option>
+                            <option value=""  disabled hidden> Seleccionar </option>
                             <% type.forEach(type => { %>
                             <option value="<%= type.id %>"><%= type.sign_type %> </option>
                             <% });%>
+
                         </select>
                         <span class="feedback"></span>
+                   
                     </p>
                     <p class="form-content">
                         <label for="star">Tráfico apróx. por día:</label>
