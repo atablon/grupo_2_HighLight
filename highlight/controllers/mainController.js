@@ -10,12 +10,15 @@ function getAllUsers() {
 	let usersFileContent = fs.readFileSync(userFilePath, 'utf-8');
 	let finalUsers = usersFileContent == '' ? [] : JSON.parse(usersFileContent);
 	return finalUsers;
+	/**@todo eliminar funcion, ahora con manejo de base de datos son inutiles */
 }
 
 function getUserById(id) {
 	let allUsers = getAllUsers();
 	let userById = allUsers.find(oneUser => oneUser.id == id);
 	return userById;
+
+	/**@todo eliminar funcion, ahora con manejo de base de datos son inutiles */
 }
 
 const controller = {
@@ -30,17 +33,20 @@ const controller = {
 		let user = [];
 		//
 
-		console.log(req.session.userId);// para debug
+		
 		
 		if(req.session.userId!= undefined){
 
-			user = getUserById(req.session.userId);
-			console.log(user);
+			db.User.findByPk(req.session.userId)
+			.then((user)=>{
+				res.render("index",{cartelesDb,user});
+			})
+			.catch(error=>console.log(error));
+
 		}else{
 			console.log('NO HAY PERSONA LOGUEADA');
-			
+			res.render("index",{cartelesDb,user}); 
 		}
-		res.render("index",{cartelesDb, user}); 
 	
 	},
 	root_carrito: (req, res) => {

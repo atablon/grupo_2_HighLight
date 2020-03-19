@@ -54,7 +54,7 @@ const controller = {
 
       let additionalData = {
         picture_filename: req.files[0] ? req.files[0].filename : 'no_image.png',
-        user_id: 1 //req.session.user.id != undefined ? req.session.user.id: 1 // por ahora no esta implementado
+        user_id: req.session.user.id
      }
 
     let signData = {
@@ -67,8 +67,6 @@ const controller = {
     db.Sign.create(signData)// Se crea registro nuevo de cartel en la base de datos
       .then( () => res.redirect('/sign/sign_list') ) 
       .catch( error => {return res.send(signData)} ); // por el asincronismo debo ponerlo aqui
-    
-
     },
 
 /** Controlador que se encarga de listar todos los cartels que dispone el usuario en cuestion */
