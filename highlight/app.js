@@ -7,6 +7,7 @@ const path = require('path');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const userCookieMiddleware = require('./middlewares/userCookieMiddleware');
+const authentication = require('./middlewares/authentication');
 
 // ************ express() - (don't touch) ************
 const app = express();
@@ -23,7 +24,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
-
+app.use(authentication)
 app.use(userCookieMiddleware);
 //
 // ************ Template Engine - (don't touch) ************

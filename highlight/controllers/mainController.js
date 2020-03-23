@@ -23,30 +23,14 @@ function getUserById(id) {
 
 const controller = {
 	root: (req, res) => {
-		
-		// Acceso a la base de datos (Actualmente en JSON)
 		/**
 		 * @todo limpiar todas estas lecturas y hacer una buena busqueda de la informacion para la pantalla principal en la base de datos 
 		 * */
+		// Acceso a la base de datos (Actualmente en JSON)
 		let filePath = path.join(__dirname, '../data/productos_creados.json');
 		let cartelesDb = JSON.parse(fs.readFileSync(filePath,{encoding:'utf-8'}));
-		let user = [];
-		//
 
-		
-		
-		if(req.session.userId!= undefined){
-
-			db.User.findByPk(req.session.userId)
-			.then((user)=>{
-				res.render("index",{cartelesDb,user});
-			})
-			.catch(error=>console.log(error));
-
-		}else{
-			console.log('NO HAY PERSONA LOGUEADA');
-			res.render("index",{cartelesDb,user}); 
-		}
+		res.render('index',{cartelesDb});
 	
 	},
 	root_carrito: (req, res) => {

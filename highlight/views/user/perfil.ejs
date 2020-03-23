@@ -14,7 +14,21 @@
                 <p> Tipo de de usuario: <%= user.user_type %></p>
                 <p> Correo electronico: <%= user.email %></p>
                 <p> poner boto para ir al listado de carteles del usuario</p>
-                
+                <div class="box-buttom">
+                    <a href="/sign/sign_list">
+                        <!-- Para corregir luego front y aspecto -->
+                        <button class="btn">Listar Carteles</button>
+                    </a>
+                </div>
+                <!-- Hacer el boton de cerrar sesion rojo -->
+                <form method="POST" class="formBase">
+                    <div class="box-buttom">
+                        <a href="/users/logout">
+                            <!-- Para corregir luego front y aspecto -->
+                            <button type="submit" class="btn_logout">Cerrar sesion</button>
+                        </a>
+                    </div>
+                </form>
             </div>
 		</div>
 	</div>

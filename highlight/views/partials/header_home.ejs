@@ -24,14 +24,7 @@
             <!-- javascrip on clinck class toggle on click-->
             <div class="box_nav col-md-8 offset-md-2 col-lg-4 offset-lg-5" id="b">
                 <nav class="navegacion">
-                    <% if(user.id==undefined){ %> 
-                    <ul>
-                        <li><a href="/users/ingresar"> Ingresar</a></li>
-                        <li><a href="/users/registro"> Registrarse</a></li>
-                        <li><a href="/users/ingresar" class="btn"> Publicar mi cartel</a></li>
-
-                    </ul>
-                    <%} else {%>
+                    <% if(isAuthenticated){ %> 
                         <ul>
                             <!-- <li><a href="/users/perfil"> Perfil</a></li> -->
                             <li><a class="nav-link dropdown-toggle profile_bar" href="/users/perfil" id="dropUser" role="button" data-toggle="dropdown"
@@ -41,7 +34,13 @@
                             </a></li>
                             <li><a href="/sign/publish" class="btn"> Publicar mi cartel</a></li>
                         </ul>
-                
+                    <%} else {%>
+                        <ul>
+                            <li><a href="/users/ingresar"> Ingresar</a></li>
+                            <li><a href="/users/registro"> Registrarse</a></li>
+                            <li><a href="/users/ingresar" class="btn"> Publicar mi cartel</a></li>
+    
+                        </ul>
                     <% } %> 
                 </nav>
 
