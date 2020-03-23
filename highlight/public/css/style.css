@@ -146,7 +146,9 @@ button.btn:focus {
   background-color: blue;
   display: block;
 }
-
+#cerrar_sesion_link{
+  color:#DC143C;
+}
 
 .buscador_medium {
   margin: 0px 10px;

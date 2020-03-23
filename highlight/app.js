@@ -24,7 +24,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
-app.use(authentication)
+app.use(authentication);
 app.use(userCookieMiddleware);
 //
 // ************ Template Engine - (don't touch) ************
