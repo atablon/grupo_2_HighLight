@@ -34,7 +34,8 @@
         <h2 class="titulo-seccion">Publicar mi cartel</h2>
         <div class="box-view">
             <div class="box-container-view ">
-                <form action="/sign/sign_list" method="POST" class="ui-form" enctype="multipart/form-data"
+
+                <form action="/sign/edit/<%=sign.id%>?_method=PUT" method="POST" class="ui-form" enctype="multipart/form-data"
                     id="publishForm">
                     <p class="titulo-content"> Ubicación del cartel</p>
                     <p class="form-content">
@@ -109,7 +110,7 @@
                       
                         <span class="feedback"></span>
                     </p>
-                    <p class="form-content">
+                    <p cl   ass="form-content">
                         <label for="star">Tráfico apróx. por día:</label>
 
 

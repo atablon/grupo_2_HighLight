@@ -31,6 +31,7 @@ router.get('/publish', signController.publish);
 router.post('/sign_list', upload.any(), signController.publishPost);
 
 
+
 /**********  Publico el listado completo que tiene el usuario actual ***********/
 router.get('/sign_list', signController.sign_list);
 
@@ -38,6 +39,8 @@ router.get('/sign_list', signController.sign_list);
 
 /********** EDITAR ***********/
 router.get('/edit/:id', upload.any(), signController.edit);
+router.put('/edit/:id', upload.any(), signController.saveEdit);
+
 // router.put('/edit/:id', upload.any(), signController.editSave);
 
 
