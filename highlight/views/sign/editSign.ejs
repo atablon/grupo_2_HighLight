@@ -8,6 +8,8 @@
 <%= type[0].sign_type %>
 
 
+<%= sign.reference%>
+
 <p>nnn </p>
 <%= tech[0].id %>
 <%= tech[0].sign_tech %>
@@ -20,13 +22,6 @@
     <option value="<%= tech.id %>" <%= tech.id == sign.tech_id ? "selected" : "" %>><%= tech.sign_tech %> </option>
     <% });%>
 </select>
-
-
-
-
-
- 
-
 
 
 <main class="main-body">
@@ -110,11 +105,9 @@
                       
                         <span class="feedback"></span>
                     </p>
-                    <p cl   ass="form-content">
+                    <!-- <p class="form-content">
                         <label for="star">Tráfico apróx. por día:</label>
-
-
-                        <!-- <select name="star" id="star" data-type="peatón">
+                        <select name="star" id="star" data-type="peatón">
                             <option value="" selected disabled hidden> Seleccionar </option>
                             <option value="1">Hasta 3000 personas </option>
                             <option value="2">Hasta 10000 personas</option>
@@ -122,8 +115,8 @@
                             <option value="4">Entre 20000 y 49999 personas</option>
                             <option value="5">Más de 50000 personas</option>
 
-                        </select>-->
-                        <span class="feedback"></span>
+                        </select>
+                        <span class="feedback"></span>--> 
                     </p>
 
                     <p class="form-content input_50">

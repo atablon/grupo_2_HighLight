@@ -110,7 +110,15 @@ const controller = {
     }, 
     
     delete: (req, res) => {
-      res.send("delete")
+ 
+     db.Sign.destroy ({
+        where: {
+          id: req.params.id
+        }
+      })
+      res.redirect("/sign/sign_list")
+
+
     },
     saveEdit : (req, res) => {
     
@@ -125,13 +133,11 @@ const controller = {
       db.Sign.update(
         signData, { where: {id:req.params.id}}
         );
-        
+
       res.redirect("/sign/sign_list")
   }, 
 
-  delete: (res,req) => {
-    res.redirect("/sign/sign_list")
-  }
+
  }
 
 module.exports = controller
