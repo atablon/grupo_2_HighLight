@@ -19,7 +19,7 @@ function validateUserEntry(req,res,user){
 			// Al ya tener al usuario, comparamos las contraseñas
 			if (bcrypt.compareSync(req.body.user_password, user.user_password)) {
 				// Setear en session el ID del usuario
-				req.session.userId = user.id;
+				req.session.user = user;
 
 				// Setear la cookie
 				if (req.body.remember_user) {
@@ -36,6 +36,11 @@ function validateUserEntry(req,res,user){
 				res.send('Credenciales inválidas');
 			}
 		} else {
+
+			/**
+			 * @todo hacer la pagina de usuario no existente, en otras palabras que la misma pagina en la que esta le avise que no se encontro el usuario
+			 * con ese email y contrasenia
+			 */
 			res.send('No hay usuarios registrados con ese email');
 		}
 }
@@ -110,16 +115,15 @@ const usersController = {
         let newUserData = getUserFormData(req); // recupero los datos del formulario en la ruta: POST ->/registro
 
 		db.User.create(newUserData)
-		.then( (userCreated)=>{
+			.then( (userCreated)=>{
 			
-			req.session.userId = userCreated.id;
+				req.session.userId = userCreated.id;
 			
-			res.cookie('userCookie', userCreated.id, { maxAge: 60000 * 60 });
+				res.cookie('userCookie', userCreated.id, { maxAge: 60000 * 60 });
 
-			//return res.send(userCreated)
-			return res.redirect('/users/ingresar');
-		})
-		.catch(error => console.log(error));
+				return res.redirect('/users/ingresar');
+			})
+			.catch(error => console.log(error));
 	
         
 	},
@@ -142,18 +146,30 @@ const usersController = {
 	 * Se muestra el perfil del usuario cuya session este activa o recien haya ingresado
 	 */
 	showProfile: (req,res)=>{
-		
-		db.User.findOne({
-			where:{
-				id:req.session.userId
-			}
-		})
-		.then(user=>{
-			res.render('user/perfil',{user}); 
-		})
-		.catch(error=>{console.log(error);
-		});
+		return (res.render('user/perfil')); 
 	},
+	/**
+	 * Funcion para hacer logout, @todo incorporar en la vista del perfil
+	 */
+	logout: (req, res) => {
+        // Al hacer logout borramos todos las cookies activas
+        //let tokens = userTokensModel.findAllByField('userId', req.session.user.id);
+        // if (tokens) {
+        //     tokens.forEach(token => {
+        //         userTokensModel.destroy(token.id);
+        //     });
+        // }
+
+        // La otra opción sería solo borrar la que corresponda a esta sesión.
+        // let token = userTokensModel.findByField('token', req.cookies.rememberToken);
+        // if (token) { userTokensModel.destroy(token.id) }
+		console.log(`\n*****Se ha hecho el LOGOUT de ${req.session.user.user_name} correctamente****\n`);
+        req.session.destroy();
+		//res.cookie('rememberToken', null, { maxAge: -1 });
+	
+		
+        return(res.redirect('/'));
+    },
 
 }
 

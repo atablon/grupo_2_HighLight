@@ -24,24 +24,23 @@
             <!-- javascrip on clinck class toggle on click-->
             <div class="box_nav col-md-8 offset-md-2 col-lg-4 offset-lg-5" id="b">
                 <nav class="navegacion">
-                    <% if(user.id==undefined){ %> 
-                    <ul>
-                        <li><a href="/users/ingresar"> Ingresar</a></li>
-                        <li><a href="/users/registro"> Registrarse</a></li>
-                        <li><a href="/users/ingresar" class="btn"> Publicar mi cartel</a></li>
-
-                    </ul>
-                    <%} else {%>
+                    <% if(isAuthenticated){ %> 
                         <ul>
                             <!-- <li><a href="/users/perfil"> Perfil</a></li> -->
                             <li><a class="nav-link dropdown-toggle profile_bar" href="/users/perfil" id="dropUser" role="button" data-toggle="dropdown"
                                 aria-haspopup="true" aria-expanded="false">
-                                <img src="/images/imagenesperfil/<%= user.fotoPerfil %>" width="30" style="border-radius: 100%;">
-                                <!-- Hi <%= user.nombre %> -->
+                                <img src="/images/imagenesperfil/<%= user.profile_picture %>" width="30" style="border-radius: 100%;">
+                                <!-- Hi <%= user.user_name %> -->
                             </a></li>
-                            <li><a href="/products/publicar" class="btn"> Publicar mi cartel</a></li>
+                            <li><a href="/sign/publish" class="btn"> Publicar mi cartel</a></li>
                         </ul>
-                
+                    <%} else {%>
+                        <ul>
+                            <li><a href="/users/ingresar"> Ingresar</a></li>
+                            <li><a href="/users/registro"> Registrarse</a></li>
+                            <li><a href="/users/ingresar" class="btn"> Publicar mi cartel</a></li>
+    
+                        </ul>
                     <% } %> 
                 </nav>
 

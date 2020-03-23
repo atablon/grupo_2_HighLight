@@ -20,8 +20,6 @@ const diskStorage = multer.diskStorage({
 
 const upload = multer({ storage: diskStorage });
 
-
-
 // GET -> /users/registrar
 router.get('/registro', usersController.register);
 
@@ -37,6 +35,10 @@ router.post('/registro',upload.any(),usersController.store);
 // POST -> /users/login
 router.post('/ingresar', usersController. processLogin);
 
-// 
+// POST -> /users/logout
+/**
+ * @todo pendiente de implementar en la vista
+ */
+router.post('/logout',usersController.logout);
 
 module.exports = router;

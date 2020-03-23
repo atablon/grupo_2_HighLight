@@ -38,6 +38,8 @@ const controller = {
      * Se muestra formulario de publicacion de cartel
      */
     publish: (req, res) => {
+          console.log(`\n ****El usuario utilizado es ${req.session.userId}****** \n`);
+          
           let tech = db.Sign_tech.findAll();
           let type = db.Sign_type.findAll();
           Promise
@@ -54,7 +56,7 @@ const controller = {
 
       let additionalData = {
         picture_filename: req.files[0] ? req.files[0].filename : 'no_image.png',
-        user_id: 1 //req.session.user.id != undefined ? req.session.user.id: 1 // por ahora no esta implementado
+        user_id: req.session.userId
      }
 
     let signData = {
@@ -63,19 +65,29 @@ const controller = {
     };
 
     /**@todo validacion por parte del back con la funcion validateDataDb */
-
+    console.log(signData);
+    
     db.Sign.create(signData)// Se crea registro nuevo de cartel en la base de datos
-      .then( () => res.redirect('/sign/sign_list') ) 
+      .then( () => {res.redirect('/sign/sign_list')} ) 
       .catch( error => {return res.send(signData)} ); // por el asincronismo debo ponerlo aqui
     },
 
-/** Controlador que se encarga de listar todos los cartels que dispone el usuario en cuestion */
+/**
+ * Controlador que se encarga de listar todos los cartels que dispone el usuario en cuestion
+ */
     sign_list: async (req, res) => {
           db.Sign.findAll({
             include: ['techs', 'types', 'users', 'orders']
-          })
-          .then(results => {            
-             return res.render('sign/signList', {sign:results})
+          },
+          {
+            where:{
+            user_id: req.session.userId
+          }
+        })
+          .then(results => {     
+            console.log(results);
+                   
+            return res.render('sign/signList', {sign:results})
              
             })
         }, 
