@@ -41,4 +41,11 @@ router.post('/ingresar', usersController. processLogin);
  */
 router.post('/logout',usersController.logout);
 
+/********** EDITAR ***********/
+
+router.get('/edit/:id', upload.any(), usersController.showProfileEdit);
+router.put('/edit/:id', upload.any(), usersController.saveEdit);
+
+
+
 module.exports = router;

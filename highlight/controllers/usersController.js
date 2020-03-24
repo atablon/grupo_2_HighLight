@@ -166,10 +166,20 @@ const usersController = {
 		console.log(`\n*****Se ha hecho el LOGOUT de ${req.session.user.user_name} correctamente****\n`);
         req.session.destroy();
 		//res.cookie('rememberToken', null, { maxAge: -1 });
-	
-		
         return(res.redirect('/'));
-    },
+	},
+	 
+	saveEdit: (res,req) => {
+
+	},
+	showProfileEdit: (req, res) => {
+		let idNumber = req.params.id; 
+		console.log(idNumber)
+		db.User.findAll({where: {id: idNumber}})
+		.then(results => {
+		return res.render('user/editUser', { user: results})
+		})
+	},
 
 }
 

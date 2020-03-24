@@ -111,3 +111,9 @@
     display: none;
     color: tomato
 }
+
+.feedback.block {
+    display: block !important;
+    border: none;
+
+}
