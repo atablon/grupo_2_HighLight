@@ -35,11 +35,11 @@ router.post('/registro',upload.any(),usersController.store);
 // POST -> /users/login
 router.post('/ingresar', usersController. processLogin);
 
-// POST -> /users/logout
+// GET -> /users/logout
 /**
  * @todo pendiente de implementar en la vista
  */
-router.post('/logout',usersController.logout);
+router.get('/logout',usersController.logout);
 
 /********** EDITAR ***********/
 
