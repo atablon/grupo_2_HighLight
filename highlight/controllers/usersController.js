@@ -170,11 +170,20 @@ const usersController = {
 	},
 	 
 	saveEdit: (res,req) => {
+		// let newUser = {
+        //     pass: req.body.pass, // ya se encuentra hasheado 
+		// }
+		// console.log(newUser	)
+		// db.User.update(
+		// 	newUser, { where: { id: req.params.id } }
+		// );
+		res.redirect("/user/perfil")
+
+
 
 	},
 	showProfileEdit: (req, res) => {
 		let idNumber = req.params.id; 
-		console.log(idNumber)
 		db.User.findAll({where: {id: idNumber}})
 		.then(results => {
 		return res.render('user/editUser', { user: results})

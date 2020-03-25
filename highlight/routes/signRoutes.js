@@ -39,9 +39,8 @@ router.get('/sign_list', signController.sign_list);
 
 /********** EDITAR ***********/
 router.get('/edit/:id', upload.any(), signController.edit);
-router.put('/edit/:id', upload.any(), signController.saveEdit);
+router.put('/edit/:id', signController.saveEdit);
 
-// router.put('/edit/:id', upload.any(), signController.editSave);
 
 
 /********** ELIMINAR ***********/

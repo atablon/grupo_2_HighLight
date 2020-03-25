@@ -130,12 +130,12 @@ const controller = {
          ...req.body,
          ...additionalData
        };
-      db.Sign.update(
+   db.Sign.update(
         signData, { where: {id:req.params.id}}
-        );
+        );  
 
       res.redirect("/sign/sign_list")
-  }, 
+  },  
 
 
  }

@@ -109,7 +109,8 @@
 
 .feedback {
     display: none;
-    color: tomato
+    color: tomato; 
+    margin-left: 24%;;
 }
 
 .feedback.block {
@@ -117,3 +118,19 @@
     border: none;
 
 }
+
+.form-check {
+    margin-left: 24%;
+    font-size: 12px;
+}
+
+.linkform {
+    margin-top: 50px;
+    margin-left: 24%;
+}
+
+.errorPass {
+    border: 1px solid tomato !important;
+    padding: 10px 0;
+}
+
