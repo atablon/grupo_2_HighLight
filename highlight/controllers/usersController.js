@@ -170,15 +170,17 @@ const usersController = {
 	},
 	 
 	saveEdit: (res,req) => {
-		// let newUser = {
-        //     pass: req.body.pass, // ya se encuentra hasheado 
-		// }
-		// console.log(newUser	)
-		// db.User.update(
-		// 	newUser, { where: { id: req.params.id } }
-		// );
-		res.redirect("/user/perfil")
-
+		console.log(req.body.pass)
+		let changePass = {
+			user_password: bcrypt.hashSync(req.body.pass, 10),
+		}
+		console.log(req.body.changePass)
+		db.User.update(
+			changePass, { where: {id: req.params.id } }
+		)
+		.then(results => {
+			return (res.redirect("/user/perfil"));
+		})
 
 
 	},

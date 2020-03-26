@@ -56,7 +56,7 @@ const controller = {
 
       let additionalData = {
         picture_filename: req.files[0] ? req.files[0].filename : 'no_image.png',
-        user_id: req.session.userId
+        user_id: 11 // req.session.user.user_id // Acá me tira error
      }
 
     let signData = {
@@ -75,24 +75,24 @@ const controller = {
 /**
  * Controlador que se encarga de listar todos los cartels que dispone el usuario en cuestion
  */
-    sign_list: async (req, res) => {
+    sign_list: (req, res) => {
+      console.log(req.session.user)
           db.Sign.findAll({
             include: ['techs', 'types', 'users', 'orders']
           },
           {
             where:{
-            user_id: req.session.userId
+              user_id: req.session.user.user_id
           }
         })
           .then(results => {     
-            console.log(results);
                    
             return res.render('sign/signList', {sign:results})
              
             })
         }, 
     edit:(req, res) => {
-      let idNumber = req.params.id; 
+     let idNumber = req.params.id; 
      let sign = db.Sign.findOne({  
         where: {
           id: idNumber
@@ -110,7 +110,7 @@ const controller = {
     }, 
     
     delete: (req, res) => {
- 
+    console.log (req.params.id)
      db.Sign.destroy ({
         where: {
           id: req.params.id
@@ -121,20 +121,25 @@ const controller = {
 
     },
     saveEdit : (req, res) => {
-    
+      console.log(req.session.user)
       let additionalData = {
         picture_filename: req.files[0] ? req.files[0].filename : 'no_image.png',
-        user_id: 1 //req.session.user.id != undefined ? req.session.user.id: 1 // por ahora no esta implementado
-       }
+        user_id: req.session.user.user_id
+      }
+
       let signData = {
          ...req.body,
          ...additionalData
        };
-   db.Sign.update(
-        signData, { where: {id:req.params.id}}
-        );  
 
-      res.redirect("/sign/sign_list")
+      console.log(signData)
+       db.Sign.update(
+        signData, { where: {id:req.params.id}}
+        )
+        .then (results => {
+          return (res.redirect("/sign/sign_list"));
+        });
+      
   },  
 
 

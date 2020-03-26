@@ -9,7 +9,7 @@
         
                 <form method="POST" action="/users/edit/<%= user[0].id %>?_method=PUT" enctype="multipart/form-data" class="formBase"
                     id="publishForm">
-                    <!-- <p class="form-content">
+                    <p class="form-content">
                         <label for="pass">Contraseña:</label>
                         <input type="password" id="pass" name="pass" data-type="password">
                         <span class="feedback"></span>
@@ -18,7 +18,7 @@
                         <label for="pass2">Repetí contraseña:</label>
                         <input type="password" id="pass2" name="rpass" data-type="password">
                         <span class="feedback"></span>
-                    </p> -->
+                    </p>
                     <span class="feedbackForm" id="feedbackForm"> </span>
 
                     <div class="box-buttom">
@@ -33,5 +33,5 @@
 </main>
 <%- include('../partials/footer.ejs') %>
 
-<script src="/js/validator.min.js"></script>
-<script src="/js/user_validator.js"></script>
+<!-- <script src="/js/validator.min.js"></script>
+<script src="/js/user_validator.js"></script> -->
