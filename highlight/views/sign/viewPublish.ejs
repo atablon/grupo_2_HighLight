@@ -63,7 +63,7 @@
                     <p class="form-content">
                         <label for="tech_id">Tipo de cartel:</label>
                         <select name="tech_id" id="tech_id" data-type="especificaciones">
-                            <option value="" selected disabled hidden> Seleccionar </option>
+                            <option value="" selected  hidden> Seleccionar </option>
                              <% tech.forEach(tech => { %>
                             <option value="<%= tech.id %>"><%=tech.sign_tech%> </option>
                             <% });%>    
@@ -72,8 +72,8 @@
                     </p>
                     <p class="form-content">
                         <label for="type_id">Clasificación: </label>
-                        <select name="type_id" id="type_id" data-type="Clasificacion">
-                            <option value=""  disabled hidden> Seleccionar </option>
+                        <select name="type_id" id="type_id" data-type="clasificacion">
+                            <option value=""  hidden> Seleccionar </option>
                             <% type.forEach(type => { %>
                             <option value="<%= type.id %>"><%= type.sign_type %> </option>
                             <% });%>
@@ -109,7 +109,8 @@
                    
                     <p class="form-content input_50">
                         <label for="monthly_cost">Costo de alquiler: </label>
-                        <input class="small" placeholder="10000" type="text" name="monthly_cost" id="monthly_cost" data-type="costo">
+                        <input class="small" placeholder="10000 por mes" type="text" name="monthly_cost" id="monthly_cost" data-type="costo">
+                        
                         <span class="feedback"></span>
                     </p>
 
