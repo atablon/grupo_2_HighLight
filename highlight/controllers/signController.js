@@ -25,7 +25,6 @@ const controller = {
         Promise
         .all([tech, type, sign, users])
         .then (results => {
-           
             //return res.render('sign/index', { tech: results[0], type: results[1], sign: results[2]  });
             return res.send({tech: results[0], type: results[1], sign: results[2], user: results[3]});
         })
@@ -46,8 +45,6 @@ const controller = {
             return res.render("sign/viewPublish", {tech: results[0], type: results[1]}); 
           })
           .catch(error => { console.log(error)});
-          
-         
         },
 /** 
  * Controlador para crear producto en funcion del formulario 

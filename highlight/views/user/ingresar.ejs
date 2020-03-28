@@ -5,28 +5,31 @@
     <main class="main-body">
         <div class="contenedor-main container">
             <h2 class="titulo-seccion"> Completá los datos</h2>
-    
             <div class="box-view">
                 <div class="box-container-view ">
-                    <form method="POST" class="formBase">
-                    <p class="form-content">
-                        <label for="mail">E-mail:</label>
-                        <input type="email" id="mail" name="email" placeholder="juan@gmail.com">
-                    </p>
-                    <p class="form-content">
-                        <label for="pass">Contraseña:</label>
-                        <input type="password" id="pass" name="user_password">
-                    </p>
-                    
-                    
-                    <div class="form-group form-check">
-								<label class="form-check-label">
-									<input type="checkbox" class="form-check-input" name="remember_user">Recordar mi usuario
-								</label>
-							</div>
-                    <div class="box-buttom">
-                         <button type="submit" class="btn"> Ingresar</button>
-                    </div>
+                    <form method="POST" class="formBase" id="publishForm">
+                            <p class="form-content">
+                                <label for="mail">E-mail:</label>
+                                <input type="email" id="mail" name="email" placeholder="juan@gmail.com" data-type="e-mail">
+                                <span class="feedback"></span>
+
+                            </p>
+                            <p class="form-content">
+                                <label for="pass">Contraseña:</label>
+                                <input type="password" id="pass" name="user_password" data-type="contraseña">
+                                                        <span class="feedback"></span>
+
+                            </p>
+                            
+                            
+                            <div class="form-group form-check">
+                                        <label class="form-check-label">
+                                            <input type="checkbox" class="form-check-input" name="remember_user">Recordar mi usuario
+                                        </label>
+                                    </div>
+                            <div class="box-buttom">
+                                <button type="submit" class="btn"> Ingresar</button>
+                            </div>
 
                     </form>
                     
@@ -39,3 +42,5 @@
     </main>
     
 <%- include('../partials/footer.ejs') %>
+<script src="/js/validator.min.js"></script>
+<script src="/js/ingresar_validator.js"></script>
