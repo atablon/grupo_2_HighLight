@@ -8,6 +8,9 @@ const db = require("../src/database/models")
 
 
 const controller = {
+  /**
+   * Funcion para probar la base de datos
+   */
     index: async (req, res) => {
         let tech = db.Sign_tech.findAll({
           include: ['signs'] 
@@ -93,7 +96,7 @@ const controller = {
         }, 
     edit:(req, res) => {
       let idNumber = req.params.id; 
-     let sign = db.Sign.findOne({  
+      let sign = db.Sign.findOne({  
         where: {
           id: idNumber
         },
