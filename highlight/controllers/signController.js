@@ -3,9 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const db = require("../src/database/models")
 
-
 /*********************************************************************************/
-
 
 const controller = {
     index: async (req, res) => {
@@ -47,13 +45,14 @@ const controller = {
           .then(results => {
             return res.render("sign/viewPublish", {tech: results[0], type: results[1]}); 
           })
+          .catch(error => { console.log(error)});
+          
          
         },
 /** 
  * Controlador para crear producto en funcion del formulario 
 */
     publishPost: (req,res)=>{
-
       let additionalData = {
         picture_filename: req.files[0] ? req.files[0].filename : 'no_image.png',
         user_id: 11 // req.session.user.user_id // Acá me tira error
@@ -68,82 +67,83 @@ const controller = {
     console.log(signData);
     
     db.Sign.create(signData)// Se crea registro nuevo de cartel en la base de datos
-      .then( () => {res.redirect('/sign/sign_list')} ) 
-      .catch( error => {return res.send(signData)} ); // por el asincronismo debo ponerlo aqui
+      .then( () => {res.redirect('/sign/sign_list')}) 
+      .catch( error => {return res.send(signData)}); // por el asincronismo debo ponerlo aqui
     },
 
 /**
  * Controlador que se encarga de listar todos los cartels que dispone el usuario en cuestion
  */
     sign_list: (req, res) => {
-      console.log(req.session.user)
           db.Sign.findAll({
             include: ['techs', 'types', 'users', 'orders']
           },
-          {
-            where:{
-              user_id: req.session.user.user_id
-          }
-        })
-          .then(results => {     
-                   
-            return res.render('sign/signList', {sign:results})
-             
-            })
-        }, 
-    edit:(req, res) => {
-     let idNumber = req.params.id; 
-     let sign = db.Sign.findOne({  
-        where: {
-          id: idNumber
-        },
-        include: ['techs', 'types', 'users', 'orders']
-      })
-      let tech = db.Sign_tech.findAll();
-      let type = db.Sign_type.findAll();
-
-      Promise
-      .all([sign, tech, type])
-      .then(results => {
-        return res.render('sign/editSign', {sign:results[0], tech:results[1], type:results[2]})
-      })
+          { where:{ user_id: req.session.user.user_id}
+          })
+          .then(results => { return res.render('sign/signList', {sign:results})})
+          .catch(error => { console.log(error) });
     }, 
+
+/**
+ * Controlador que se encarga de mostrar la vista de editar  
+ */
+
+    edit:(req, res) => {
+        let idNumber = req.params.id; 
+        let sign = db.Sign.findOne({  
+             where: {
+                id: idNumber
+             },
+            include: ['techs', 'types', 'users', 'orders']
+          })
+        let tech = db.Sign_tech.findAll();
+        let type = db.Sign_type.findAll();
+      Promise
+        .all([sign, tech, type])
+        .then(results => {
+          return res.render('sign/editSign', {sign:results[0], tech:results[1], type:results[2]})
+        })
+        .catch(error => { console.log(error) });
+
+    }, 
+
+/**
+* Controlador que se encarga de eliminar un cartel 
+*/
     
     delete: (req, res) => {
-    console.log (req.params.id)
-     db.Sign.destroy ({
-        where: {
-          id: req.params.id
-        }
-      })
-      res.redirect("/sign/sign_list")
-
-
+        db.Sign.destroy ({
+          where: {id: req.params.id}
+        })
+        .then(results => {
+          return res.redirect("/sign/sign_list")
+        })
+        .catch(error => { console.log(error) });
     },
+
+/**
+* Controlador que se encarga de guardar las modificaciones del cartel
+*/
+
     saveEdit : (req, res) => {
-      console.log(req.session.user)
-      let additionalData = {
-        picture_filename: req.files[0] ? req.files[0].filename : 'no_image.png',
-        user_id: req.session.user.user_id
-      }
+        let additionalData = {
+          picture_filename: req.files[0] ? req.files[0].filename : 'no_image.png',
+          user_id: req.session.user.user_id
+        }
+        let signData = {
+          ...req.body,
+          ...additionalData
+        };
 
-      let signData = {
-         ...req.body,
-         ...additionalData
-       };
-
-      console.log(signData)
        db.Sign.update(
-        signData, { where: {id:req.params.id}}
-        )
-        .then (results => {
-          return (res.redirect("/sign/sign_list"));
-        });
-      
-  },  
-
-
- }
+          signData, { where: {id:req.params.id}}
+          )
+          .then (results => {
+              return (res.redirect("/sign/sign_list"));
+           })
+          .catch(error => { console.log(error) });   
+    },  
+}
 
 module.exports = controller
 
