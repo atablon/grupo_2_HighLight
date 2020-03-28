@@ -1,58 +1,66 @@
-
     <%- include('../partials/head.ejs') %>
-
     <%- include('../partials/header_small.ejs') %>
             
     <main class="main-body">
     <div class="contenedor-main container">
-        <h2 class="titulo-seccion"> Completá los datos</h2>
-    
+        <h2 class="titulo-seccion"> Completá todos los datos</h2>
         <div class="box-view">
             <div class="box-container-view ">
-                <form method="POST" action="/users/registro" enctype="multipart/form-data" class="formBase" >
+            
+                <form method="POST" action="/users/registro" enctype="multipart/form-data" class="formBase" id="publishForm" >
+
                     <p class="form-content">
-                        <label for="name">Nombre de usuario: </label>
-                        <input type="text" id="name" name="user_name">
+                        <label for="name">Nombre y apellido: </label>
+                        <input type="text" id="name" name="user_name" data-type="nombre y apellido">
+                        <span class="feedback"></span>
                     </p>
                     <p class="form-content">
-                        <label for="registro">Quiero:</label>
-                      <select id="registro" name="user_type">
+                        <label for="registro">Qué queres hacer:</label>
+                      <select id="registro" name="user_type" data-type="qué queres hacer">
                         <option value="" selected disabled hidden> Seleccionar </option>
-                          <option> Publicar </option>
-                         <option> Alquilar </option>
-                         <option> Publicar y alquilar </option>
+                          <option> Publicar carteles</option>
+                         <option> Alquilar carteles </option>
+                         <option> Publicar / alquilar carteles</option>
 
                       </select>
+                    <span class="feedback"></span>
                     </p>
-                   
-
+                  
                     <p class="form-content">
                         <label for="mail">E-mail:</label>
-                        <input type="email" id="mail" name="email" placeholder="juan@gmail.com">
+                        <input type="email" id="mail" name="email" placeholder="juan@gmail.com" data-type="e-mail">
+                        <span class="feedback"></span>
                     </p>
 
-                    <p class="form-content"><label for="avatar">Foto de perfil:</label>
-                        <input type="file" id="avatar" name="profile_picture">
+                    <p class="form-content">
+                        <label for="avatar">Foto de perfil:</label>
+                        <input type="file" id="avatar" name="profile_picture" data-type="imagen">
+                        <span class="feedback"></span>
                     </p>
 
-                    <p class="form-content"><label for="pass">Contraseña:</label>
-                        <input type="password" id="pass" name="pass">
-                        <em class="help">Debe tener un número + un caracter</em>
+                    <p class="form-content">
+                        <label for="pass">Contraseña:</label>
+                        <input type="password" id="pass" name="pass" data-type="password">
+                        <span class="feedback"></span>
                     </p>
-                    <p class="form-content"><label for="pass2">Repetir contraseña:</label>
-                        <input type="password" id="pass2" name="rpass">
+                    <p class="form-content">
+                        <label for="pass2">Repetí contraseña:</label>
+                        <input type="password" id="pass2" name="rpass" data-type="password">
+                        <span class="feedback"></span>
                     </p>
+                     <span class="feedbackForm" id="feedbackForm"> </span>
 
-                    
                     <div class="box-buttom">
-                    <button type="submit" class ="btn"> Registrarme </button>
+                    <button type="submit" class ="btn"> Registrarme</button>
+                    <a href="/"> Cancelar </a>
                     </div>
 
-
-                </form>
-
+            </form>
             </div>
             </div>
 
 </main>
-    <%- include('../partials/footer.ejs') %>
+<%- include('../partials/footer.ejs') %>
+
+<script src="/js/validator.min.js"></script>
+<script src="/js/user_validator.js"></script>   

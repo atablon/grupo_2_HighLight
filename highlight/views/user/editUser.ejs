@@ -1,0 +1,36 @@
+<%- include('../partials/head.ejs') %>
+<%- include('../partials/header_small.ejs') %>
+
+<main class="main-body">
+    <div class="contenedor-main container">
+        <h2 class="titulo-seccion">Modificar contraseña</h2>
+        <div class="box-view">
+            <div class="box-container-view ">
+                <form method="POST" action="/users/edit/<%= user[0].id %>?_method=PUT" enctype="multipart/form-data" class="formBase"
+                    id="publishForm">
+                    <p class="form-content">
+                        <label for="pass">Contraseña:</label>
+                        <input type="password" id="pass" name="pass" data-type="password">
+                        <span class="feedback"></span>
+                    </p>
+                    <p class="form-content">
+                        <label for="pass2">Repetí contraseña:</label>
+                        <input type="password" id="pass2" name="rpass" data-type="password">
+                        <span class="feedback"></span>
+                    </p>
+                    <span class="feedbackForm" id="feedbackForm"> </span>
+
+                    <div class="box-buttom">
+                        <button type="submit" class="btn">Cambiar</button>
+                        <a href="/user/perfil"> Cancelar </a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+</main>
+<%- include('../partials/footer.ejs') %>
+
+<script src="/js/validator.min.js"></script>
+<script src="/js/user_validator.js"></script>

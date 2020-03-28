@@ -33,7 +33,9 @@ function validateUserEntry(req,res,user){
 				return res.redirect('/users/perfil');
 				
 			} else {
-				res.send('Credenciales inválidas');
+				// para ver con beto>
+				return res.redirect('/users/ingresar');
+				
 			}
 		} else {
 
@@ -146,7 +148,18 @@ const usersController = {
 	 * Se muestra el perfil del usuario cuya session este activa o recien haya ingresado
 	 */
 	showProfile: (req,res)=>{
-		return (res.render('user/perfil')); 
+		
+		return (res.render('user/perfil'))
+		
+		// db.User
+		// .findAll({
+		// 		include: ['sign']
+		// 	})
+		// .then(results => {
+		// 	return res.render('user/perfil', { user: results } )
+		// })
+		
+	
 	},
 	/**
 	 * Funcion para hacer logout, @todo incorporar en la vista del perfil
@@ -166,10 +179,37 @@ const usersController = {
 		console.log(`\n*****Se ha hecho el LOGOUT de ${req.session.user.user_name} correctamente****\n`);
         req.session.destroy();
 		//res.cookie('rememberToken', null, { maxAge: -1 });
-	
-		
         return(res.redirect('/'));
-    },
+	},
+	 
+	saveEdit: (res,req) => {
+		console.log(req.body.pass)
+		let changePass = {
+			user_password: req.body.pass,
+		}
+		db.User.update(
+			changePass, { where: {id: req.params.id } }
+		)
+		.then(results => {
+			return (res.redirect("/user/perfil"));
+		})
+
+
+	},
+	showProfileEdit: (req, res) => {
+		let idNumber = req.params.id; 
+		db.User
+		.findAll({
+			include: ['sign']
+		}, 
+		{
+			where: {id:idNumber}, 
+		
+		})
+		.then(results => {
+			return res.render('user/editUser', { user: results})
+		})
+	},
 
 }
 

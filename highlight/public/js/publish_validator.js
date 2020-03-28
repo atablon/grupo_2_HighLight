@@ -87,11 +87,18 @@ form.addEventListener('submit', function (event) {
 
         }
     }
-
-    console.log(inputError)
     if (Object.keys(inputError).length > 0) {
         event.preventDefault();
     }
 })
 
+window.addEventListener("load", function () {
+    let changeImage = document.querySelector("#changeImage");
+    changeImage.addEventListener("click", function (e) {
+        e.preventDefault()
+        let boxImage = document.querySelector("#boxImage");
+        boxImage.innerHTML = `<input type="file" name="picture_filename" id="picture_filename" data-type="imagen">`;
+        // let imagen = document.querySelector(".imageNew").innerHTML = `<input type="file" name="picture_filename" id="picture_filename" data-type="imagen">`;
+    })
 
+})

@@ -3,25 +3,23 @@
 
 <%= sign.types.sign_type %>
 <%= sign.type_id %>
+<p></p>
+<%= sign.reference %>
+
+
+
 <p>nnn </p>
 <%= type[0].id %>
 <%= type[0].sign_type %>
 
 
 <%= sign.reference%>
+<%= sign.picture_filename%>
 
 <p>nnn </p>
 <%= tech[0].id %>
 <%= tech[0].sign_tech %>
 
-
-
-
-<select name="tech_id" id="tech_id" data-type="Clasificacion">
-    <% tech.forEach(tech => { %>
-    <option value="<%= tech.id %>" <%= tech.id == sign.tech_id ? "selected" : "" %>><%= tech.sign_tech %> </option>
-    <% });%>
-</select>
 
 
 <main class="main-body">
@@ -73,16 +71,20 @@
                     </p>
                     <p class="form-content">
                         <label for="reference">Referencias del lugar:</label>
-                        <textarea name="reference" value="<%= sign.reference%>" id="reference"
-                            data-type="referencias"></textarea>
+                        <textarea name="reference" id="reference"
+                            data-type="referencias"><%= sign.reference%></textarea>
                         <span class="feedback"></span>
                     </p>
-                    <p class="form-content">
-                        <label for="picture_filename">Imagen:</label>
-                        <input type="file" name="picture_filename" id="picture_filename" data-type="imagen">
+                    <div class="form-content">
+                        <label for="type_id" class="imageNew">Imagen: </label>
+                        <p class="" id="boxImage">
+                            <img src="/images/imagescartel/<%= sign.picture_filename%>" height="80px">
+                            <a href="" id="changeImage"> Cambiar </a>
+                        </p>
                         <span class="feedback"></span>
-                    </p>
-
+         
+                    </div>
+                   
                     <p class="titulo-content margin">Especificaciones</p>
                     <p class="form-content">
                         <label for="tech_id">Tipo de cartel:</label>
@@ -91,8 +93,6 @@
                                 <option value="<%= tech.id %>" <%= tech.id == sign.tech_id ? "selected" : "" %>><%= tech.sign_tech %> </option>
                                 <% });%>
                             </select>
-                     
-                        <span class="feedback"></span>
                     </p>
                     <p class="form-content">
                         <label for="type_id">Clasificación: </label>
@@ -102,32 +102,26 @@
                             <option value="<%= type.id %>" <%= type.id == sign.type_id ? "selected" : "" %>><%= type.sign_type %> </option>
                             <% });%>
                         </select>
-                      
-                        <span class="feedback"></span>
                     </p>
-                    <!-- <p class="form-content">
+                    <p class="form-content">
                         <label for="star">Tráfico apróx. por día:</label>
                         <select name="star" id="star" data-type="peatón">
                             <option value="" selected disabled hidden> Seleccionar </option>
-                            <option value="1">Hasta 3000 personas </option>
-                            <option value="2">Hasta 10000 personas</option>
-                            <option value="3">Entre 10000 y 19999 personas</option>
-                            <option value="4">Entre 20000 y 49999 personas</option>
-                            <option value="5">Más de 50000 personas</option>
-
+                            <option value="1" <%= 1 == sign.star ? "selected" : "" %>>Hasta 10000 personas</option>
+                            <option value="3" <%= 3 == sign.star ? "selected" : "" %>>Entre 10000 y 19999 personas</option>
+                            <option value="4" <%= 4 == sign.star ? "selected" : "" %>>Entre 20000 y 49999 personas</option>
+                            <option value="5" <%= 5 == sign.star ? "selected" : "" %>>Más de 50000 personas</option>
                         </select>
-                        <span class="feedback"></span>--> 
                     </p>
-
                     <p class="form-content input_50">
                         <label for="heigth">Alto: </label>
-                        <input class="small" value="<%= sign.heigth %> metros" type="text" name="heigth"
+                        <input class="small" value="<%= sign.heigth %>" type="text" name="heigth"
                             data-type="altura">
                         <span class="feedback"></span>
                     </p>
                     <p class="form-content input_50">
                         <label for="width">Ancho:</label>
-                        <input class="small" value="<%= sign.width %> metros" type="text" name="width"
+                        <input class="small" value="<%= sign.width %>" type="text" name="width"
                             data-type="ancho">
                         <span class="feedback"></span>
                     </p>
