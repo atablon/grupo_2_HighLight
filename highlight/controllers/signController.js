@@ -8,6 +8,9 @@ let { check, validationResult, body } = require('express-validator');
 /*********************************************************************************/
 
 const controller = {
+  /**
+   * Funcion para probar la base de datos
+   */
     index: async (req, res) => {
         let tech = db.Sign_tech.findAll({
           include: ['signs'] 
