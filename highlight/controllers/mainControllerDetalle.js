@@ -7,10 +7,10 @@ const controller = {
                 include: ['techs', 'types']                     
             })
             .then(results => { 
-                return res.render('detalle', { sign: results }) 
+                return res.render('detalle', {sign: results }) 
                 //return res.send(results)
             })
-            .catch(error => { console.log(error) });
+            .catch(error => { console.log(error)});
     }
 } 
 

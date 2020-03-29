@@ -55,20 +55,20 @@
                         <!--Tambien luego tenemos que ver el form y rutearlo-->
                         <form class="ui-form-detalle">
                             <h3>Calculá tu campaña</h3>
-                            <p>
-                                <label for="tiempoAlquiler"> Tiempo de alquiler:</label>
-                                <select name="tiempoAlquiler" id="tiempoAlquiler">
-                                    <option value="1 mes" selected>1 mes</option>
-                                    <option value="2 mes">2 mes</option>
-                                    <option value="3 mes">3 mes</option>
+                            <p class="">
+                                <label for="timeCost"> Tiempo de alquiler:</label>
+                                <select name="timeCost" id="timeCost">
+                                    <option value="1 mes" selected>1 mes por $<%=sign.monthly_cost * 1 %></option>
+                                    <option value="2 mes">2 mes por $<%=sign.monthly_cost * 2 %></option>
+                                    <option value="3 mes">3 mes $<%=sign.monthly_cost * 3 %></option>
                                 </select>
                             </p>
                             <p>
                                 <label for="date">Desde:</label>
                                 <input id="date" type="date">
                             </p>
-
-                            <p class="p_detalle_costo">$<%= sign.monthly_cost%></p>
+                           
+                           
                             <div class="box-buttom">
                                 <button type="submit" class="btn">Alquilar cartel</button>
                             </div>
@@ -77,11 +77,14 @@
                 </div>
             </div>
            
-
-
         </div>
 
         <%- include('partials/footer.ejs') %>
+
+       
+
+
+    
 
      
 
