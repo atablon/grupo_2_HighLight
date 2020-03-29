@@ -57,7 +57,8 @@ const controller = {
         picture_filename: req.files[0] ? req.files[0].filename : 'no_image.png',
         user_id: 11 // req.session.user.user_id // Acá me tira error
      }
-
+     console.log(`****** \n Este es el usuario que deberia tomar ${req.session.user.user_id} y su USER_ID es ->>>>${req.session.user.user_id} <<<<----***** \n`);
+     
     let signData = {
       ...req.body,
       ...additionalData
