@@ -52,15 +52,12 @@ function validateUserEntry(req,res,user){
  */
 function getUserFormData(req){
 
-    console.log(req.body);
-    
     if(req.body.pass == req.body.rpass){
 		// Hash del password
 		let userAdditionalData = {
 			user_password: bcrypt.hashSync(req.body.pass, 10),
 			profile_picture: req.files[0].filename
 		};
-//        req.body.user_password = bcrypt.hashSync(req.body.pass, 10);
 		
 		/**@todo hacer la validacion campo por campo, armar un arreglo que vaya conteniendo todos los posibles errores
 		 * y que cuando termine tome la decision de informar el problema.
@@ -71,18 +68,7 @@ function getUserFormData(req){
 
 		let newUser = {...req.body,...userAdditionalData};
 		console.log(newUser);
-		
-        // let newUser = {
-        //     nombre: req.body.nombre,
-        //     tipoUsuario: req.body.tipoUsuario,
-        //     empresa: req.body.empresa,//no va
-        //     rubro: req.body.rubro,//no va
-        //     tel: req.body.tel,//no va
-        //     email: req.body.email,
-        //     fotoPerfil: req.files[0].filename,
-        //     pass: req.body.pass, // ya se encuentra hasheado 
-		// }
-		
+	
         return newUser;
     }
     else{
