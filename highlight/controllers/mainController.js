@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const db = require('../src/database/models');
+const db = require("../src/database/models")
 
 // Constants
 const userFilePath = path.join(__dirname, '../data/users.json');
@@ -23,14 +23,20 @@ function getUserById(id) {
 
 const controller = {
 	root: (req, res) => {
-		/**
-		 * @todo limpiar todas estas lecturas y hacer una buena busqueda de la informacion para la pantalla principal en la base de datos 
-		 * */
-		// Acceso a la base de datos (Actualmente en JSON)
-		let filePath = path.join(__dirname, '../data/productos_creados.json');
-		let cartelesDb = JSON.parse(fs.readFileSync(filePath,{encoding:'utf-8'}));
-
-		res.render('index',{cartelesDb});
+			let signStar = db.Sign.findAll({
+				order:[["star", "DESC"]],
+				limit: 4
+			})
+			 let signCost = db.Sign.findAll({
+			 	order: [["monthly_cost", "ASC"]],
+			 	limit: 4
+			})
+			Promise
+			.all([signStar, signCost])
+			.then(results => { 
+				return res.render('index',{signStar: results[0], signSale: results[1]})
+			})
+			.catch(error => { console.log(error) });
 	
 	},
 	root_carrito: (req, res) => {

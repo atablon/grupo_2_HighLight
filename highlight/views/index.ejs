@@ -24,77 +24,63 @@
 		</section>
 		<!-- Productos-->
 		<section class="lista-productos container">
-			<h2>Carteles para campañas</h2>
-
+			<h2>Carteles Destacados</h2>
 			<div class="row">
-
-				<!-- LOGICA PARA IMPRIMIR LOS "RESULTADOS DE LAS BUSQUEDA" -->
-				
-				<% for(let i=0;i < 4 ;i++){ %>
+					<!-- LOGICA PARA IMPRIMIR LOS "RESULTADOS DE LAS BUSQUEDA" -->
+					<% signStar.forEach(sign => {%>
 					<div class="col-12 col-prod col-md-3">
-						<a href="/detalle/<%= cartelesDb[i].id %>" > 
+						<a href="/detalle/<%= sign.id %>" > 
 							<div class="producto">
 								<div class="img_producto">
-									<img src="/images/imagescartel/<%=cartelesDb[i].imagen%>" width="100%" alt="">
+									<img src="/images/imagescartel/<%=sign.picture_filename%>" width="100%" alt="">
 								</div>
 								<div class="producto_info">
 									<p class="estrellas">
 										<!-- Loop para plotear las estrellas rellenas o vacias del puntaje del cartel -->
-										<% for(let j=0;j<cartelesDb[i].estrellas;j++){ %>
+										<% for(let j=0;j<sign.star;j++){ %>
 										<span class="fa fa-star checked"></span>
 										<%}
-										for(j=cartelesDb[i].estrellas; j<5;j++){%>
+										for(j=sign.star; j<5;j++){%>
 										<span class="fa fa-star n_checked"></span>
 										<%}%>													
 									</p>
-									<p><%= cartelesDb[i].domiclioCartel %> <%= cartelesDb[i].numero %></p>
-									<p><%= cartelesDb[i].barrio %>, <%= cartelesDb[i].provincia %></p>
-										
-									<p><strong>1 mes por $<%= cartelesDb[i].valor%></strong></p>
+									<p><%=sign.address%> <%=sign.street_number%></p>
+									<p><%=sign.city%>, <%=sign.state%></p>
+									<p><strong>1 mes por $<%= sign.monthly_cost%></strong></p>
 									
 								</div>
 							</div>
-						
 						</a>
 					</div>
-				<%}%>
+					<%}); %>
 			</div>
 	</section>
 
-	<section class="bloque-productos-destacados container"> 
-			<h2>Más carteles destacados</h2>
-			<div class="row">
-				<% for(let i=0;i < 4 ;i++){ %>
-				<div class="col-12 col-prod col-md-3">
-					<a href="/detalle/<%= cartelesDb[i].id %>">
-						<div class="producto">
-							<div class="img_producto">
-								<img src="/images/imagescartel/<%=cartelesDb[i].imagen%>" width="100%" alt="">
-							</div>
-							<div class="producto_info">
-								<p class="estrellas">
-									<!-- Loop para plotear las estrellas rellenas o vacias del puntaje del cartel -->
-									<% for(let j=0;j<cartelesDb[i].estrellas;j++){ %>
-									<span class="fa fa-star checked"></span>
-									<%}
-									for(j=cartelesDb[i].estrellas; j<5;j++){%>
-										<span class="fa fa-star n_checked"></span>
-									<%}%>													
-								</p>
-								<p><%= cartelesDb[i].domiclioCartel %> <%= cartelesDb[i].numero %></p>
-								<p><%= cartelesDb[i].barrio %>, <%= cartelesDb[i].provincia %></p>
-								<p><strong>1 mes por $<%= cartelesDb[i].valor%></strong></p>
-				
-							</div>
+	<section class="lista-productos container">
+		<h2>Encontrá la mejor promo para tu anuncio</h2>
+		<div class="row">
+			<% signSale.forEach(sign => {%>
+			<div class="col-12 col-prod col-md-3">
+				<a href="/detalle/<%= sign.id %>">
+					<div class="producto">
+						<div class="img_producto">
+							<img src="/images/imagescartel/<%=sign.picture_filename%>" width="100%" alt="">
 						</div>
-				
-					</a>
-				</div>
-				<%}%>
-
+						<div class="producto_info">
+							<em class="tipo_cartel">En promoción</em>
+										<p><%=sign.address%> <%=sign.street_number%></p>
+							<p><%=sign.city%>, <%=sign.state%></p>
+							<p><strong>1 mes por $<%= sign.monthly_cost%></strong></p>
+	
+						</div>
+					</div>
+				</a>
 			</div>
-		</section>
+			<%}); %>
+		</div>
+	</section>
 
+	
 		<section class="clientes">
 			<h3>Todas estás pymes son parte de nuestros clientes</h3>
 			<div class="container">

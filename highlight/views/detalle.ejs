@@ -36,6 +36,19 @@
                         <p> Entre <%= sign.street_1%> y <%= sign.street_2%> -
                             <%= sign.city%>, <%= sign.state%></p>
 
+                          
+                                <p class="p_medidas">
+                                    Medidas: <span class="fas fa-arrows-alt-v" class=" arrow_height"></span>
+                                    <%= sign.heigth%>
+                                    mts
+                                    x <span class="fas fa-arrows-alt-h" class=" arrow_width"></span>
+                                    <%= sign.width%> mts
+                                </p>
+                            
+                           
+                                <p class="detalle_datos_adicionales"> <i class="fas fa-sign"></i>
+                                    <%= sign.types.sign_type%> </p>
+                     
 
                         <!--Calcular costo del cartel-->
                         <!--Esto hay programarlo, que si elige 2 meses multiple el valor de 1 y muetre la respueta-->
@@ -63,39 +76,14 @@
 
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <h3>Ubicación en el mapa</h3>
-
-
-                    <p class="p_calles">
-                        <i class="fas fa-map-marker-alt"></i>
-                       
-                        
-                        <%= sign.address%>
-                        <%= sign.street_number%> entre las
-                        calles <%= sign.street_1%> y <%= sign.street_2%></p>
-                </div>
-                <div class="col-12 col-md-6">
-                    <p class="p_medidas">
-                        Medidas: <span class="fas fa-arrows-alt-v" class=" arrow_height"></span>
-                    <%= sign.heigth%>
-                    mts
-                        x <span class="fas fa-arrows-alt-h" class=" arrow_width"></span>
-                        <%= sign.width%> mts
-                    </p>
-                    <p> Datos adicionales: </p>
-                   
-                    <p class="detalle_datos_adicionales"> <i class="fas fa-sign"></i>
-                    <%= sign.types.sign_type%> </p>
-                </div>
-            </div>
+           
 
 
         </div>
 
         <%- include('partials/footer.ejs') %>
 
+     
 
 
 
