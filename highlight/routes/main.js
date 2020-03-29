@@ -29,7 +29,7 @@ router.get('/carrito', mainController.root_carrito);
 router.get('/resultado',mainController.root_resultado);
 router.get('/ingresar', mainController.ingresar);
 router.get('/registrar', mainController.registrar);
-router.get('/detalle', mainControllerDetalle.detalle);
+router.get('/detalle/:id', mainControllerDetalle.detalle);
 
 
 
