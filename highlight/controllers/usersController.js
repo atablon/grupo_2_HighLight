@@ -130,21 +130,25 @@ const usersController = {
 		.catch(error=>console.log(error));
 	
 	},
-	/**
+	/**	
 	 * Se muestra el perfil del usuario cuya session este activa o recien haya ingresado
 	 */
 	showProfile: (req,res)=>{
-		
-		return (res.render('user/perfil'))
-		
-		// db.User
-		// .findAll({
-		// 		include: ['sign']
+		return (res.render('user/perfil')); 
+	
+		// db.User.findOne({
+		// 	include: ['sings']
+		// 	},
+		// 	{
+		// 		where: { id: req.user...... }
 		// 	})
-		// .then(results => {
-		// 	return res.render('user/perfil', { user: results } )
+
+		// .then(results =>{
+		// 	console.log(results)
+		// return (res.render('user/perfil')); 
+			
+			
 		// })
-		
 	
 	},
 	/**

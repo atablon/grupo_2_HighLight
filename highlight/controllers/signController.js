@@ -2,6 +2,8 @@
 const fs = require('fs');
 const path = require('path');
 const db = require("../src/database/models")
+let { check, validationResult, body } = require('express-validator');
+
 
 /*********************************************************************************/
 
@@ -53,23 +55,34 @@ const controller = {
  * Controlador para crear producto en funcion del formulario 
 */
     publishPost: (req,res)=>{
-      let additionalData = {
-        picture_filename: req.files[0] ? req.files[0].filename : 'no_image.png',
-        user_id: 11 // req.session.user.user_id // Acá me tira error
-     }
-     console.log(`****** \n Este es el usuario que deberia tomar ${req.session.user.user_id} y su USER_ID es ->>>>${req.session.user.user_id} <<<<----***** \n`);
-     
-    let signData = {
-      ...req.body,
-      ...additionalData
-    };
+      // validaciones del vaquen, atrapo los errores en validationresulta. lo hacemos con express validation.
+      let errors = validationResult(req)
+      // preguntamos si no tiene errores que avance con el guardado y sino tire a la misma vista.
+      if (errors.isEmpty()) {
+        console.log(`****** \n Este es el usuario que deberia tomar ${req.session.user.user_id} y su USER_ID es ->>>>${req.session.user.user_id} <<<<----***** \n`);
+            let additionalData = {
+               picture_filename: req.files[0] ? req.files[0].filename : 'no_image.png',
+               user_id: req.session.user.user_id  // esto para revisar BETO
+            };
+            let signData = {
+              ...req.body,
+              ...additionalData
+            };
+            db.Sign.create(signData)// Se crea registro nuevo de cartel en la base de datos
+              .then(() => { res.redirect('/sign/sign_list') })
+              .catch(error => { return res.send(signData) }); // por el asincronismo debo ponerlo aqui
 
-    /**@todo validacion por parte del back con la funcion validateDataDb */
-    console.log(signData);
-    
-    db.Sign.create(signData)// Se crea registro nuevo de cartel en la base de datos
-      .then( () => {res.redirect('/sign/sign_list')}) 
-      .catch( error => {return res.send(signData)}); // por el asincronismo debo ponerlo aqui
+      } else {
+        console.log(errors)
+        let tech = db.Sign_tech.findAll();
+        let type = db.Sign_type.findAll();
+        Promise
+          .all([tech, type])
+          .then(results => {
+            return res.render("sign/viewPublish", {tech: results[0], type: results[1], errors:errors.errors});
+          })
+      }
+     
     },
 
 /**
@@ -127,8 +140,13 @@ const controller = {
 */
 
     saveEdit : (req, res) => {
+      let sign = db.Sign.findOne({
+        where: {
+          id: req.params.id
+        }})
+     
         let additionalData = {
-          picture_filename: req.files[0] ? req.files[0].filename : 'no_image.png',
+          picture_filename: req.files[0] ? req.files[0].filename : sign.picture_filename,
           user_id: req.session.user.user_id
         }
         let signData = {

@@ -2,93 +2,101 @@
 
 <%- include('partials/header_medium.ejs') %>
 
-<!-- style.css -->
 
-<!-- Tengo que hacer un row, que se comporte de la siguiente forma
-1- En tamaño 320px debe tener la imagen/es por arriba y el detalle del producto, en este caso cartel por debajo.
-2- En tamaño más grande debe tener la imagen por la izquierda y el detalle por la derecha.
-3- En ambos casos debe tener los botones de agregar al carrito por debajo.
-4- Ver como incorporar el puntaje del cartel en algún lado.
--->
 
-<!--  -->
-<div class = "container">
-    <div class = "row detalle_row">
-        <div class = "col-12 col-md-6">
-            <img class="detalle_imagen" src="/images/imagescartel/<%=cartelDetalle.imagen%>" width="100%" alt="">
+
+
+<div class="container">
+    <div class="row detalle_row">
+        <div class="col-12 col-md-6">
+            <img class="detalle_imagen" src="/images/imagescartel/<%=sign.picture_filename%>" width="100%" alt="">
         </div>
         <!-- Datos del Detalle -->
         <div class="col-12 col-md-6 detalle_producto_info">
-                
-            <div class="row"> 
-                        <div class="col-6">
-                        <em class="tipo_cartel"><%= cartelDetalle.TipoDeCartel %></em>
-                        </div>
-                        <div class="col-6 box-estrellas">
-                            <p class="estrellas">
-                                <% for(let j=0;j<cartelDetalle.estrellas;j++){ %>
-                                    <span class="fa fa-star checked"></span>
-                                    <%}
-                                    for(j=cartelDetalle.estrellas; j<5;j++){ %>
-                                <span class="fa fa-star n_checked"></span>
-                                <%}%>
+
+            <div class="row">
+                <div class="col-6">
+                    <em class="tipo_cartel"><%= sign.techs.sign_tech%></em>
+                </div>
+                <div class="col-6 box-estrellas">
+                    <p class="estrellas">
+                        <% for(let j=0;j< sign.star;j++){ %>
+                        <span class="fa fa-star checked"></span>
+                            <%}
+                                    for(j=3; j< sign.star;j++){ %>
+                        <span class="fa fa-star n_checked"></span>
+                        <%}%>
                             </p>
                         </div>
                       
             </div>
                     
             <!--Direccion del cartel-->
-            <h2 class="titulo-detalle"> <%= cartelDetalle.domiclioCartel %> <%= cartelDetalle.numero %> </h2>
-            <p> Entre <%= cartelDetalle.entreCalles1%> y <%= cartelDetalle.entreCalles2%> - <%= cartelDetalle.barrio %>, <%= cartelDetalle.provincia %></p>
+            <h2 class="titulo-detalle"> <%= sign.address%> <%= sign.street_number%> </h2>
+                        <p> Entre <%= sign.street_1%> y <%= sign.street_2%> -
+                            <%= sign.city%>, <%= sign.state%></p>
 
 
-            <!--Calcular costo del cartel-->
-            <!--Esto hay programarlo, que si elige 2 meses multiple el valor de 1 y muetre la respueta-->
-            <!--Tambien luego tenemos que ver el form y rutearlo-->
-             <form class="ui-form-detalle">
-                    <h3>Calculá tu campaña</h3>
+                        <!--Calcular costo del cartel-->
+                        <!--Esto hay programarlo, que si elige 2 meses multiple el valor de 1 y muetre la respueta-->
+                        <!--Tambien luego tenemos que ver el form y rutearlo-->
+                        <form class="ui-form-detalle">
+                            <h3>Calculá tu campaña</h3>
                             <p>
                                 <label for="tiempoAlquiler"> Tiempo de alquiler:</label>
-                                <select  name="tiempoAlquiler" id="tiempoAlquiler" >
+                                <select name="tiempoAlquiler" id="tiempoAlquiler">
                                     <option value="1 mes" selected>1 mes</option>
                                     <option value="2 mes">2 mes</option>
                                     <option value="3 mes">3 mes</option>
                                 </select>
                             </p>
                             <p>
-                               <label for="date">Desde:</label>
-                               <input id="date" type="date">
+                                <label for="date">Desde:</label>
+                                <input id="date" type="date">
                             </p>
 
-                            <p class="p_detalle_costo">$<%= cartelDetalle.costo%></p>
-                    <div class="box-buttom">
+                            <p class="p_detalle_costo">$<%= sign.monthly_cost%></p>
+                            <div class="box-buttom">
                                 <button type="submit" class="btn">Alquilar cartel</button>
-                     </div>
-             </form>
+                            </div>
+                        </form>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <h3>Ubicación en el mapa</h3>
+
+
+                    <p class="p_calles">
+                        <i class="fas fa-map-marker-alt"></i>
+                       
+                        
+                        <%= sign.address%>
+                        <%= sign.street_number%> entre las
+                        calles <%= sign.street_1%> y <%= sign.street_2%></p>
+                </div>
+                <div class="col-12 col-md-6">
+                    <p class="p_medidas">
+                        Medidas: <span class="fas fa-arrows-alt-v" class=" arrow_height"></span>
+                    <%= sign.heigth%>
+                    mts
+                        x <span class="fas fa-arrows-alt-h" class=" arrow_width"></span>
+                        <%= sign.width%> mts
+                    </p>
+                    <p> Datos adicionales: </p>
+                   
+                    <p class="detalle_datos_adicionales"> <i class="fas fa-sign"></i>
+                    <%= sign.types.sign_type%> </p>
+                </div>
+            </div>
+
 
         </div>
-    </div>
-    <div class="row"> 
-        <div class="col-12 col-md-6"> 
-            <h3>Ubicación en el mapa</h3>
+
+        <%- include('partials/footer.ejs') %>
 
 
-                <p class="p_calles">
-            <i class="fas fa-map-marker-alt"></i> <%= cartelDetalle.domiclioCartel %> <%= cartelDetalle.numero %> entre las
-            calles <%= cartelDetalle.entreCalles1%> y <%= cartelDetalle.entreCalles2  %> </p>
-                </div>
-                <div class="col-12 col-md-6"> <p class="p_medidas">
-                    Medidas: <span class="fas fa-arrows-alt-v" class=" arrow_height"></span> <%= cartelDetalle.medidasCartelAlto %> mts
-                    x <span class="fas fa-arrows-alt-h" class=" arrow_width"></span> <%= cartelDetalle.medidasCartelAncho %> mts
-                </p>
-                <p> Datos adicionales: </p>
-                <p class="detalle_datos_adicionales"> <i class="fas fa-eye"></i> <%=cartelDetalle.trafico %> </p>
-                <p class="detalle_datos_adicionales"> <i class="fas fa-binoculars"></i> <%= cartelDetalle.expocision %> </p>
-                <p class="detalle_datos_adicionales"> <i class="fas fa-sign"></i> <%= cartelDetalle.ClasifiacionCartel %> </p></div>
-    </div>
 
 
-</div>
-
-<%- include('partials/footer.ejs') %><!-- Información secundaria-->
 

@@ -4,6 +4,8 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 
+let {check,validationResult, body} = require ('express-validator');
+
 // Esto es muller para levantar la imagen del cartel y guardarla en nuestra carpeta.
 // esto es un middleware podemos sacarlo afuera y llamarlo en cada ruta que necesitemos
 var storage = multer.diskStorage({
@@ -28,7 +30,9 @@ router.get('/index', signController.index);
 router.get('/publish', signController.publish);
 
 /**********  Guardar PUBLICAR ***********/
-router.post('/sign_list', upload.any(), signController.publishPost);
+router.post('/sign_list', upload.any(), 
+[check('address').isLength({ min: 4 }), 
+check('street_number').isInt({min:2})],  signController.publishPost);
 
 
 
