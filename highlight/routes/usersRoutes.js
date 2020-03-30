@@ -43,8 +43,8 @@ router.get('/logout',usersController.logout);
 
 /********** EDITAR ***********/
 
-router.get('/edit/:id', upload.any(), usersController.showProfileEdit);
-router.put('/edit/:id', upload.any(), usersController.saveEdit);
+router.get('/edit', upload.any(), usersController.showProfileEdit);
+router.put('/edit', upload.any(), usersController.saveEdit);
 
 
 

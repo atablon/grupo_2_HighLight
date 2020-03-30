@@ -6,7 +6,7 @@
         <h2 class="titulo-seccion">Modificar contraseña</h2>
         <div class="box-view">
             <div class="box-container-view ">
-                <form method="POST" action="/users/edit/<%= user[0].id %>?_method=PUT" enctype="multipart/form-data" class="formBase"
+                <form  action="/users/edit?_method=PUT" method="POST" enctype="multipart/form-data" class="formBase"
                     id="publishForm">
                     <p class="form-content">
                         <label for="pass">Contraseña:</label>
@@ -14,8 +14,8 @@
                         <span class="feedback"></span>
                     </p>
                     <p class="form-content">
-                        <label for="pass2">Repetí contraseña:</label>
-                        <input type="password" id="pass2" name="rpass" data-type="password">
+                        <label for="rpass">Repetí contraseña:</label>
+                        <input type="password" id="rpass" name="rpass" data-type="password">
                         <span class="feedback"></span>
                     </p>
                     <span class="feedbackForm" id="feedbackForm"> </span>

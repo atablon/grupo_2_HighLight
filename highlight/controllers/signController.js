@@ -57,12 +57,13 @@ const controller = {
     publishPost: (req,res)=>{
       // validaciones del vaquen, atrapo los errores en validationresulta. lo hacemos con express validation.
       let errors = validationResult(req)
+            
       // preguntamos si no tiene errores que avance con el guardado y sino tire a la misma vista.
       if (errors.isEmpty()) {
-        console.log(`****** \n Este es el usuario que deberia tomar ${req.session.user.user_id} y su USER_ID es ->>>>${req.session.user.user_id} <<<<----***** \n`);
+        
             let additionalData = {
                picture_filename: req.files[0] ? req.files[0].filename : 'no_image.png',
-               user_id: req.session.user.user_id  // esto para revisar BETO
+               user_id: req.session.user.id  // esto para revisar BETO
             };
             let signData = {
               ...req.body,
@@ -89,19 +90,21 @@ const controller = {
  * Controlador que se encarga de listar todos los cartels que dispone el usuario en cuestion
  */
     sign_list: (req, res) => {
-          db.Sign.findAll({
-            include: ['techs', 'types', 'users', 'orders']
-          },
-          { where:{ user_id: req.session.user.user_id}
+      
+      console.log(`\n El usuario que quiero mostrar los carteles es: ${req.session.user.id}`);
+      
+          db.Sign.findAll({ 
+          where:{user_id: req.session.user.id},
+          include: ['techs', 'types','orders']
           })
-          .then(results => { return res.render('sign/signList', {sign:results})})
+          .then(results => { 
+            return (res.render('sign/signList', { sign:results } ) );
+          })
           .catch(error => { console.log(error) });
     }, 
-
 /**
  * Controlador que se encarga de mostrar la vista de editar  
  */
-
     edit:(req, res) => {
         let idNumber = req.params.id; 
         let sign = db.Sign.findOne({  
