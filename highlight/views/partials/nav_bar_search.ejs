@@ -1,0 +1,55 @@
+<div class="col-4 col-md-1 col-sm-2 col-lg-1 offset-md-0 offset-lg-0">
+    <div class="menu">
+
+        <a href="#" class="toggle-nav" id="myTab">
+            <i class="fa fa-bars"></i>
+        </a>
+        <a href="carrito" class="carrito">
+            <i class="fa fa-shopping-cart"></i>
+        </a>
+    </div>
+</div>
+
+<div class="box_nav col-5 col-md-5 " id="b">
+    <nav class="navegacion" id="mostrar">
+        <% if(isAuthenticated){ %>
+        <ul>
+            <!-- <li><a href="/users/perfil"> Perfil</a></li> -->
+            <li><a class="nav-link dropdown-toggle profile_bar" href="/users/perfil" id="dropUser" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="/images/imagenesperfil/<%= user.profile_picture %>" width="30"
+                        style="border-radius: 100%;">
+                    <!-- Hi <%= user.user_name %> -->
+                </a></li>
+            <li><a href="/users/logout" id="cerrar_sesion_link">Salir</a></li>
+            <li><a href="/sign/publish" class="btn"> Publicar mi cartel</a></li>
+        </ul>
+        <%} else {%>
+        <ul>
+            <li><a href="/users/ingresar"> Ingresar</a></li>
+            <li><a href="/users/registro"> Registrarse</a></li>
+            <li><a href="/users/ingresar" class="btn"> Publicar mi cartel</a></li>
+
+        </ul>
+        <% } %>
+    </nav>
+
+</div>
+
+<script>
+    let menu = document.querySelector("#myTab");
+    menu.addEventListener("mouseover", function () {
+        document.querySelector(".box_nav").style.display = "block";
+        document.querySelector(".box_nav").classList.remove("col-5");
+        document.querySelector(".box_nav").classList.remove("col-md-5");
+
+        let menu = document.querySelector("#myTab");
+        menu.addEventListener("mouseleave", function () {
+            document.querySelector(".box_nav").style.display = "none";
+
+
+        })
+
+    })
+
+</script>

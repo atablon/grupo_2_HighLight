@@ -191,7 +191,7 @@ button.btn:focus {
 
   .navegacion {
     position: absolute;
-    border-top: 1px solid #10A3EB;
+    border: 1px solid #10A3EB;
     border-bottom: 1px solid #10A3EB;
     z-index: 1;
     background-color: #f5f5f5;
@@ -203,7 +203,7 @@ button.btn:focus {
     content: '';
     position: absolute;
     top: -6px;
-    right: 18%;
+    right: 8%;
     width: 10px;
     height: 10px;
     -webkit-transform: rotate(45deg);
@@ -224,7 +224,7 @@ button.btn:focus {
   }
 
   .navegacion ul li a:hover {
-    background-color: aqua;
+    background-color:#ddd;
   }
 }
 
