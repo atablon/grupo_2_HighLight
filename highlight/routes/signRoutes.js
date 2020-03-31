@@ -40,11 +40,9 @@ check('street_number').isInt({min:2})],  signController.publishPost);
 router.get('/sign_list', signController.sign_list);
 
 
-
 /********** EDITAR ***********/
 router.get('/edit/:id', upload.any(), signController.edit);
 router.put('/edit/:id', upload.any(), signController.saveEdit);
-
 
 
 /********** ELIMINAR ***********/

@@ -37,19 +37,26 @@ app.use(methodOverride('_method'));
 
 // ************ Route System require and use() ************
 
-// ******* Paquetes Requeridos ********
+// ******* Rutas ********
 
 const mainRouter = require('./routes/main');
 
 const usersRoutes = require('./routes/usersRoutes');
+<<<<<<< HEAD
 
+=======
+>>>>>>> 35a2f0af3bef04b8f02f52d302e0bc26fb9917e7
 const signRoutes = require('./routes/signRoutes');
+const apiSign = require('./routes/api/sign');
+
 
 
 // **** Rutas a usar ****
 app.use('/', mainRouter);
 app.use('/users', usersRoutes);
 app.use('/sign', signRoutes);
+app.use('/api/sign', apiSign);
+
 
 
 
