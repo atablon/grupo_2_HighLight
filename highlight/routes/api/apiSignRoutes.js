@@ -8,9 +8,11 @@ const signApiController = require('../../controllers/api/signApiController');
 
 
 // ************ Rutas Require ************ /
-router.get('/', signApiController.list);
-router.get('/:id', signApiController.find);
-router.get('/type_id/:id', signApiController.type);
+router.get('/lowestCost', signApiController.lowestCost );
+router.get('/listAll', signApiController.list);
+router.get('/listById/:id', signApiController.find);
+router.get('/listByType/:id', signApiController.type);
+
 
 
 

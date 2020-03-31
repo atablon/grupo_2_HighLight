@@ -1,7 +1,7 @@
 
 const db = require("../../src/database/models")
 
-
+const Op = db.Sequelize.Op;
 /*********************************************************************************/
 
 const controller = {
@@ -95,6 +95,35 @@ const controller = {
             })
             .catch(error => { console.log(error) });
     }, 
+    lowestCost: (req,res)=>{
+
+        let searchCost = req.query.cost;
+
+        let busqueda = {
+            meta: {
+            status: 200,                      
+            }
+        }
+        
+        if(!isNaN(searchCost)){
+
+            db.Sign.findAll({
+                where:{  
+                    monthly_cost:{  [Op.lte]: searchCost  }
+                }
+            })
+            .then(results=>{
+                busqueda = {...busqueda,...results};
+                res.json(results);
+            })
+            .catch(error=>console.log(error));
+
+        } else {
+            res.json(`Error /api/sign/lowestCost solo puede recibir numeros`);
+        }
+
+        
+    },
 
 
      
