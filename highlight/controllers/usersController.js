@@ -18,6 +18,7 @@ function validateUserEntry(req,res,user){
 		if (user != undefined) {
 			// Al ya tener al usuario, comparamos las contraseñas
 			if (bcrypt.compareSync(req.body.user_password, user.user_password)) {
+				delete user.user_password;
 				// Setear en session el ID del usuario
 				req.session.user = user;
 
@@ -134,71 +135,43 @@ const usersController = {
 	 * Se muestra el perfil del usuario cuya session este activa o recien haya ingresado
 	 */
 	showProfile: (req,res)=>{
-		return (res.render('user/perfil')); 
-	
-		// db.User.findOne({
-		// 	include: ['sings']
-		// 	},
-		// 	{
-		// 		where: { id: req.user...... }
-		// 	})
-
-		// .then(results =>{
-		// 	console.log(results)
-		// return (res.render('user/perfil')); 
-			
-			
-		// })
-	
+		return (res.render('user/perfil')); 	
 	},
 	/**
 	 * Funcion para hacer logout, @todo incorporar en la vista del perfil
 	 */
 	logout: (req, res) => {
-        // Al hacer logout borramos todos las cookies activas
-        //let tokens = userTokensModel.findAllByField('userId', req.session.user.id);
-        // if (tokens) {
-        //     tokens.forEach(token => {
-        //         userTokensModel.destroy(token.id);
-        //     });
-        // }
-
-        // La otra opción sería solo borrar la que corresponda a esta sesión.
-        // let token = userTokensModel.findByField('token', req.cookies.rememberToken);
-        // if (token) { userTokensModel.destroy(token.id) }
-		console.log(`\n*****Se ha hecho el LOGOUT de ${req.session.user.user_name} correctamente****\n`);
         req.session.destroy();
-		//res.cookie('rememberToken', null, { maxAge: -1 });
+		res.cookie('userCookie', null, { maxAge: -1 });
         return(res.redirect('/'));
 	},
-	 
-	saveEdit: (res,req) => {
-		console.log(req.body.pass)
-		let changePass = {
-			user_password: req.body.pass,
-		}
-		db.User.update(
-			changePass, { where: {id: req.params.id } }
-		)
-		.then(results => {
-			return (res.redirect("/user/perfil"));
-		})
+	/**
+	 * Funcion que se encarga de actualizar el valor de contrasena modificado en el formulario, a su vez se hace validacion de back
+	 * verificando que las dos contrasenas ingresadas sean la misma. De no ser las mismas envia un mensaje de aviso.
+	 */
+	saveEdit: (req,res) => {
+	
+		if(req.body.pass == req.body.rpass){//validacion de back
 
+			db.User.update(
+				{user_password: bcrypt.hashSync(req.body.pass, 10)},
+				{ where: {id: req.session.user.id} }
+			)
+			.then(results => {
+				return (res.redirect("/users/perfil"));
+			});
+
+		} else {
+			let passError = true;
+			res.render("user/editUser", {passError:passError});
+		}
 
 	},
+/**
+ * Controlador que se encarga de renderizar la vista para editar la contrasena de usuario
+ */
 	showProfileEdit: (req, res) => {
-		let idNumber = req.params.id; 
-		db.User
-		.findAll({
-			include: ['sign']
-		}, 
-		{
-			where: {id:idNumber}, 
-		
-		})
-		.then(results => {
-			return res.render('user/editUser', { user: results})
-		})
+		res.render('user/editUser');
 	},
 
 }

@@ -94,7 +94,7 @@ form.addEventListener('submit', function (event) {
     }
     // valida que las contraseñas de los campos sean iguales. 
     let inputValue = pass.value;
-    let inputValue2 = pass2.value;
+    let inputValue2 = rpass.value;
     console.log (inputValue, inputValue2)
     // if (validator.isEmpty(inputValue, {ignore_whitespace: true }) != validator.isEmpty(inputValue2, { ignore_whitespace: true })) {
     if (inputValue != inputValue2 && !validator.isEmpty(inputValue) && !validator.isEmpty(inputValue2) ) { 
