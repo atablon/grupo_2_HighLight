@@ -24,35 +24,35 @@
                             <div class="row resultados_producto no-gutters">
                                 <div class="col-12">
                                     <div class="img_producto">
-                                        <img src="/images/imagescartel/<%=cartelesDb[i].imagen%>" width="100%" alt="">
+                                        <img src="/images/imagescartel/<%=cartelesDb[i].picture_filename%>" width="100%" alt="">
                                     </div>
                                 </div>
                                 <div class="col-12 producto_info">
                                     <div class="flex-probar">
                                         <div class="uno">
                                             <em class="tipo_cartel">
-                                                <%= cartelesDb[i].TipoDeCartel %>
+                                                <%= cartelesDb[i].types.sign_type %>
                                             </em>
                                             <p class="estrellas">
                                                 <!-- Loop para plotear las estrellas rellenas o vacias del puntaje del cartel -->
-                                                <% for(let j=0;j<cartelesDb[i].estrellas;j++){ %>
+                                                <% for(let j=0;j<cartelesDb[i].star;j++){ %>
                                                     <span class="fa fa-star checked"></span>
                                                 <%}
-                                                for(j=cartelesDb[i].estrellas; j<5;j++){
+                                                for(j=cartelesDb[i].star; j<5;j++){
                                                 %>
                                                  <span class="fa fa-star n_checked"></span>
                                                 <%}%>
 
                                             </p>
 
-                                            <p class="p_direccion"><%= cartelesDb[i].domiclioCartel %> <%= cartelesDb[i].numero %></p>
-                                            <p class="p_calles"> Entre las calles <%= cartelesDb[i].entreCalles1%> y <%= cartelesDb[i].entreCalles2  %>. <%= cartelesDb[i].barrio%>, <%= cartelesDb[i].provincia  %>  </p>
+                                            <p class="p_direccion"><%= cartelesDb[i].address %> <%= cartelesDb[i].street_number %></p>
+                                            <p class="p_calles"> Entre las calles <%= cartelesDb[i].street_1%> y <%= cartelesDb[i].street_2  %>. <%= cartelesDb[i].city%>, <%= cartelesDb[i].state  %>  </p>
                                             <p class="p_medidas"> 
-                                                Medidas:  <span class="fas fa-arrows-alt-v" class=" arrow_height"></span> <%= cartelesDb[i].medidasCartelAlto %> mts x <span class="fas fa-arrows-alt-h" class=" arrow_width"></span>  <%= cartelesDb[i].medidasCartelAncho %> mts 
+                                                Medidas:  <span class="fas fa-arrows-alt-v" class=" arrow_height"></span> <%= cartelesDb[i].height %> mts x <span class="fas fa-arrows-alt-h" class=" arrow_width"></span>  <%= cartelesDb[i].width %> mts 
                                             </p>
                                         </div>
 
-                                        <p class="p_costo">Valor mensual $<%= cartelesDb[i].valor%></p>
+                                        <p class="p_costo">Valor mensual $<%= cartelesDb[i].monthly_cost%></p>
                                     </div>
 
                                 </div>

@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const db = require("../src/database/models")
-
+const op = db.sequelize.op;
 // Constants
 const userFilePath = path.join(__dirname, '../data/users.json');
 
@@ -44,13 +44,28 @@ const controller = {
 	},
 	root_resultado: (req, res) => {
 		
-		// Acceso a la base de datos (Actualmente en JSON)
-		let filePath = path.join(__dirname, '../data/productos_creados.json');
-		let cartelesDb = JSON.parse(fs.readFileSync(filePath,{encoding:'utf-8'}));
 		let busqueda=req.query.busqueda_cartel;
-		console.log(req.query.busqueda_cartel);
+
+		db.Sign.findAll({
+			include:['techs','types','users','orders']
+		})
+		.then(results=>{
+			//res.send(results);
+			res.render('resultado',{cartelesDb:results,busqueda});
+		})
+		.catch(error=>{
+			console.log(error);
+		});
 		
-		res.render('resultado',{cartelesDb,busqueda});	
+		// db.Sign.findAll({
+		// 	where: 
+		// })
+		// .then()
+		// .catch(error=>console.log(error));
+		// );
+
+
+			
 	},
 	ingresar: (req, res) => {
 		res.render('ingresar');
