@@ -30,19 +30,21 @@ const controller = {
     },
     userDetail: (req,res)=>{
 
-        db.User.findOne({ 
-            where: { id:req.params.id },
-            attributes: ['id','user_name', 'email','user_type','profile_picture'],                
+        db.User.findOne({
+            attributes: ['id','user_name', 'email','user_type','profile_picture']
+        },{ 
+            where: { id:req.params.id },              
         })
         .then(usuario => { 
 
             let respuesta = {
+
                 meta:{
                     status: 200, 
-                    Total: results.length
                 }, 
                 data : usuario
             }
+
             res.json(respuesta);
             
         })
@@ -50,9 +52,5 @@ const controller = {
     }
 
 }
-
-
-
-
 
 module.exports = controller;
