@@ -99,11 +99,8 @@ const controller = {
 
         let searchCost = req.query.cost;
 
-        let busqueda = {
-            meta: {
-            status: 200,                      
-            }
-        }
+        console.log(`\n\n ESTO ES LO QUE SE BUSCA ${searchCost}    *********\n\n`);
+        
         
         if(!isNaN(searchCost)){
 
@@ -113,8 +110,15 @@ const controller = {
                 }
             })
             .then(results=>{
-                busqueda = {...busqueda,...results};
-                res.json(results);
+                              
+                let lowerCostSigns = {
+                    meta:{
+                        status: 200, 
+                        Total: results.length
+                    }, 
+                    data : results
+                }
+                res.json(lowerCostSigns);
             })
             .catch(error=>console.log(error));
 

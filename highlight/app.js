@@ -67,9 +67,9 @@ const signRoutes = require('./routes/signRoutes');
 /**
  * Rutas de APIs
  */
-const apiSign = require('./routes/api/apiSignRoutes');
+const apiSignsRoutes = require('./routes/api/signApiRoutes');
 
-
+const apiUsersRoutes = require('./routes/api/userApiRoutes');
 
 /**
  * Utilizacion de rutas
@@ -80,7 +80,19 @@ app.use('/users', usersRoutes);
 
 app.use('/sign', signRoutes);
 
-app.use('/api/sign', apiSign);
+/**
+ * APIs colecciones
+ */
+
+ /**
+  * Coleccion de recursos para Carteles
+  */
+app.use('/api/signs', apiSignsRoutes);
+
+/**
+ * Coleccion de recursos para Usuarios
+ */
+app.use('/api/users', apiUsersRoutes);
 
 
 
@@ -100,7 +112,6 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500);
   res.render('error');
 });
-
 
 // ************ exports app - dont'touch ************
 module.exports = app;
