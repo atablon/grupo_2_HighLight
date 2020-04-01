@@ -9,8 +9,14 @@ const session = require('express-session');
 const userCookieMiddleware = require('./middlewares/userCookieMiddleware');
 const authentication = require('./middlewares/authentication');
 
+
+
 // ************ express() - (don't touch) ************
 const app = express();
+
+
+
+
 
 // ************ Middlewares - (don't touch) ************
 app.use(express.static(path.join(__dirname, 'public')));  // Necesario para los archivos estáticos en el folder /public
@@ -71,6 +77,7 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 // ************ exports app - dont'touch ************
 module.exports = app;
