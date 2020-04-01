@@ -28,14 +28,24 @@ const controller = {
                 where: { type_id: 3 }
             })
 
+             let zoneCF = db.Sign.findAll({
+                where: { state: "Ciudad de Buenos Aires"    }
+            })
+
+            let zoneGBA = db.Sign.findAll({
+                    where: { state: "Gran Buenos Aires" }
+                })
+
             Promise
-            .all([signAll, signFilter, signTypes1, signTypes2, signTypes3])
+                .all([signAll, signFilter, signTypes1, signTypes2, signTypes3, zoneCF, zoneGBA])
             .then(results => {
                 let signAll = results[0];
                 let signFilter = results[1];
                 let signTypes1 = results[2];
                 let signTypes2 = results[3];
                 let signTypes3 = results[4];
+                let zoneCF = results[5];
+                let zoneGBA = results[5]
 
                 for (let i = 0; i < signAll.length; i++) {
                     signAll[i].setDataValue("endpoint", "/api/sign/" + signAll[i].id )
@@ -44,12 +54,18 @@ const controller = {
                
 
                 let carteles = {
-                    meta: {
+                    meta :  {
                         status: 200,
                         TotalDeProductos: signAll.length + " carteles",
-                        DestacadosConCincoEstrellas : signFilter.length                           
+                        DestacadosConCincoEstrellas: signFilter.length + " carteles",  
+                    
                     }, 
-                    TipoDeCartel : {
+                    Zona: {
+                        CapitalFederal: zoneCF.length + " carteles",
+                        GranBuenosAires: zoneGBA.length + " carteles"
+
+                    }, 
+                    TipoDeCartel: {
                         TipoID1: "Cartel de Kioscos, Diarios y Florerias",
                         Total1: signTypes1.length,
                         TipoID2: "Cartel de Vallas",
@@ -59,8 +75,6 @@ const controller = {
                     }, 
 
                     data: signAll, 
-                   
-                  
                 
                 }
               return res.json({carteles});
@@ -76,6 +90,17 @@ const controller = {
             })
             .catch(error => { console.log(error) });
     }, 
+    findFiveStar: (req, res) => {
+        db.Sign.findAll({
+            where: { star: 5 },
+            include: ['techs', 'types']
+        })
+            .then(results => {
+                return res.json({ results })
+            })
+            .catch(error => { console.log(error) });
+
+    },
 
     type: (req, res) => {
             db.Sign.findAll({
