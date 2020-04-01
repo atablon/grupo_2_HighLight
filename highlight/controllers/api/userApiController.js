@@ -4,6 +4,9 @@ const Op = db.Sequelize.Op;
 
 const controller = {
 
+    /**
+     * Api controller que entrega el listado de todos los usuarios con todos los atributos menos el password 
+     */
     usersList: (req,res)=>{
 
         db.User.findAll({
@@ -28,6 +31,9 @@ const controller = {
         
 
     },
+    /**
+     * API controller que entrega los detalles de un usuario en particular, sin incluir el password de este
+     */
     userDetail: (req,res)=>{
 
         db.User.findOne({

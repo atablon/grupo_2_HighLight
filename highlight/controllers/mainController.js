@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const db = require("../src/database/models")
-const op = db.sequelize.op;
+const Op = db.Sequelize.Op;
 // Constants
 const userFilePath = path.join(__dirname, '../data/users.json');
 
@@ -47,25 +47,46 @@ const controller = {
 		let busqueda=req.query.busqueda_cartel;
 
 		db.Sign.findAll({
+			where:{
+				[Op.or]: [
+					{
+						address: {
+							[Op.like]: `%${busqueda}%`
+							}
+					},
+					{
+						street_1: {
+							[Op.like]: `%${busqueda}%`
+							}
+					},
+					{
+						street_2: {
+								[Op.like]: `%${busqueda}%`
+							}
+					},
+					{
+						city: {
+							[Op.like]: `%${busqueda}%`
+						}
+					},{
+						state: {
+							[Op.like]: `%${busqueda}%`
+						}
+					}
+				]}
+		,
 			include:['techs','types','users','orders']
 		})
 		.then(results=>{
-			//res.send(results);
+
 			res.render('resultado',{cartelesDb:results,busqueda});
+
 		})
 		.catch(error=>{
 			console.log(error);
 		});
 		
-		// db.Sign.findAll({
-		// 	where: 
-		// })
-		// .then()
-		// .catch(error=>console.log(error));
-		// );
-
-
-			
+		
 	},
 
 };
