@@ -1,54 +1,78 @@
-// ************ Require's ************
+/**
+ * Modulos requeridos
+ */
 const createError = require('http-errors');
+
 const cookieParser = require('cookie-parser');
+
 const express = require('express');
+
 const logger = require('morgan');
+
 const path = require('path');
+
 const methodOverride = require('method-override');
+
 const session = require('express-session');
-const userCookieMiddleware = require('./middlewares/userCookieMiddleware');
+
 const authentication = require('./middlewares/authentication');
 
-// ************ express() - (don't touch) ************
+/**
+ * Express, no tocar!
+ */
 const app = express();
 
-// ************ Middlewares - (don't touch) ************
+/**
+ * Middlewares, no tocar!
+ */
 app.use(express.static(path.join(__dirname, 'public')));  // Necesario para los archivos estáticos en el folder /public
+
 app.use(express.urlencoded({ extended: false }));
+
 app.use(logger('dev'));
+
 app.use(express.json());
+
 app.use(cookieParser());
 
 app.use(session({
   secret: 'register-login',
   resave: false,
   saveUninitialized: true
-}));
+})); // datos caracteristicos de la sesion
+
 app.use(authentication);
-//app.use(userCookieMiddleware);
-//
-// ************ Template Engine - (don't touch) ************
-app.set('view engine', 'ejs');
 
-// override with POST having ?_method=DELETE
-app.use(methodOverride('_method'));
+app.use(methodOverride('_method'));// override with POST having ?_method=DELETE o ?_method=PUT
 
-// ************ WRITE YOUR CODE FROM HERE ************
+app.set('view engine', 'ejs');//  Template Engine - no tocar!
 
-// ************ Route System require and use() ************
 
-// ******* Rutas ********
+/**
+ * Rutas Principales
+ */
+const mainRouter = require('./routes/mainRoutes');
 
-const mainRouter = require('./routes/main');
 
+/**
+ * Rutas de usuarios, Ingreso, Registro, edicion de usuarios, Perfil
+ */
 const usersRoutes = require('./routes/usersRoutes');
+
+/**
+ * Rutas de producto, en este caso carteleria, Publicar carteles, editar carteles, listar carteles
+ */
 const signRoutes = require('./routes/signRoutes');
+
+/**
+ * Rutas de APIs
+ */
 const apiSign = require('./routes/api/apiSignRoutes');
 
 
 
 /**
- * Ruta home
+ * Utilizacion de rutas
  */
 app.use('/', mainRouter);
 
@@ -57,7 +81,6 @@ app.use('/users', usersRoutes);
 app.use('/sign', signRoutes);
 
 app.use('/api/sign', apiSign);
-
 
 
 
