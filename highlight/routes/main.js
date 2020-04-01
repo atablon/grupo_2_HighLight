@@ -1,45 +1,38 @@
-// ************ Require's ************
+/**
+ * Modulos requeridos
+ */
 const express = require('express');
+
 const router = express.Router();
-const multer = require('multer');
-const path = require('path');
 
-// Esto es muller para levantar la imagen del cartel y guardarla en nuestra carpeta.
-// esto es un middleware podemos sacarlo afuera y llamarlo en cada ruta que necesitemos
-var storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, __dirname + '/../public/images/imagescartel') //aca falta pain.join(__dirname, "../../public...")
-    },
-    filename: function (req, file, cb) {
-        cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
-    }
-})
-
-var upload = multer({ storage: storage })
-
-
-// ************ Controller Require ************
 const mainController = require('../controllers/mainController');
+
 const mainControllerDetalle = require('../controllers/mainControllerDetalle');
 
 
-/* GET - home page. */
+/**
+ * Get -> HomePage localhost:3000/
+ */
 router.get('/', mainController.root);
+
+/**
+ * Get -> @todo El Carrito ira en lugar por separado
+ */
 router.get('/carrito', mainController.root_carrito);
+
+/**
+ * Get -> Ruta que entrega el resultado de la busqueda por la barra de busqueda, tanto en la pagina HomePage como en los headers con busqueda
+ */
 router.get('/resultado',mainController.root_resultado);
-router.get('/ingresar', mainController.ingresar);
-router.get('/registrar', mainController.registrar);
+
+
+/**
+ * Get -> Ruta que muestra el detalle de una de las selecciones de carteles de la HomePage o Pagina de resultado en /resultado?busqueda=lugar
+ */
 router.get('/detalle/:id', mainControllerDetalle.detalle);
 
 
 
-
-
-
-
-
-/* Get para ser redirigido a la pagina de detalle */
-router.get('/detalle/:CartelId',mainControllerDetalle.detalle)
 
 
 module.exports = router;

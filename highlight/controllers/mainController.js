@@ -40,7 +40,7 @@ const controller = {
 	
 	},
 	root_carrito: (req, res) => {
-		res.render('carrito');
+		res.render('cart/carrito');
 	},
 	root_resultado: (req, res) => {
 		
@@ -67,14 +67,7 @@ const controller = {
 
 			
 	},
-	ingresar: (req, res) => {
-		res.render('ingresar');
-	},
-	registrar: (req, res) => {
-		res.render('registro');
-	},
-	
-	
+
 };
 
 

@@ -47,10 +47,15 @@ const apiSign = require('./routes/api/apiSignRoutes');
 
 
 
-// **** Rutas a usar ****
+/**
+ * Ruta home
+ */
 app.use('/', mainRouter);
+
 app.use('/users', usersRoutes);
+
 app.use('/sign', signRoutes);
+
 app.use('/api/sign', apiSign);
 
 
