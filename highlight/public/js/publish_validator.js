@@ -81,9 +81,9 @@ form.addEventListener('submit', function (event) {
         let valueInput = input.value.trim();
         if (validator.isEmpty(valueInput)) {
             inputError[input.name] = true;
-            /// esto tengo que revisarlo porque no anda con la img. !VERRRRRRR
-              input.classList.add("error")
-             input.nextElementSibling.innerHTML = `El campo <b>${input.dataset.type}</b> no puede estar vacío`
+            
+            input.classList.add("error")
+            input.nextElementSibling.innerHTML = `El campo <b>${input.dataset.type}</b> no puede estar vacío`
 
         }
     }
@@ -98,7 +98,6 @@ window.addEventListener("load", function () {
         e.preventDefault()
         let boxImage = document.querySelector("#boxImage");
         boxImage.innerHTML = `<input type="file" name="picture_filename" id="picture_filename" data-type="imagen">`;
-        // let imagen = document.querySelector(".imageNew").innerHTML = `<input type="file" name="picture_filename" id="picture_filename" data-type="imagen">`;
     })
 
 })

@@ -1,5 +1,4 @@
 
-
 // Levantamos toda la informacion del form. 
 let form = document.querySelector("#publishForm");
 
@@ -49,7 +48,7 @@ allInput.forEach(input => {
                 // Mostramos el mensaje de error en el span con clase feedback
                 this.nextElementSibling.innerHTML = `El <b>${this.dataset.type}</b> debe ser un formato de email válido`;
             }
-            console.log(inputErrors);
+            
         });
     }
 
