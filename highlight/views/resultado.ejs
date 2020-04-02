@@ -9,8 +9,9 @@
             <h2 class="titulo-seccion"> Resultado de busqueda: <%= busqueda %></h2>
             <div class="filtros">
                 <ul>
-                    <li>Ordernar por puntaje </li>
-                    <li>Ordernar por precio  </li>
+                     <li>Ordernar por puntaje <input type="radio" name="ordenar" value="puntaje"></li>
+                    <li>Ordernar por precio <input type="radio" name="ordenar" value="precio"></li>
+                </form>
                     <li><a>Cantidad de resultados: <%= cartelesDb.length %>  </a></li>
                 </ul>
             </div>

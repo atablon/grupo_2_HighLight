@@ -39,7 +39,9 @@ p {
   padding: 0;
   margin: 0;
 }
-
+.filter-button{
+  background-color: #444444;
+}
 .fa {
   font-size: 18px;
 }
